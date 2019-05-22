@@ -1,0 +1,29 @@
+
+&star_job
+
+  
+	history_columns_file = '~/sens/base/history_customACL.list'
+	profile_columns_file = '~/sens/base/profile_customACL.list'
+	
+    read_extra_star_job_inlist2 = .true.
+    extra_star_job_inlist2_name = '~/sens/base/inlist_base'
+
+/ ! end of star_job namelist
+
+&controls
+
+    read_extra_controls_inlist1 = .true.
+    extra_controls_inlist1_name = '~/sens/base/inlist_base'
+
+    read_extra_controls_inlist2 = .true.
+    extra_controls_inlist2_name = 'inlist_cluster'
+
+
+/ ! end of controls namelist
+
+&pgstar
+
+    read_extra_pgstar_inlist1 = .true.
+    extra_pgstar_inlist1_name = '~/sens/base/inlist_pgstar'
+
+/ ! end of pgstar namelist
