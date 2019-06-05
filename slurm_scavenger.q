@@ -29,11 +29,11 @@ let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
 
 # Check for empty files using arrays
-chk_files=(${index2}/*)
-(( ${#chk_files[*]} )) && empty=true  || empty=false # Unset the variable for bash b$
+
+[ "$(ls -A ./${index2})" ] && empty=false || empty=true
+
 if $empty; then
     echo "starting from scratch"
-    mkdir $MESA_RUN/${index2}
     cd $MESA_RUN/${index2}
     cat $MESA_BASE/inlist_cluster_template > ./inlist_cluster
     rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305.txt)
