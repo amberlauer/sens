@@ -15,14 +15,7 @@
 ! Choosing a net:
 ! RP nets:
 !
-! Adaptive nets
-!     enable_adaptive_network=.true.
-!     max_Z_for_add = 52
-!     max_N_for_add=82
-!     min_x_for_keep = 1d-8
-!     min_x_for_n = 1d-6
-!     min_x_for_add = 1d-6
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !    
 ! Used when taking the NS mod file from ns_h test_suite to convert into ns_relax.mod. 
 ! Dont try to change the net at the same time as using the relax_* options
@@ -31,127 +24,136 @@
 !     chem_name2='ba138'
 !     replace_element_nzlo=-1
 !     replace_element_nzhi=-1
-! 
-!     new_R_center=1.12d6
-!     relax_initial_R_center = .true.
-! 
-!     new_L_center=1.6d34
+!
+!     relax_initial_R_center = .true.! 
+!     new_R_center=1.12d6! 
 !     relax_initial_L_center = .true.
-! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !    
+!     new_L_center=1.6d34
+! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! 
 
 
 &star_job
-
-	show_log_description_at_start = .false.
-	  
-	load_saved_model = .true.
-	!saved_model_name = 'ns_1.4M_h_test.mod'
-	saved_model_name = 'ns_relax.mod'
-	
-	save_model_when_terminate = .true.
-	save_model_filename = 'final.mod'
-	  
-	write_profile_when_terminate = .true.
+        show_log_description_at_start = .false.
+      
+        load_saved_model = .true.
+        saved_model_name = 'ns_relax.mod'
+  
+        write_profile_when_terminate = .true.
 	filename_for_profile_when_terminate = 'final_profile.data'
-	
-	kappa_file_prefix = 'gs98'
-	
-	!enable_adaptive_network=.true.
-	!these settings give double peak
-	!min_x_for_keep = 1d-4
-	!min_x_for_n = 1d-3
-	!min_x_for_add = 1d-3
-	!max_Z_for_add = 16
-	!max_N_for_add = 16
-	!max_A_for_add = 32
-	
-	change_initial_net = .true.      
-	!new_net_name = 'rp_53.net'
-	!new_net_name = 'rp_153.net'
-	new_net_name = 'rp_305.net'
+     
+        change_initial_net = .true.      
+        !         new_net_name = 'rp_53.net'
+        !         new_net_name = 'rp_153.net'
+        new_net_name = 'rp_305.net'
 	rate_tables_dir ='starlib_raw_rates'
-	rate_cache_suffix = 'starlib'
-	list_net_reactions = .true.
-	
-	set_rate_3a = 'FL87' ! Fushiki and Lamb, Apj, 317, 368-388, 1987
-	set_rate_1212 = 'G05' ! Gasques, et al. Phys Review C, 72, 025806, 2005     
-	 
-	!num_special_rate_factors=1
-	!reaction_for_special_factor(1)=r_ar34_ap_k37
-	!special_rate_factor=.0951
-	  
-	  
-	pgstar_flag = .true.
+	rate_cache_suffix = 'starlib'	
 
-	
-	
-	/ ! end of star_job namelist
+      
+        set_rate_3a = 'FL87' ! Fushiki and Lamb, Apj, 317, 368-388, 1987
+        set_rate_1212 = 'G05' ! Gasques, et al. Phys Review C, 72, 025806, 2005      
+
+        kappa_file_prefix = 'gs98'
+
+	pgstar_flag = .true.
+        warn_run_star_extras=.false.
+
+/ ! end of star_job namelist
 
 &controls
 
-
-	fe_core_infall_limit = 1d99
-	max_abar_for_burning = 137
-	!#2max_abar_for_burning=55
-	
-	!! starting from a saved model, should be redundant
-	initial_mass = 1.4
-	initial_z = 0.02d0
-	  
-	use_Type2_opacities = .true.
-	Zbase = 0.02d0
-	
+        max_model_number=3000
 	use_other_pgstar_plots=.true.
-	photo_interval = 50
-	profile_interval = 100
-	history_interval = 10
-	terminal_interval = 10
-	write_header_frequency = 10
-	  
-	min_timestep_limit = 1d-9
-	max_years_for_timestep = 1d-4  	
-	max_timestep_factor=2d0	
-	gamma_center_limit = 1d99
-	
-	varcontrol_target = 1d-3
-	mesh_delta_coeff = 1.0
-	
-	mesh_min_dlnR = 1d-9
-	merge_if_dlnR_too_small = .true.
-	
-	use_GR_factors = .true.
-	 
-	!mass_change_full_on_dt = 1d-4 ! (seconds)
-	!mass_change_full_off_dt = 1d-6 ! (seconds)
-	  
-	  
-	which_atm_option = 'grey_and_kap'  
-	cool_wind_RGB_scheme = ''
-	cool_wind_AGB_scheme = ''
-	RGB_to_AGB_wind_switch = 1d-4
-	Reimers_scaling_factor = 0.5d0  
-	Blocker_scaling_factor = 0.1d0 
-	Pextra_factor = 2
+        photo_interval= 500
+        profile_interval = 500
+        history_interval = 10
+        terminal_interval = 200
+        write_header_frequency = 10
 
-	use_Ledoux_criterion = .false.
-	
-	alpha_semiconvection = 0.1
-	thermohaline_coeff = 2
-	thermohaline_option = 'Kippenhahn'
+        min_timestep_limit = 1d-9
+        max_years_for_timestep = 1d-4
+        max_timestep_factor=2d0
+        gamma_center_limit = 1d99
+        varcontrol_target = 1d-3
+        mesh_delta_coeff = 1.0
+        mesh_min_dlnR = 1d-9
+        merge_if_dlnR_too_small = .true.
+        newton_iterations_limit = 10
 
+        dX_nuc_drop_limit=7.5d-2
+        dX_nuc_drop_limit_at_high_T=5d-3
+        dX_nuc_drop_min_X_limit=7.5d-2
+        dX_nuc_drop_max_A_limit=52
 
-	super_eddington_scaling_factor = 1
-	
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        mesh_dlog_pp_dlogP_extra = 1
+        mesh_dlog_cno_dlogP_extra = 1
+
+        mesh_dlog_3alf_dlogP_extra = 1
+        mesh_dlog_burn_c_dlogP_extra = 1
+        mesh_dlog_burn_n_dlogP_extra = 1
+        mesh_dlog_burn_o_dlogP_extra = 1
+
+        mesh_dlog_burn_ne_dlogP_extra = 1
+        mesh_dlog_burn_na_dlogP_extra = 1
+        mesh_dlog_burn_mg_dlogP_extra = 1
+
+        mesh_dlog_cc_dlogP_extra = 1
+        mesh_dlog_co_dlogP_extra = 1
+        mesh_dlog_oo_dlogP_extra = 1
+
+        mesh_dlog_burn_si_dlogP_extra = 1
+        mesh_dlog_burn_s_dlogP_extra = 1
+        mesh_dlog_burn_ar_dlogP_extra = 1
+        mesh_dlog_burn_ca_dlogP_extra = 1
+        mesh_dlog_burn_ti_dlogP_extra = 1
+        mesh_dlog_burn_cr_dlogP_extra = 1
+        mesh_dlog_burn_fe_dlogP_extra = 1
+
+        mesh_dlog_pnhe4_dlogP_extra = 1
+        mesh_dlog_other_dlogP_extra = 1
+        mesh_dlog_photo_dlogP_extra = 1
+    
+        fe_core_infall_limit = 1d99
+        max_abar_for_burning = 137
+	!max_abar_for_burning=55
+
+        use_Type2_opacities = .true.
+        Zbase = 0.02d0
+
+        use_GR_factors = .true.
+
+        which_atm_option = 'grey_and_kap'
+        cool_wind_RGB_scheme = ''
+        cool_wind_AGB_scheme = ''
+        RGB_to_AGB_wind_switch = 1d-4
+        Reimers_scaling_factor = 0.5d0  
+        Blocker_scaling_factor = 0.1d0 
+        Pextra_factor = 2
+        use_Ledoux_criterion = .false.
+
+        alpha_semiconvection = 0.1
+        thermohaline_coeff = 2
+        thermohaline_option = 'Kippenhahn'
+
+        set_min_D_mix = .true.
+        min_D_mix = 1d6
+
+        min_T_for_acceleration_limited_conv_velocity = 0.0
+        okay_to_reduce_gradT_excess = .true.
+        super_eddington_scaling_factor = 1
+
+        mixing_length_alpha = 1.5
+        MLT_option = 'Henyey'
+
+ 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	! Other case:
-	!	accrete_same_as_surface = .false. 
-    !	accretion_dump_missing_metals_into_heaviest = .false. 
+		accrete_same_as_surface = .false. 
+    		accretion_dump_missing_metals_into_heaviest = .false. 
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	! 2% N case
 	!      accrete_given_mass_fractions = .true.
 	!      num_accretion_species = 3
 	!      accretion_species_id(1) = 'h1'
-	!      accretion_species_xa(1) = 0.7048
+	!     accretion_species_xa(1) = 0.7048
 	!      accretion_species_id(2) = 'he4'
 	!      accretion_species_xa(2) = 0.2752
 	!      accretion_species_id(3) = 'n14'
@@ -168,53 +170,10 @@
 		 mass_change = 3d-9
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	
-	set_min_D_mix = .true.
-	min_D_mix = 1d6
-	 
-	min_T_for_acceleration_limited_conv_velocity = 0.0
-	
-	okay_to_reduce_gradT_excess = .true.
+	!mass_change_full_on_dt = 1d-4 ! (seconds)
+	!mass_change_full_off_dt = 1d-6 ! (seconds)
 
-	mixing_length_alpha = 1.5
-	MLT_option = 'Henyey'
 	
-	
-	dX_nuc_drop_limit=7.5d-2
-	dX_nuc_drop_limit_at_high_T=5d-3
-	dX_nuc_drop_min_X_limit=7.5d-2
-	dX_nuc_drop_max_A_limit=52
-	
-	newton_iterations_limit = 10
-	
-	
-	mesh_dlog_pp_dlogP_extra = 1
-	mesh_dlog_cno_dlogP_extra = 1
-	
-	mesh_dlog_3alf_dlogP_extra = 1
-	mesh_dlog_burn_c_dlogP_extra = 1
-	mesh_dlog_burn_n_dlogP_extra = 1
-	mesh_dlog_burn_o_dlogP_extra = 1
-	
-	mesh_dlog_burn_ne_dlogP_extra = 1
-	mesh_dlog_burn_na_dlogP_extra = 1
-	mesh_dlog_burn_mg_dlogP_extra = 1
-	
-	mesh_dlog_cc_dlogP_extra = 1
-	mesh_dlog_co_dlogP_extra = 1
-	mesh_dlog_oo_dlogP_extra = 1
-	
-	mesh_dlog_burn_si_dlogP_extra = 1
-	mesh_dlog_burn_s_dlogP_extra = 1
-	mesh_dlog_burn_ar_dlogP_extra = 1
-	mesh_dlog_burn_ca_dlogP_extra = 1
-	mesh_dlog_burn_ti_dlogP_extra = 1
-	mesh_dlog_burn_cr_dlogP_extra = 1
-	mesh_dlog_burn_fe_dlogP_extra = 1
-	
-	mesh_dlog_pnhe4_dlogP_extra = 1
-	mesh_dlog_other_dlogP_extra = 1
-	mesh_dlog_photo_dlogP_extra = 1         
-	 
 ! test with "Gold Standard" tolerances -- FAILED
 !      newton_iterations_limit = 20
 !      max_tries = 20
@@ -269,9 +228,5 @@
   
   !trace_k = 0
 
-
 / ! end of controls namelist
-
-
-
 

@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=3072
-#SBATCH --array=0-100
+#SBATCH --array=101-200
 #SBATCH --mail-type=END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
@@ -18,7 +18,8 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
 export MESA_BASE=/work/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
-export MESA_RUN=$MESA_BASE/runs_test
+export MESA_RUN=$MESA_BASE/runs_x100_2
+
 
 cd $MESA_RUNS
 
@@ -28,7 +29,7 @@ let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
 
 # Check for empty files using arrays
-chk_files=($folder/*)
+chk_files=(${index2}/*)
 (( ${#chk_files[*]} )) && empty=true  || empty=false # Unset the variable for bash b$
 if $empty; then
     echo "starting from scratch"

@@ -37,20 +37,21 @@
 	  
 	load_saved_model = .true.
 	!saved_model_name = 'ns_1.4M_h_test.mod'
-	saved_model_name = '~/sens/base/ns_relax.mod'
+	saved_model_name = '/work/al363/sens/base/ns_relax.mod'
 	
 	save_model_when_terminate = .true.
 	save_model_filename = 'final.mod'
 	  
 	write_profile_when_terminate = .true.
-	filename_for_profile_when_terminate = 'final_profile.data'
+	!filename_for_profile_when_terminate = 'final_profile.data'
 	
 	kappa_file_prefix = 'gs98'
 
 	
 	change_initial_net = .true.
-	new_net_name = '~/sens/base/rp_305.net'
-	rate_tables_dir ='~/sens/base/starlib_raw_rates'
+	new_net_name = '/work/al363/sens/base/rp_305.net'
+	!new_net_name = 'basic.net'
+	rate_tables_dir ='/work/al363/sens/base/starlib_raw_rates'
 	rate_cache_suffix = 'starlib'	
 	
 	set_rate_3a = 'FL87' ! Fushiki and Lamb, Apj, 317, 368-388, 1987
@@ -67,13 +68,13 @@
 
 	max_model_number= 3000
 	use_other_pgstar_plots=.true.
-	photo_interval = 100
-	profile_interval = 1000
+	photo_interval = 500
+	profile_interval = 500
 	history_interval = 10
-	terminal_interval = 100
+	terminal_interval = 200
 	write_header_frequency = 10
 	  
-	min_timestep_limit = 1d-99
+	min_timestep_limit = 1d-9
 	max_years_for_timestep = 1d-4  	
 	max_timestep_factor=2d0	
 	gamma_center_limit = 1d99
@@ -129,7 +130,7 @@
 	Zbase = 0.02d0 
 		
 	
-	use_GR_factors = .false.
+	use_GR_factors = .true.
 	 
 	which_atm_option = 'grey_and_kap'  
 	cool_wind_RGB_scheme = ''
@@ -138,7 +139,7 @@
 	Reimers_scaling_factor = 0.5d0  
 	Blocker_scaling_factor = 0.1d0 
 	Pextra_factor = 2
-	use_Ledoux_criterion = .true.
+	use_Ledoux_criterion = .false.
 	
 	alpha_semiconvection = 0.1
 	thermohaline_coeff = 2
@@ -156,22 +157,22 @@
 	
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	! Other case:
-	!	accrete_same_as_surface = .false. 
-    !	accretion_dump_missing_metals_into_heaviest = .false. 
+	accrete_same_as_surface = .false. 
+    	accretion_dump_missing_metals_into_heaviest = .false. 
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	! 2% N case
 	!      accrete_given_mass_fractions = .true.
 	!      num_accretion_species = 3
 	!      accretion_species_id(1) = 'h1'
-	!     accretion_species_xa(1) = 0.7048
+	!      accretion_species_xa(1) = 0.7048
 	!      accretion_species_id(2) = 'he4'
 	!      accretion_species_xa(2) = 0.2752
 	!      accretion_species_id(3) = 'n14'
 	!      accretion_species_xa(3) = 0.02
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	! 2% metals case
-	     accretion_h1 = 0.7048 
-	     accretion_h2 = 0 
+	     accretion_h1 = 0.7048	
+	     accretion_h2 = 0 	
 	     accretion_he3 = 0
 	     accretion_he4 = 0.2752
 	     accretion_zfracs = 3 
@@ -179,7 +180,6 @@
 	! Accretion rate
 		 mass_change = 3d-9
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	
 	!mass_change_full_on_dt = 1d-4 ! (seconds)
 	!mass_change_full_off_dt = 1d-6 ! (seconds)
 
