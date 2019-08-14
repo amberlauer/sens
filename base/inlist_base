@@ -1,4 +1,4 @@
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
 ! inlist_ns_h
 ! Type 1 Xray bursts. MESA r7484
 !
@@ -37,7 +37,7 @@
 	  
 	load_saved_model = .true.
 	!saved_model_name = 'ns_1.4M_h_test.mod'
-	saved_model_name = '/work/al363/sens/base/ns_relax.mod'
+	saved_model_name = '/work/al363/sens2/base/ns_relax.mod'
 	
 	save_model_when_terminate = .true.
 	save_model_filename = 'final.mod'
@@ -49,9 +49,9 @@
 
 	
 	change_initial_net = .true.
-	new_net_name = '/work/al363/sens/base/rp_305.net'
+	new_net_name = '/work/al363/sens2/base/rp_305.net'
 	!new_net_name = 'basic.net'
-	rate_tables_dir ='/work/al363/sens/base/starlib_raw_rates'
+	rate_tables_dir ='/work/al363/sens2/base/starlib_raw_rates'
 	rate_cache_suffix = 'starlib'	
 	
 	set_rate_3a = 'FL87' ! Fushiki and Lamb, Apj, 317, 368-388, 1987
@@ -70,11 +70,11 @@
 	use_other_pgstar_plots=.true.
 	photo_interval = 500
 	profile_interval = 500
-	history_interval = 10
-	terminal_interval = 200
+	history_interval = 2
+	terminal_interval = 100
 	write_header_frequency = 10
 	  
-	min_timestep_limit = 1d-9
+	min_timestep_limit = 1d-99
 	max_years_for_timestep = 1d-4  	
 	max_timestep_factor=2d0	
 	gamma_center_limit = 1d99

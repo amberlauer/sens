@@ -413,7 +413,7 @@
       !        (4*pi*s% photosphere_r*Rsun*s% tau_base)
       ! Lars says:
       ! wind_mdot = 4*pi*R^2*rho*v_wind
-      ! tau = integral(opacity*rho*dr) from R to infinity
+      !  tau = integral(opacity*rho*dr) from R to infinity
       ! so tau = opacity*wind_mdot/(4*pi*R*v_wind) at photosphere
       ! or v_wind = opacity*wind_mdot/(4*pi*R*tau) at photosphere
       
@@ -784,10 +784,10 @@
       
       ! energy information
 
-         !total_energy ! at end of step
+         total_energy ! at end of step
          !total_energy_start ! at start of step
 
-         !total_energy_sources_and_sinks ! for this step
+         total_energy_sources_and_sinks ! for this step
 
          !error_in_energy_conservation ! for this step
             ! = total_energy - (total_energy_start + total_energy_sources_and_sinks)
@@ -799,10 +799,12 @@
          !rel_error_in_energy_conservation ! = error_in_energy_conservation/total_energy
          !log_rel_error_in_energy_conservation
 
-         !total_energy_and_integrated_fluxes ! = total_energy + cumulative_sources_and_sinks
+         total_energy_and_integrated_fluxes ! = total_energy + cumulative_sources_and_sinks
 
          !total_radiation
          !total_energy_plus_total_radiation
+	tot_E    !!!! these were changed after 10108
+	log_tot_E !!! these were changed after 10108
 
          !total_E
          !total_KE

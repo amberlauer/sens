@@ -156,7 +156,7 @@
          if (ierr /= 0) return
          
          call set_my_namelist_defaults
-         call read_my_pgstar_namelist('inlist_for_my_pgstar_plots', ierr)
+         call read_my_pgstar_namelist('/work/al363/sens2/base/inlist_for_my_pgstar_plots', ierr)
          if (ierr /= 0) return
          
 			i=1

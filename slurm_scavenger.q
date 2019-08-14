@@ -1,27 +1,28 @@
 #!/bin/bash
 #SBATCH --partition scavenger
-#SBATCH --job-name=sensitivity
-#SBATCH --output=res1.txt
+#SBATCH --job-name=sensitivity_10108_number
+#SBATCH --output=/work/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
+
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=3072
-#SBATCH --array=101-200
+#SBATCH --array=numero00-number00
 #SBATCH --mail-type=END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
 
 
-export MESA_DIR=/dscrhome/al363/mesa10398
+export MESA_DIR=/dscrhome/al363/mesa10108
 export MESASDK_ROOT=/dscrhome/al363/mesasdk_1_2018
 #export MESASDK_ROOT=~/mesasdk_8_18
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
 export MESA_BASE=/work/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
-export MESA_RUN=$MESA_BASE/runs_x100_2
+export MESA_RUN=$MESA_BASE/runs_x100_number
 
-
-cd $MESA_RUNS
+mkdir $MESA_BASE/runs_x100_number
+cd $MESA_RUN
 
 shopt -s nullglob
 shopt -s dotglob # Die if dir name provided on command line
@@ -43,7 +44,7 @@ if $empty; then
     $MESA_BASE/star >> /work/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
 else
     echo "starting from photo"  
-    cd $MESA_RUN/${SLURM_ARRAY_TASK_ID}
+    cd $MESA_RUN/${index2}
     cd ./photos
     cp $(ls -t  | head -1) restart_photo
     cd ../   date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
