@@ -37,7 +37,7 @@ if $empty; then
     echo "starting from scratch "
     mkdir $MESA_RUN/${index2}
     cd $MESA_RUN/${index2}
-    cat $MESA_BASE/inlist_cluster_templatefactor > ./inlist_cluster
+    cat $MESA_BASE/inlist_cluster_templatefactor_1b > ./inlist_cluster
     rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
     sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
     rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
