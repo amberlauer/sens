@@ -23,8 +23,8 @@ fi
 sed -i 's|number|'${number}'|g'  slurm_scavenger_10108_1b_${number}_${factor}.q
 sed -i 's|numero|'${numero}'|g'  slurm_scavenger_10108_1b_${number}_${factor}.q
 
-#sbatch slurm_scavenger_10108_1b_${number}_${factor}.q >> job_number_${number}_${factor}.txt
-
+sbatch slurm_scavenger_10108_1b_${number}_${factor}.q >> job_number_${number}_${factor}.txt
+mv slurm_scavenger_10108_1b_${number}_${factor}.q /slurms
 #### old junk that didn't work
 #job_number=$(tail -c 9 job_number.txt)
 
