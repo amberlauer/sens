@@ -22,7 +22,8 @@ fi
 
 sed -i 's|number|'${number}'|g'  slurm_scavenger_10108_1b_${number}_${factor}.q
 sed -i 's|numero|'${numero}'|g'  slurm_scavenger_10108_1b_${number}_${factor}.q
-
+#mkdir /work/al363/runs/runs_x${factor}_${number}
+mkdir /work/al363/runs/runs_x${factor}_${number}/errors
 sbatch slurm_scavenger_10108_1b_${number}_${factor}.q >> job_number_${number}_${factor}.txt
 
 mv slurm_scavenger_10108_1b_${number}_${factor}.q /slurms
