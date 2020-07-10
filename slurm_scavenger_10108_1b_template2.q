@@ -32,6 +32,8 @@ let "index2=${index1}-1"
 # Check for empty files using arrays
 #empty=false
 #test "$(ls -A ./${index2}/photos)"&& empty=false || empty=true
+max_model=$(sed -n ''${index}'p' ./max_model.txt)
+model=$(sed -n ''${index}'p' ./restart_model.txt)
 
 cd $MESA_RUN/${index2}
 cat $MESA_BASE/inlist_cluster_abund_templatefactor > ./inlist_cluster
@@ -41,12 +43,13 @@ rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
 max_model=$(sed -n ''${index})'p' ./max_model.txt
 if[ "${max_model}" = "DNC" ];then
-
-elif
-        sed -i 's|max_number|'$max_model'|g'  inlist_cluster
-        model=$(sed -n ""${index})'p' ./restart_model.txt
+        echo "DNC"
+elif [ ! "${max_model}" = "DNC" ] ; then
+        sed -i 's|max_number|'${max_model}'|g'  inlist_cluster
         cd ./photos
-        ./re ${model} >> /work/al363/new_sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+        cp ${model} restart_photo
+	cd ../ date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
+        $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
         date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 fi
 
