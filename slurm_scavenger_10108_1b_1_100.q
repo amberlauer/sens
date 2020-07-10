@@ -45,11 +45,11 @@ if [ "${max_model}" = "DNC" ] ; then
 	echo "DNC"
 elif [ ! "${max_model}" = "DNC" ] ; then
         sed -i 's|max_number|'${max_model}'|g'  inlist_cluster
-        cd ./photos
-        cp ${model} restart_photo
-	cd ../ date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
-        $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
-        date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
+        #cd ./photos
+        #cp ${model} restart_photo
+	#cd ../ date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
+        $MESA_BASE/re ${model} >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+        #date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 fi
 
 
