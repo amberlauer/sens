@@ -9,7 +9,7 @@
 #SBATCH --mail-type=END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
-
+#SBATCH -x dcc-aryalab-01,dcc-biodept-[01,03],dcc-biostat-[01-03],dcc-cagpm-[01-02],dcc-carin-[01-25],dcc-compeb-[03-14],dcc-dhvi-[01-03],dcc-econ-[01-03],dcc-pfister-01,dcc-rausherlab-[01-02],dcc-tmolab-[02,03]
 
 export MESA_DIR=/hpc/group/physics/al363/mesa10108
 export MESASDK_ROOT=/hpc/group/physics/al363/mesasdk_11_2017
