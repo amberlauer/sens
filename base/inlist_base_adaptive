@@ -53,15 +53,20 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	!new_net_name = 'basic.net'
 	rate_tables_dir ='/hpc/group/physics/al363/sens/base/starlib_raw_rates'
 	rate_cache_suffix = 'starlib'	
-	
+	enable_adaptive_network = .true.
+	min_x_for_keep = 1d-5
+	min_x_for_n = 1d-4
+	min_x_for_add = 1d-4
+	max_Z_for_add = 999
+	max_N_for_add = 999	
+	max_A_for_add = 999
 	set_rate_3a = 'FL87' ! Fushiki and Lamb, Apj, 317, 368-388, 1987
 	set_rate_1212 = 'G05' ! Gasques, et al. Phys Review C, 72, 025806, 2005   
 	   	  
 	pgstar_flag = .true.
 
 	warn_run_star_extras=.false.
-	
-  
+
 	/ ! end of star_job namelist
 
 &controls
