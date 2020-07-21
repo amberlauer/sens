@@ -4,7 +4,7 @@
 #SBATCH --output=errors/slurm._%A_%a.err
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
-#SBATCH --array=30,31,32,33,39,76,77,90-100
+#SBATCH --array=1-100
 #SBATCH --mem-per-cpu=2096
 #SBATCH --mail-type=END
 #SBATCH --mail-user=amberlauer@gmail.com
