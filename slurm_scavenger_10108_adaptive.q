@@ -18,9 +18,9 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
 export MESA_BASE=/hpc/group/physics/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist_3
-export MESA_RUN=$MESA_BASE/runs_adaptive
+export MESA_RUN=/work/al363/runs/runs_adaptive
 
-mkdir $MESA_BASE/runs_adaptive
+mkdir $MESA_RUN
 
 #mkdir $MESA_BASE/runs_x100_5
 cd $MESA_RUN
@@ -44,7 +44,7 @@ if $empty; then
     sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
     rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
     sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
-    $MESA_BASE/star >> /work/al363/new_sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
+    $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
 
 else
     cd $MESA_RUN/${index2}
