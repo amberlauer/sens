@@ -4,7 +4,7 @@
 #SBATCH --output=errors/slurm._%A_%a.err
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
-#SBATCH --mem-per-cpu=3072
+#SBATCH --mem-per-cpu=8192
 #SBATCH --array=8,19,161,399,525,611,776,834,1102,1433
 #SBATCH --mail-type=END
 #SBATCH --mail-user=amberlauer@gmail.com
@@ -20,7 +20,7 @@ export MESA_BASE=/hpc/group/physics/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist_3
 export MESA_RUN=/work/al363/runs/runs_adaptive
 
-mkdir $MESA_RUN
+#mkdir $MESA_RUN
 
 #mkdir $MESA_BASE/runs_x100_5
 cd $MESA_RUN
@@ -48,7 +48,7 @@ if $empty; then
 
 else
     cd $MESA_RUN/${index2}
-    if ls ./final_profile* 1> /dev/null 2>&1; then
+    if [! ls ./final_profile* 1> /dev/null 2>&1]; then
     	echo "this_model_is_finished"  >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     else	
     	echo "starting from photo" >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
