@@ -32,8 +32,8 @@ let "index2=${index1}-1"
 # Check for empty files using arrays
 #empty=false
 #test "$(ls -A ./${index2}/photos)"&& empty=false || empty=true
-max_model=$(sed -n ''${index}'p' ./max_model.txt)
-model=$(sed -n ''${index}'p' ./restart_model.txt)
+max_model=$(sed -n ''${index}'p' ./max_model_xfactor_number.txt)
+model=$(sed -n ''${index}'p' ./restart_model_xfactor_number.txt)
 
 cd $MESA_RUN/${index2}
 cat $MESA_BASE/inlist_cluster_abund_templatefactor > ./inlist_cluster
