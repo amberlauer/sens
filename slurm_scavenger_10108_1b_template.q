@@ -20,8 +20,8 @@ export MESA_BASE=/hpc/group/physics/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
 export MESA_RUN=/work/al363/runs/runs_xfactor_number
 
-max_model=$(sed -n ''${index}'p' ./max_model_xfactor_number.txt)
-model=$(sed -n ''${index}'p' ./restart_model_xfactor_number.txt)
+max_model=$(sed -n ''${index}'p' ./1b/max_model_xfactor_number.txt)
+model=$(sed -n ''${index}'p' ./1b/restart_model_xfactor_number.txt)
 
 
 #mkdir $MESA_BASE/runs_x100_number
