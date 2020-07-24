@@ -43,10 +43,10 @@ rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
 rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
-if [ "${max_model}" = "DNC" ];then
+if [ "${max_model}" = "DNC" ]; then
         echo "DNC" >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
-elif [ ! "${max_model}" = "DNC" ] ; then
-        sed -i 's|max_numb|'${max_model}'|g'  inlist_cluster
+elif [ ! "${max_model}" = "DNC" ]; then
+        sed -i 's|max_numb|'$max_model'|g'  inlist_cluster
         cd ./photos
         cp ${model} restart_photo
 	cd ../ date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
