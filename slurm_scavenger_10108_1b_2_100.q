@@ -20,18 +20,17 @@ export MESA_BASE=/hpc/group/physics/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
 export MESA_RUN=/work/al363/runs/runs_x100_2
 
-max_model=$(sed -n ''${index}'p' ./1b/max_model_x100_2.txt)
-model=$(sed -n ''${index}'p' ./1b/restart_model_x100_2.txt)
 
 
-#mkdir $MESA_BASE/runs_x100_2
-cd $MESA_RUN
 
 shopt -s nullglob
 shopt -s dotglob # Die if dir name provided on command line
 let "index=${SLURM_ARRAY_TASK_ID}"
 let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
+
+max_model=$(sed -n ''${index}'p' ./1b/max_model_x100_2.txt)
+model=$(sed -n ''${index}'p' ./1b/restart_model_x100_2.txt)
 
 # Check for empty files using arrays
 #empty=false
