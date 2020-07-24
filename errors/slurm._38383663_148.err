@@ -1,0 +1,38 @@
+sed: -e expression #1, char 12: unterminated `s' command
+cp: target ‘restart_photo’ is not a directory
+                                         version_number       10108
+ read /hpc/group/physics/al363/sens/base/inlist_base
+At line 1848 of file ../private/ctrls_io.f90 (unit = 30, file = 'inlist_cluster')
+Fortran runtime error: Cannot match namelist object name max_number
+
+Error termination. Backtrace:
+#0  0x7fcedc14ddec in finalize_transfer
+	at /root/mesasdk-src/gcc/libgfortran/io/transfer.c:3891
+#1  0x489864 in __ctrls_io_MOD_read_controls_file
+	at ../private/ctrls_io.f90:1848
+#2  0x489bb4 in __ctrls_io_MOD_read_controls_file
+	at ../private/ctrls_io.f90:1893
+#3  0x489d27 in __ctrls_io_MOD_read_controls
+	at ../private/ctrls_io.f90:1804
+#4  0x489d95 in __ctrls_io_MOD_do_one_setup
+	at ../private/ctrls_io.f90:1774
+#5  0x437705 in __run_star_support_MOD_before_evolve_loop
+	at ../job/run_star_support.f90:277
+#6  0x438108 in __run_star_support_MOD_run1_star
+	at ../job/run_star_support.f90:94
+#7  0x41c710 in __run_star_MOD_do_run_star
+	at /hpc/group/physics/al363/mesa10108/star/job/run_star.f:26
+#8  0x41c761 in run
+	at ../src/run.f:13
+#9  0x41c798 in main
+	at ../src/run.f:2
+ read inlist_cluster
+
+
+
+
+Failed while trying to read control namelist file: inlist_cluster
+Perhaps the following runtime error message will help you find the problem.
+
+DATE: 2020-07-22
+TIME: 19:52:03
