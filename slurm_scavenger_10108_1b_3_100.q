@@ -30,8 +30,8 @@ let "index=${SLURM_ARRAY_TASK_ID}"
 let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
 
-max_model=$(sed -n ''${index}'p' ./1b/max_model_x100_3.txt)
-model=$(sed -n ''${index}'p' ./1b/restart_model_x100_3.txt)
+max_model=$(sed -n ''${index}'p' ./1b/max_model_x.01_3.txt)
+model=$(sed -n ''${index}'p' ./1b/restart_model_x.01_3.txt)
 
 
 # Check for empty files using arrays
