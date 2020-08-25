@@ -29,9 +29,10 @@ shopt -s dotglob # Die if dir name provided on command line
 let "index=${SLURM_ARRAY_TASK_ID}"
 let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
+let "index3=${index}-numero00"
 
-max_numb=$(sed -n ''${index}'p' ./1b/max_model_xfactor_number.txt)
-model=$(sed -n ''${index}'p' ./1b/restart_model_xfactor_number.txt)
+max_model=$(sed -n ''${index3}'p' ./1b/max_model_xfactor_number.txt)
+model=$(sed -n ''${index3}'p' ./1b/restart_model_xfactor_number.txt)
 
 
 # Check for empty files using arrays

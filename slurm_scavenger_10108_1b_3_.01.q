@@ -5,8 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=2096
-#SBATCH --array=207,213,216,219,220,221,226,229,230,233,234,236,252,257,266,282,283,286,287,296
-
+#SBATCH --array=200-299
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
@@ -30,9 +29,10 @@ shopt -s dotglob # Die if dir name provided on command line
 let "index=${SLURM_ARRAY_TASK_ID}"
 let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
+let "index3=${index}-200"
 
-max_numb=$(sed -n ''${index}'p' ./1b/max_model_x.01_3.txt)
-model=$(sed -n ''${index}'p' ./1b/restart_model_x.01_3.txt)
+max_model=$(sed -n ''${index3}'p' ./1b/max_model_x.01_3.txt)
+model=$(sed -n ''${index3}'p' ./1b/restart_model_x.01_3.txt)
 
 
 # Check for empty files using arrays
