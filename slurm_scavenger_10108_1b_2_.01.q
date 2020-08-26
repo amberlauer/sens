@@ -29,8 +29,7 @@ shopt -s dotglob # Die if dir name provided on command line
 let "index=${SLURM_ARRAY_TASK_ID}"
 let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
-let "index3=${index}-100
-"
+let "index3=${index}-100"
 max_model=$(sed -n ''${index3}'p' ./1b/max_model_x.01_2.txt)
 model=$(sed -n ''${index3}'p' ./1b/restart_model_x.01_2.txt)
 
@@ -45,7 +44,7 @@ rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
 rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
-if ["${model}" = "0"]; then
+if [ "${model}" = "0" ]; then
     echo "starting from 0"
     cd $MESA_RUN/${index2}
     cat $MESA_BASE/inlist_cluster_templatefactor > ./inlist_cluster
