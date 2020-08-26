@@ -23,11 +23,12 @@ fi
 sed -i 's|number|'${number}'|g'  slurm_scavenger_10108_1b_${number}_${factor}.q
 sed -i 's|numero|'${numero}'|g'  slurm_scavenger_10108_1b_${number}_${factor}.q
 rsync -r /datacommons/phy-champagne-lauer/runs_x${factor}_${number} /work/al363/runs
-#mkdir /work/al363/runs/runs_x${factor}_${number}/errors
+mkdir /work/al363/runs/runs_x${factor}_${number}/errors
 sbatch slurm_scavenger_10108_1b_${number}_${factor}.q >> job_number_${number}_${factor}.txt
 
-mv slurm_scavenger_10108_1b_${number}_${factor}.q /slurms
 #### old junk that didn't work
+#mv slurm_scavenger_10108_1b_${number}_${factor}.q /slurms
+
 #job_number=$(tail -c 9 job_number.txt)
 
 #cp move_data_template.sh move_data_${number}.sh
