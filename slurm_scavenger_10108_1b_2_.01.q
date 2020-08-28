@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=2096
-#SBATCH --array=100-110
+#SBATCH --array=100-199
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
@@ -31,8 +31,6 @@ let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
 let "index3=${index}-100"
 
-max_model=$(sed -n ''${index3}'p' ./1b/max_model_x.01_2.txt)
-model=$(sed -n ''${index3}'p' ./1b/restart_model_x.01_2.txt)
 
 
 # Check for empty files using arrays
@@ -40,23 +38,24 @@ model=$(sed -n ''${index3}'p' ./1b/restart_model_x.01_2.txt)
 #test "$(ls -A ./${index2}/photos)"&& empty=false || empty=true
 
 cd $MESA_RUN/${index2}
-cp $MESA_BASE/inlist_cluster_abund_template.01 > ./inlist_cluster
+cp $MESA_BASE/inlist_cluster_abund_template.01  ./inlist_cluster
 rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
 rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
+max_model=$(sed -n ''${index3}'p' ./1b/max_model_x.01_2.txt)
+sed -i 's|max_numb|'${max_model}'|g'  inlist_cluster
+
+model=$(sed -n ''${index3}'p' ./1b/restart_model_x.01_2.txt)
+
 
 if [ "${model}" = "0" ]; then
     echo "starting from 0"
-    rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
-    sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
-    rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
-    sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
-    sed -i 's|max_numb|'${max_model}'|g'  inlist_cluster
-    $MESA_BASE/star >> /work/al363/new_sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
+    cd ../ date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
+    $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+    date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 
 elif [ ! "${max_model}" = "DNC" ] ; then
-        sed -i 's|max_numb|'${max_model}'|g'  inlist_cluster
         cd ./photos
         cp ${model} restart_photo
 	cd ../ date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
