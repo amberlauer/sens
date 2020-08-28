@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --partition scavenger
-#SBATCH --job-name=sensitivity_10108_number
+#SBATCH --job-name=sensitivity_10108_2
 #SBATCH --output=errors/slurm._%A_%a.err
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=2096
-#SBATCH --array=numero00-numero10
+#SBATCH --array=100-110
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
@@ -18,21 +18,21 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
 export MESA_BASE=/hpc/group/physics/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
-export MESA_RUN=/work/al363/runs/runs_xfactor_number
+export MESA_RUN=/work/al363/runs/runs_x.01_2
 
 
 
-#mkdir $MESA_BASE/runs_x100_number
+#mkdir $MESA_BASE/runs_x100_2
 
 shopt -s nullglob
 shopt -s dotglob # Die if dir name provided on command line
 let "index=${SLURM_ARRAY_TASK_ID}"
 let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
-let "index3=${index}-numero00"
+let "index3=${index}-100"
 
-max_model=$(sed -n ''${index3}'p' ./1b/max_model_xfactor_number.txt)
-model=$(sed -n ''${index3}'p' ./1b/restart_model_xfactor_number.txt)
+max_model=$(sed -n ''${index3}'p' ./1b/max_model_x.01_2.txt)
+model=$(sed -n ''${index3}'p' ./1b/restart_model_x.01_2.txt)
 
 
 # Check for empty files using arrays
@@ -40,7 +40,7 @@ model=$(sed -n ''${index3}'p' ./1b/restart_model_xfactor_number.txt)
 #test "$(ls -A ./${index2}/photos)"&& empty=false || empty=true
 
 cd $MESA_RUN/${index2}
-cp $MESA_BASE/inlist_cluster_abund_templatefactor > ./inlist_cluster
+cp $MESA_BASE/inlist_cluster_abund_template.01 > ./inlist_cluster
 rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
 rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
