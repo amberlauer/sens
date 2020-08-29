@@ -43,22 +43,23 @@ rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
 rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
-max_model=$(sed -n ''${index3}'p' ./1b/max_model_x.01_2.txt)
+max_model=$(sed -n ''${index3}'p' $MESA_BASE/1b/max_model_x.01_2.txt)
 sed -i 's|max_numb|'${max_model}'|g'  inlist_cluster
 
-model=$(sed -n ''${index3}'p' ./1b/restart_model_x.01_2.txt)
+model=$(sed -n ''${index3}'p' $MESA_BASE/1b/restart_model_x.01_2.txt)
 
 
 if [ "${model}" = "0" ]; then
     echo "starting from 0"
-    cd ../ date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
+    date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
     $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 
 elif [ ! "${max_model}" = "DNC" ] ; then
         cd ./photos
         cp ${model} restart_photo
-	cd ../ date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
+	cd ../ 
+	date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
         $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
         date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 elif [ "${max_model}" = "DNC" ];then
