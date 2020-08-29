@@ -43,10 +43,10 @@ rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
 rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
-max_model=$(sed -n ''${index3}'p' ./1b/max_model_xfactor_number.txt)
+max_model=$(sed -n ''${index3}'p' $MESA_BASE/1b/max_model_xfactor_number.txt)
 sed -i 's|max_numb|'${max_model}'|g'  inlist_cluster
 
-model=$(sed -n ''${index3}'p' ./1b/restart_model_xfactor_number.txt)
+model=$(sed -n ''${index3}'p' $MESA_BASE/1b/restart_model_xfactor_number.txt)
 
 
 if [ "${model}" = "0" ]; then
