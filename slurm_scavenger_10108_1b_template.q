@@ -51,7 +51,7 @@ model=$(sed -n ''${index3}'p' $MESA_BASE/1b/restart_model_xfactor_number.txt)
 
 if [ "${model}" = "0" ]; then
     echo "starting from 0"
-    cd ../ date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
+     date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
     $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 
