@@ -28,6 +28,11 @@ let "index=${SLURM_ARRAY_TASK_ID}"
 let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
 let "index3=${index}-000"
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e249b4bfaa350eb1e977f4b4597b409176810fc9
 
 # Check for empty files using arrays
 #empty=false

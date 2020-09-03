@@ -1,0 +1,793 @@
+cp: missing destination file operand after ‘restart_photo’
+Try 'cp --help' for more information.
+                                         version_number       10108
+ read /hpc/group/physics/al363/sens/base/inlist_base
+ read inlist_cluster
+load saved model /hpc/group/physics/al363/sens/base/ns_relax.mod
+
+ change to /hpc/group/physics/al363/sens/base/rp_305.net
+             set special rate factor for r_fe49_ng_fe50         141    1.0000000000000000D-02
+             set special rate factor for r_fe50_gn_fe49         142    1.0000000000000000D-02
+             set special rate factor for r_fe49_ng_fe50         141    1.0000000000000000D-02
+             set special rate factor for r_fe50_gn_fe49         142    1.0000000000000000D-02
+ number of species         305
+ read /hpc/group/physics/al363/sens/base/history_customACL.list_tau
+ read /hpc/group/physics/al363/sens/base/profile_customACL.list_tau
+ net name /hpc/group/physics/al363/sens/base/rp_305.net
+ v_flag T
+                         which_atm_option: grey_and_kap
+                                           xmstar/mstar    4.5461189430843640D-12
+                                             xmstar (g)    1.2660395722219186D+22
+                                           M_center (g)    2.7848799999878681D+33
+                                            xmstar/Msun    6.3645665203193175D-12
+                                          M_center/Msun    1.3999999999939012D+00
+                                          R_center (cm)    1.1200000000000000D+06
+                                          R_center/Rsun    1.6092416448748527D-05
+                                           core density    4.7322078204273819D+14
+                                          L_center/Lsun    4.1647144567650578D+00
+ kappa_file_prefix gs98
+ kappa_lowT_prefix lowT_fa05_gs98
+
+   eos_file_prefix mesa
+                                        OMP_NUM_THREADS           8
+
+
+__________________________________________________________________________________________________________________________________________________
+
+       step    lg_Tcntr    Teff       lg_LH     lg_Lnuc     Mass       H_rich     H_cntr     N_cntr     Y_surf     X_avg     eta_cntr  zones retry
+   lg_dt_yr    lg_Dcntr    lg_R       lg_L3a    lg_Lneu     lg_Mdot    He_core    He_cntr    O_cntr     Z_surf     Y_avg     gam_cntr  iters bckup
+     age_yr    lg_Pcntr    lg_L       lg_LZ     lg_Psurf    lg_Dsurf   C_core     C_cntr     Ne_cntr    Si_cntr    Z_avg     v_div_cs     dt_limit
+__________________________________________________________________________________________________________________________________________________
+
+save LOGS/profile1.data for model 2
+ grid1/grid1_000005.png/png
+ burst_profile/burst_profile000005.png/png
+          6   8.165156  1.497E+06   0.087590   0.087976   1.400000   1.400000   0.000000   0.000000   0.275200   0.030886  22.514775    791      0
+  -5.817651   6.610341  -4.793035 -18.862378  -1.086578  -8.522879   0.000000   0.000000   0.000000   0.020000   0.011710 149.410225      6      0
+ 4.0040E-06  23.176196   0.068337  -2.962874  12.744977  -1.553972   0.000000   0.000000   0.000000   0.000687  9.574E-01  0.395E-11      lgT_cntr
+
+save LOGS/profile2.data for model 6
+ grid1/grid1_000010.png/png
+ burst_profile/burst_profile000010.png/png
+ grid1/grid1_000015.png/png
+ burst_profile/burst_profile000015.png/png
+ grid1/grid1_000020.png/png
+ burst_profile/burst_profile000020.png/png
+ grid1/grid1_000025.png/png
+ burst_profile/burst_profile000025.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    30       -5.532111        1.967001        0.500000
+ grid1/grid1_000030.png/png
+ burst_profile/burst_profile000030.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    35       -5.231081        2.268031        0.500000
+ grid1/grid1_000035.png/png
+ burst_profile/burst_profile000035.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    36       -5.532111        1.967001        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    40       -5.532111        1.967001        0.500000
+ grid1/grid1_000040.png/png
+ burst_profile/burst_profile000040.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    45       -5.231081        2.268031        0.500000
+ grid1/grid1_000045.png/png
+ burst_profile/burst_profile000045.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    49       -5.231081        2.268031        0.500000
+ grid1/grid1_000050.png/png
+ burst_profile/burst_profile000050.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    53       -5.231081        2.268031        0.500000
+ grid1/grid1_000055.png/png
+ burst_profile/burst_profile000055.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    56       -5.532111        1.967001        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    56       -5.833141        1.665971        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000055.png/png
+ burst_profile/burst_profile000055.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    58       -6.134171        1.364941        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    58       -6.435201        1.063911        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1    58       -6.736231        0.762881        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    58       -7.037261        0.461851        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1    60       -7.338291        0.160821        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    60       -7.639321       -0.140209        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000060.png/png
+ burst_profile/burst_profile000060.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    62       -7.940351       -0.441239        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    62       -8.241381       -0.742269        0.500000
+ grid1/grid1_000065.png/png
+ burst_profile/burst_profile000065.png/png
+ grid1/grid1_000070.png/png
+ burst_profile/burst_profile000070.png/png
+ grid1/grid1_000075.png/png
+ burst_profile/burst_profile000075.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    76       -5.231081        2.268031        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    76       -5.532111        1.967001        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    77       -5.833141        1.665971        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    77       -6.134171        1.364941        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1    80       -6.435201        1.063911        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    80       -6.736231        0.762881        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000080.png/png
+ burst_profile/burst_profile000080.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    81       -7.037261        0.461851        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    81       -7.338291        0.160821        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000080.png/png
+ burst_profile/burst_profile000080.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    84       -7.639321       -0.140209        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    84       -7.940351       -0.441239        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1    84       -8.241381       -0.742269        0.500000
+ grid1/grid1_000085.png/png
+ burst_profile/burst_profile000085.png/png
+ grid1/grid1_000090.png/png
+ burst_profile/burst_profile000090.png/png
+ grid1/grid1_000095.png/png
+ burst_profile/burst_profile000095.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1    97       -5.708197        1.790914        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    98       -6.029742        1.469369        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    99       -6.330772        1.168339        0.500000
+        100   8.444841  4.670E+06   2.033172   2.166622   1.400000   1.400000   0.000000   0.000000   0.275200   0.100536  12.226478    752     31
+  -6.029742   6.642744  -4.792800   1.206170   1.283423  -8.522879   0.000000   0.000000   0.000000   0.020000   0.058448  80.444496      6      8
+ 3.1300E-04  23.235090   2.045017   1.357015  13.860470  -0.943582   0.000000   0.000000   0.000000   0.000687  8.410E-01  0.987E-12          hold
+
+ grid1/grid1_000100.png/png
+ burst_profile/burst_profile000100.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   101       -6.631802        0.867309        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   103       -6.932832        0.566279        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   104       -7.233862        0.265249        0.500000
+ grid1/grid1_000105.png/png
+ burst_profile/burst_profile000105.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   106       -7.534892       -0.035780        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   110       -7.649240       -0.150129        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   110       -7.950270       -0.451159        0.500000
+ grid1/grid1_000110.png/png
+ burst_profile/burst_profile000110.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   112       -8.333830       -0.834718        0.500000
+ grid1/grid1_000115.png/png
+ burst_profile/burst_profile000115.png/png
+ grid1/grid1_000120.png/png
+ burst_profile/burst_profile000120.png/png
+ grid1/grid1_000125.png/png
+ burst_profile/burst_profile000125.png/png
+ grid1/grid1_000130.png/png
+ burst_profile/burst_profile000130.png/png
+ grid1/grid1_000135.png/png
+ burst_profile/burst_profile000135.png/png
+ grid1/grid1_000140.png/png
+ burst_profile/burst_profile000140.png/png
+ grid1/grid1_000145.png/png
+ burst_profile/burst_profile000145.png/png
+ grid1/grid1_000150.png/png
+ burst_profile/burst_profile000150.png/png
+ grid1/grid1_000155.png/png
+ burst_profile/burst_profile000155.png/png
+ grid1/grid1_000160.png/png
+ burst_profile/burst_profile000160.png/png
+ grid1/grid1_000165.png/png
+ burst_profile/burst_profile000165.png/png
+                       super eddington wind: lg_Mdot, L/Ledd         166   -10.09753     1.00326
+                       super eddington wind: lg_Mdot, L/Ledd         167    -9.06685     1.03494
+                       super eddington wind: lg_Mdot, L/Ledd         168    -8.79656     1.06502
+                       super eddington wind: lg_Mdot, L/Ledd         169    -8.63202     1.09494
+                       super eddington wind: lg_Mdot, L/Ledd         170    -8.52211     1.12226
+ grid1/grid1_000170.png/png
+ burst_profile/burst_profile000170.png/png
+                       super eddington wind: lg_Mdot, L/Ledd         171    -8.44631     1.14524
+                       super eddington wind: lg_Mdot, L/Ledd         172    -8.61266     1.09894
+                       super eddington wind: lg_Mdot, L/Ledd         173    -8.46179     1.14002
+                       super eddington wind: lg_Mdot, L/Ledd         174    -8.37595     1.17054
+                       super eddington wind: lg_Mdot, L/Ledd         175    -8.52502     1.12082
+ grid1/grid1_000175.png/png
+ burst_profile/burst_profile000175.png/png
+                       super eddington wind: lg_Mdot, L/Ledd         176    -8.40501     1.15904
+                       super eddington wind: lg_Mdot, L/Ledd         177    -8.32710     1.19021
+                       super eddington wind: lg_Mdot, L/Ledd         178    -8.45264     1.14213
+                       super eddington wind: lg_Mdot, L/Ledd         179    -8.35248     1.17892
+                       super eddington wind: lg_Mdot, L/Ledd         180    -8.27943     1.21153
+ grid1/grid1_000180.png/png
+ burst_profile/burst_profile000180.png/png
+                       super eddington wind: lg_Mdot, L/Ledd         181    -8.39868     1.16046
+                       super eddington wind: lg_Mdot, L/Ledd         182    -8.30229     1.20009
+                       super eddington wind: lg_Mdot, L/Ledd         183    -8.24421     1.22872
+                       super eddington wind: lg_Mdot, L/Ledd         184    -8.36641     1.17227
+                       super eddington wind: lg_Mdot, L/Ledd         185    -8.28004     1.20988
+ grid1/grid1_000185.png/png
+ burst_profile/burst_profile000185.png/png
+                       super eddington wind: lg_Mdot, L/Ledd         186    -8.23592     1.23227
+                       super eddington wind: lg_Mdot, L/Ledd         187    -8.35504     1.17614
+                       super eddington wind: lg_Mdot, L/Ledd         188    -8.28365     1.20741
+                       super eddington wind: lg_Mdot, L/Ledd         189    -8.24994     1.22399
+                       super eddington wind: lg_Mdot, L/Ledd         190    -8.39158     1.16119
+ grid1/grid1_000190.png/png
+ burst_profile/burst_profile000190.png/png
+                       super eddington wind: lg_Mdot, L/Ledd         191    -8.33117     1.18505
+                       super eddington wind: lg_Mdot, L/Ledd         192    -8.31531     1.19173
+                       super eddington wind: lg_Mdot, L/Ledd         193    -8.49908     1.12530
+       retry log10(dt/yr), log10(dt), retry_factor     1   193       -9.064571       -1.565459        0.500000
+                       super eddington wind: lg_Mdot, L/Ledd         193    -8.49908     1.12530
+       retry log10(dt/yr), log10(dt), retry_factor     2   193       -9.365601       -1.866489        0.500000
+                       super eddington wind: lg_Mdot, L/Ledd         193    -8.49908     1.12530
+                       super eddington wind: lg_Mdot, L/Ledd         194    -8.40692     1.15497
+                       super eddington wind: lg_Mdot, L/Ledd         195    -8.59495     1.10042
+ grid1/grid1_000195.png/png
+ burst_profile/burst_profile000195.png/png
+                       super eddington wind: lg_Mdot, L/Ledd         196    -8.46749     1.13469
+                       super eddington wind: lg_Mdot, L/Ledd         197    -8.38382     1.16320
+                       super eddington wind: lg_Mdot, L/Ledd         198    -8.61077     1.09674
+                       super eddington wind: lg_Mdot, L/Ledd         199    -8.44353     1.14222
+                       super eddington wind: lg_Mdot, L/Ledd         200    -8.65186     1.08789
+        200   8.952041  2.391E+07   3.722106   6.685178   1.400000   1.400000   0.000000   0.000000   0.295226   0.075511   3.040940    664     40
+  -8.735968   6.568777  -4.791541   3.023265   4.380272  -8.651860   0.000000   0.000000   0.000000   0.202615   0.044737  23.639586      6      8
+ 3.1498E-04  23.235203   4.884940   6.684610  15.065224  -0.895347   0.000000   0.000000   0.000000   0.000687  8.798E-01  0.541E-04    varcontrol
+
+ grid1/grid1_000200.png/png
+ burst_profile/burst_profile000200.png/png
+                       super eddington wind: lg_Mdot, L/Ledd         201    -8.53304     1.11553
+       retry log10(dt/yr), log10(dt), retry_factor     1   201       -9.172846       -1.673734        0.500000
+                       super eddington wind: lg_Mdot, L/Ledd         201    -8.53304     1.11553
+       retry log10(dt/yr), log10(dt), retry_factor     2   201       -9.473876       -1.974764        0.500000
+                       super eddington wind: lg_Mdot, L/Ledd         201    -8.53304     1.11553
+ have reached retry limit so now backup
+                       super eddington wind: lg_Mdot, L/Ledd         200    -8.65186     1.08789
+        200   8.950558  2.405E+07   3.723456   6.688176   1.400000   1.400000   0.000000   0.000000   0.295352   0.075630   3.057159    664     42
+  -9.172846   6.569297  -4.791545   3.023701   4.382623  -8.651859   0.000000   0.000000   0.000000   0.201939   0.044772  23.729914      6      9
+ 3.1498E-04  23.235202   4.894562   6.687611  15.072169  -0.897720   0.000000   0.000000   0.000000   0.000687  8.796E-01  0.958E-04        backup
+
+ grid1/grid1_000200.png/png
+ burst_profile/burst_profile000200.png/png
+                       super eddington wind: lg_Mdot, L/Ledd         201    -8.44458     1.14178
+                       super eddington wind: lg_Mdot, L/Ledd         202    -8.73586     1.07240
+                       super eddington wind: lg_Mdot, L/Ledd         203    -8.59988     1.09899
+                       super eddington wind: lg_Mdot, L/Ledd         204    -8.50778     1.12250
+                       super eddington wind: lg_Mdot, L/Ledd         205    -8.40433     1.15539
+ grid1/grid1_000205.png/png
+ burst_profile/burst_profile000205.png/png
+                       super eddington wind: lg_Mdot, L/Ledd         206    -8.64450     1.08926
+                       super eddington wind: lg_Mdot, L/Ledd         207    -8.56493     1.10732
+                       super eddington wind: lg_Mdot, L/Ledd         208    -8.71312     1.07619
+                       super eddington wind: lg_Mdot, L/Ledd         209    -8.61056     1.09646
+                       super eddington wind: lg_Mdot, L/Ledd         210    -8.86762     1.05333
+ grid1/grid1_000210.png/png
+ burst_profile/burst_profile000210.png/png
+                       super eddington wind: lg_Mdot, L/Ledd         211    -8.77293     1.06628
+                       super eddington wind: lg_Mdot, L/Ledd         212    -9.09030     1.03189
+                       super eddington wind: lg_Mdot, L/Ledd         213    -8.87766     1.05199
+                       super eddington wind: lg_Mdot, L/Ledd         214    -8.79052     1.06360
+                       super eddington wind: lg_Mdot, L/Ledd         215    -9.25584     1.02176
+ grid1/grid1_000215.png/png
+ burst_profile/burst_profile000215.png/png
+ grid1/grid1_000220.png/png
+ burst_profile/burst_profile000220.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   221       -9.269766       -1.770654        0.500000
+ grid1/grid1_000225.png/png
+ burst_profile/burst_profile000225.png/png
+ grid1/grid1_000230.png/png
+ burst_profile/burst_profile000230.png/png
+ grid1/grid1_000235.png/png
+ burst_profile/burst_profile000235.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   240       -7.454696        0.044415        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   240       -7.755726       -0.256615        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000240.png/png
+ burst_profile/burst_profile000240.png/png
+ grid1/grid1_000245.png/png
+ burst_profile/burst_profile000245.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   247       -7.847822       -0.348710        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   247       -8.148852       -0.649740        0.500000
+ have reached retry limit so now backup
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   250       -8.531139       -1.032027        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   250       -8.832169       -1.333057        0.500000
+ grid1/grid1_000250.png/png
+ burst_profile/burst_profile000250.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   251       -8.832169       -1.333057        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   251       -9.133199       -1.634087        0.500000
+ grid1/grid1_000255.png/png
+ burst_profile/burst_profile000255.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   258       -8.230109       -0.730997        0.500000
+ grid1/grid1_000260.png/png
+ burst_profile/burst_profile000260.png/png
+ grid1/grid1_000265.png/png
+ burst_profile/burst_profile000265.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   269       -7.969832       -0.470721        0.500000
+ grid1/grid1_000270.png/png
+ burst_profile/burst_profile000270.png/png
+ grid1/grid1_000275.png/png
+ burst_profile/burst_profile000275.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   278       -7.776059       -0.276947        0.500000
+ grid1/grid1_000280.png/png
+ burst_profile/burst_profile000280.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   284       -7.557614       -0.058503        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   284       -7.858644       -0.359533        0.500000
+ grid1/grid1_000285.png/png
+ burst_profile/burst_profile000285.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   289       -7.859966       -0.360855        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   289       -8.160996       -0.661885        0.500000
+ grid1/grid1_000290.png/png
+ burst_profile/burst_profile000290.png/png
+ grid1/grid1_000295.png/png
+ burst_profile/burst_profile000295.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   299       -7.619241       -0.120130        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   299       -7.920271       -0.421160        0.500000
+ have reached retry limit so now backup
+        300   8.774182  1.006E+07   1.820313   3.252269   1.400000   1.400000   0.000000   0.000000   0.275200   0.020047   5.296211    712     60
+  -7.619241   6.613747  -4.792667   1.738527   2.619835  -8.522879   0.000000   0.000000   0.000000   0.020000   0.020347  36.854376      6     12
+ 3.1819E-04  23.235963   3.378921   3.221860  14.441002  -0.732573   0.000000   0.000000   0.000000   0.000687  9.596E-01  0.268E-09          hold
+
+ grid1/grid1_000300.png/png
+ burst_profile/burst_profile000300.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   302       -8.221301       -0.722190        0.500000
+ grid1/grid1_000305.png/png
+ burst_profile/burst_profile000305.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   309       -7.550973       -0.051862        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   309       -7.852003       -0.352892        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   310       -8.153033       -0.653922        0.500000
+ grid1/grid1_000310.png/png
+ burst_profile/burst_profile000310.png/png
+ grid1/grid1_000315.png/png
+ burst_profile/burst_profile000315.png/png
+ grid1/grid1_000320.png/png
+ burst_profile/burst_profile000320.png/png
+ grid1/grid1_000325.png/png
+ burst_profile/burst_profile000325.png/png
+ grid1/grid1_000330.png/png
+ burst_profile/burst_profile000330.png/png
+ grid1/grid1_000335.png/png
+ burst_profile/burst_profile000335.png/png
+ grid1/grid1_000340.png/png
+ burst_profile/burst_profile000340.png/png
+ grid1/grid1_000345.png/png
+ burst_profile/burst_profile000345.png/png
+ grid1/grid1_000350.png/png
+ burst_profile/burst_profile000350.png/png
+ grid1/grid1_000355.png/png
+ burst_profile/burst_profile000355.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   359       -5.076789        2.422323        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   359       -5.377819        2.121293        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000360.png/png
+ burst_profile/burst_profile000360.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   361       -5.788466        1.710645        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   361       -6.089496        1.409615        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000360.png/png
+ burst_profile/burst_profile000360.png/png
+ grid1/grid1_000365.png/png
+ burst_profile/burst_profile000365.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   367       -5.487436        2.011675        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   369       -5.788466        1.710645        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   369       -6.089496        1.409615        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   370       -6.390526        1.108585        0.500000
+ grid1/grid1_000370.png/png
+ burst_profile/burst_profile000370.png/png
+ grid1/grid1_000375.png/png
+ burst_profile/burst_profile000375.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   377       -5.487436        2.011675        0.500000
+ grid1/grid1_000380.png/png
+ burst_profile/burst_profile000380.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   382       -5.408197        2.090914        0.500000
+ grid1/grid1_000385.png/png
+ burst_profile/burst_profile000385.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   386       -5.806137        1.692974        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   389       -6.184410        1.314701        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   389       -6.485440        1.013671        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   389       -6.786470        0.712641        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   389       -7.087500        0.411611        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000390.png/png
+ burst_profile/burst_profile000390.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   391       -7.388530        0.110581        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   391       -7.689560       -0.190449        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000390.png/png
+ burst_profile/burst_profile000390.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   391       -7.990590       -0.491479        0.500000
+ grid1/grid1_000395.png/png
+ burst_profile/burst_profile000395.png/png
+        400   8.347432  3.635E+06   1.518580   1.544972   1.400000   1.400000   0.000000   0.000000   0.275200   0.062162  15.856751    750     82
+  -5.883380   6.668013  -4.792871  -0.924710   0.692442  -8.522879   0.000000   0.000000   0.000000   0.020000   0.044073 102.642732      6     18
+ 5.0581E-04  23.268164   1.609970   0.289810  13.576814  -1.115876   0.000000   0.000000   0.000000   0.000687  8.938E-01  0.189E-11  max increase
+
+ grid1/grid1_000400.png/png
+ burst_profile/burst_profile000400.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   404       -5.631375        1.867737        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   404       -5.932405        1.566707        0.500000
+ grid1/grid1_000405.png/png
+ burst_profile/burst_profile000405.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   410       -5.698155        1.800957        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   410       -5.999185        1.499927        0.500000
+ grid1/grid1_000410.png/png
+ burst_profile/burst_profile000410.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   411       -6.300215        1.198897        0.500000
+ grid1/grid1_000415.png/png
+ burst_profile/burst_profile000415.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   418       -5.662320        1.836792        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   418       -5.963350        1.535762        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   420       -6.379185        1.119926        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   420       -6.680215        0.818896        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   420       -6.981245        0.517866        0.500000
+ grid1/grid1_000420.png/png
+ burst_profile/burst_profile000420.png/png
+ grid1/grid1_000425.png/png
+ burst_profile/burst_profile000425.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   428       -5.777126        1.721986        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   429       -5.777126        1.721986        0.500000
+ grid1/grid1_000430.png/png
+ burst_profile/burst_profile000430.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   431       -6.175066        1.324046        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   431       -6.476096        1.023016        0.500000
+        431   8.418452  4.389E+06   1.911222   2.007717   1.400000   1.400000   0.000000   0.000000   0.275200   0.075710  13.542123    768     96
+  -6.175066   6.674471  -4.792813   1.092649   1.082948  -8.522879   0.000000   0.000000   0.000000   0.020000   0.053678  87.591230      6     19
+ 5.8370E-04  23.280841   1.937464   0.897786  13.791191  -0.985228   0.000000   0.000000   0.000000   0.000687  8.706E-01  0.569E-11         retry
+
+save LOGS/profile3.data for model 431
+       retry log10(dt/yr), log10(dt), retry_factor     1   432       -6.874036        0.625076        0.500000
+ grid1/grid1_000435.png/png
+ burst_profile/burst_profile000435.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   438       -6.418251        1.080861        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   438       -6.719281        0.779831        0.500000
+ grid1/grid1_000440.png/png
+ burst_profile/burst_profile000440.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   441       -7.020311        0.478801        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   442       -7.321341        0.177771        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   444       -7.622371       -0.123259        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   444       -7.923401       -0.424289        0.500000
+ grid1/grid1_000445.png/png
+ burst_profile/burst_profile000445.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   446       -8.224431       -0.725319        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   446       -8.525461       -1.026349        0.500000
+ grid1/grid1_000450.png/png
+ burst_profile/burst_profile000450.png/png
+ grid1/grid1_000455.png/png
+ burst_profile/burst_profile000455.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   458       -8.656870       -1.157758        0.500000
+ grid1/grid1_000460.png/png
+ burst_profile/burst_profile000460.png/png
+ grid1/grid1_000465.png/png
+ burst_profile/burst_profile000465.png/png
+ grid1/grid1_000470.png/png
+ burst_profile/burst_profile000470.png/png
+ grid1/grid1_000475.png/png
+ burst_profile/burst_profile000475.png/png
+ grid1/grid1_000480.png/png
+ burst_profile/burst_profile000480.png/png
+ grid1/grid1_000485.png/png
+ burst_profile/burst_profile000485.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   486       -9.343808       -1.844696        0.500000
+ grid1/grid1_000490.png/png
+ burst_profile/burst_profile000490.png/png
+ grid1/grid1_000495.png/png
+ burst_profile/burst_profile000495.png/png
+        500   8.470882  1.957E+07   3.656320   6.852290   1.400000   1.400000   0.000000   0.000000   0.296345   0.066733  11.949385    777    107
+  -7.913445   6.672862  -4.791799   3.090160   4.152727  -8.522879   0.000000   0.000000   0.000000   0.173018   0.043031  77.534405      7     19
+ 5.8815E-04  23.281424   4.536624   6.851939  14.835454  -0.852467   0.000000   0.000000   0.000000   0.000687  8.902E-01 -0.373E-08        lgTeff
+
+save LOGS/profile4.data for model 500
+save photos/x500 for model 500
+ grid1/grid1_000500.png/png
+ burst_profile/burst_profile000500.png/png
+ grid1/grid1_000505.png/png
+ burst_profile/burst_profile000505.png/png
+ grid1/grid1_000510.png/png
+ burst_profile/burst_profile000510.png/png
+ grid1/grid1_000515.png/png
+ burst_profile/burst_profile000515.png/png
+ grid1/grid1_000520.png/png
+ burst_profile/burst_profile000520.png/png
+ grid1/grid1_000525.png/png
+ burst_profile/burst_profile000525.png/png
+ grid1/grid1_000530.png/png
+ burst_profile/burst_profile000530.png/png
+ grid1/grid1_000535.png/png
+ burst_profile/burst_profile000535.png/png
+ grid1/grid1_000540.png/png
+ burst_profile/burst_profile000540.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   545       -7.479771        0.019341        0.500000
+ grid1/grid1_000545.png/png
+ burst_profile/burst_profile000545.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   546       -7.877711       -0.378599        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   546       -8.178741       -0.679629        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000545.png/png
+ burst_profile/burst_profile000545.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   547       -8.479771       -0.980659        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   547       -8.780801       -1.281689        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   547       -9.081831       -1.582719        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   547       -9.382861       -1.883749        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   547       -9.683891       -2.184779        0.500000
+ grid1/grid1_000550.png/png
+ burst_profile/burst_profile000550.png/png
+ grid1/grid1_000555.png/png
+ burst_profile/burst_profile000555.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   558       -7.880947       -0.381835        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   559       -8.278887       -0.779775        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   560       -8.605220       -1.106108        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   560       -8.906250       -1.407138        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000560.png/png
+ burst_profile/burst_profile000560.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   562       -9.207279       -1.708168        0.500000
+ grid1/grid1_000565.png/png
+ burst_profile/burst_profile000565.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   568       -8.605220       -1.106108        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   568       -8.906250       -1.407138        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000570.png/png
+ burst_profile/burst_profile000570.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   574       -8.304190       -0.805078        0.500000
+ grid1/grid1_000575.png/png
+ burst_profile/burst_profile000575.png/png
+ grid1/grid1_000580.png/png
+ burst_profile/burst_profile000580.png/png
+ grid1/grid1_000585.png/png
+ burst_profile/burst_profile000585.png/png
+ grid1/grid1_000590.png/png
+ burst_profile/burst_profile000590.png/png
+ grid1/grid1_000595.png/png
+ burst_profile/burst_profile000595.png/png
+        600   8.862141  1.283E+07   2.338270   4.160407   1.400000   1.400000   0.000000   0.000000   0.275200   0.019015   4.303650    839    123
+  -7.519604   6.629793  -4.792504   2.156156   3.068903  -8.522879   0.000000   0.000000   0.000000   0.020000   0.020914  30.470434      6     24
+ 5.9025E-04  23.281847   3.800978   4.149427  14.530534  -0.803456   0.000000   0.000000   0.000000   0.000687  9.601E-01  0.184E-09          dH/H
+
+ grid1/grid1_000600.png/png
+ burst_profile/burst_profile000600.png/png
+ grid1/grid1_000605.png/png
+ burst_profile/burst_profile000605.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   610       -7.813691       -0.314580        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   610       -8.114721       -0.615610        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000610.png/png
+ burst_profile/burst_profile000610.png/png
+ grid1/grid1_000615.png/png
+ burst_profile/burst_profile000615.png/png
+ grid1/grid1_000620.png/png
+ burst_profile/burst_profile000620.png/png
+ grid1/grid1_000625.png/png
+ burst_profile/burst_profile000625.png/png
+ grid1/grid1_000630.png/png
+ burst_profile/burst_profile000630.png/png
+ grid1/grid1_000635.png/png
+ burst_profile/burst_profile000635.png/png
+ grid1/grid1_000640.png/png
+ burst_profile/burst_profile000640.png/png
+ grid1/grid1_000645.png/png
+ burst_profile/burst_profile000645.png/png
+ grid1/grid1_000650.png/png
+ burst_profile/burst_profile000650.png/png
+ grid1/grid1_000655.png/png
+ burst_profile/burst_profile000655.png/png
+ grid1/grid1_000660.png/png
+ burst_profile/burst_profile000660.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   662       -5.701851        1.797261        0.500000
+ grid1/grid1_000665.png/png
+ burst_profile/burst_profile000665.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   666       -5.733761        1.765350        0.500000
+ grid1/grid1_000670.png/png
+ burst_profile/burst_profile000670.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   671       -5.645977        1.853134        0.500000
+ grid1/grid1_000675.png/png
+ burst_profile/burst_profile000675.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   676       -5.559960        1.939151        0.500000
+ grid1/grid1_000680.png/png
+ burst_profile/burst_profile000680.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   681       -5.526087        1.973025        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   682       -5.924027        1.575085        0.500000
+ grid1/grid1_000685.png/png
+ burst_profile/burst_profile000685.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   688       -5.580367        1.918744        0.500000
+ grid1/grid1_000690.png/png
+ burst_profile/burst_profile000690.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   694       -5.342401        2.156710        0.500000
+ grid1/grid1_000695.png/png
+ burst_profile/burst_profile000695.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   698       -5.489577        2.009534        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   699       -5.874116        1.624996        0.500000
+        700   8.375255  3.908E+06   1.670359   1.707639   1.400000   1.400000   0.000000   0.000000   0.275200   0.064629  15.497213    870    135
+  -5.648262   6.701383  -4.792833   0.124203   0.838761  -8.522879   0.000000   0.000000   0.000000   0.020000   0.047887  98.770565      6     25
+ 8.3269E-04  23.319081   1.735549   0.457088  13.659305  -1.065382   0.000000   0.000000   0.000000   0.000687  8.875E-01  0.550E-12          dH/H
+
+ grid1/grid1_000700.png/png
+ burst_profile/burst_profile000700.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   704       -5.759386        1.739725        0.500000
+ grid1/grid1_000705.png/png
+ burst_profile/burst_profile000705.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   706       -6.094471        1.404640        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   706       -6.395501        1.103610        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000705.png/png
+ burst_profile/burst_profile000705.png/png
+ grid1/grid1_000710.png/png
+ burst_profile/burst_profile000710.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   712       -6.039310        1.459802        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   713       -6.340340        1.158772        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   713       -6.641370        0.857742        0.500000
+ grid1/grid1_000715.png/png
+ burst_profile/burst_profile000715.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   718       -6.340340        1.158772        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   720       -6.641370        0.857742        0.500000
+ grid1/grid1_000720.png/png
+ burst_profile/burst_profile000720.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   721       -7.037897        0.461214        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   722       -7.435837        0.063274        0.500000
+ grid1/grid1_000725.png/png
+ burst_profile/burst_profile000725.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   727       -7.134807        0.364304        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   727       -7.435837        0.063274        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   730       -7.736867       -0.237756        0.500000
+ grid1/grid1_000730.png/png
+ burst_profile/burst_profile000730.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   731       -8.037897       -0.538786        0.500000
+ grid1/grid1_000735.png/png
+ burst_profile/burst_profile000735.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   736       -8.481140       -0.982028        0.500000
+ grid1/grid1_000740.png/png
+ burst_profile/burst_profile000740.png/png
+ grid1/grid1_000745.png/png
+ burst_profile/burst_profile000745.png/png
+ grid1/grid1_000750.png/png
+ burst_profile/burst_profile000750.png/png
+ grid1/grid1_000755.png/png
+ burst_profile/burst_profile000755.png/png
+ grid1/grid1_000760.png/png
+ burst_profile/burst_profile000760.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   765       -9.378259       -1.879147        0.500000
+ grid1/grid1_000765.png/png
+ burst_profile/burst_profile000765.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   767       -9.278086       -1.778975        0.500000
+ grid1/grid1_000770.png/png
+ burst_profile/burst_profile000770.png/png
+ grid1/grid1_000775.png/png
+ burst_profile/burst_profile000775.png/png
+ grid1/grid1_000780.png/png
+ burst_profile/burst_profile000780.png/png
+ grid1/grid1_000785.png/png
+ burst_profile/burst_profile000785.png/png
+ grid1/grid1_000790.png/png
+ burst_profile/burst_profile000790.png/png
+ grid1/grid1_000795.png/png
+ burst_profile/burst_profile000795.png/png
+        800   8.614498  2.250E+07   3.561291   6.636503   1.400000   1.400000   0.000000   0.000000   0.284112   0.054145   8.720147    939    152
+  -8.546587   6.693119  -4.791661   2.939589   4.281883  -8.522879   0.000000   0.000000   0.000000   0.246678   0.036009  56.575731      7     27
+ 8.6201E-04  23.323217   4.778677   6.636051  14.993906  -0.848163   0.000000   0.000000   0.000000   0.000687  9.098E-01 -0.136E-07      lgT_cntr
+
+ grid1/grid1_000800.png/png
+ burst_profile/burst_profile000800.png/png
+ grid1/grid1_000805.png/png
+ burst_profile/burst_profile000805.png/png
+ grid1/grid1_000810.png/png
+ burst_profile/burst_profile000810.png/png
+ grid1/grid1_000815.png/png
+ burst_profile/burst_profile000815.png/png
+ grid1/grid1_000820.png/png
+ burst_profile/burst_profile000820.png/png
+ grid1/grid1_000825.png/png
+ burst_profile/burst_profile000825.png/png
+ grid1/grid1_000830.png/png
+ burst_profile/burst_profile000830.png/png
+ grid1/grid1_000835.png/png
+ burst_profile/burst_profile000835.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   836       -7.929701       -0.430589        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   836       -8.230731       -0.731619        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000835.png/png
+ burst_profile/burst_profile000835.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   837       -8.628671       -1.129559        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   837       -8.929701       -1.430589        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   838       -9.230731       -1.731619        0.500000
+ grid1/grid1_000840.png/png
+ burst_profile/burst_profile000840.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   844       -8.628671       -1.129559        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   844       -8.929701       -1.430589        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000845.png/png
+ burst_profile/burst_profile000845.png/png
+ grid1/grid1_000850.png/png
+ burst_profile/burst_profile000850.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   851       -8.026611       -0.527499        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   851       -8.327641       -0.828529        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000850.png/png
+ burst_profile/burst_profile000850.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   853       -8.628671       -1.129559        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   853       -8.929701       -1.430589        0.500000
+ grid1/grid1_000855.png/png
+ burst_profile/burst_profile000855.png/png
+ grid1/grid1_000860.png/png
+ burst_profile/burst_profile000860.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   861       -7.934333       -0.435222        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   861       -8.235363       -0.736252        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000860.png/png
+ burst_profile/burst_profile000860.png/png
+ grid1/grid1_000865.png/png
+ burst_profile/burst_profile000865.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   866       -7.934333       -0.435222        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   866       -8.235363       -0.736252        0.500000
+ grid1/grid1_000870.png/png
+ burst_profile/burst_profile000870.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   873       -8.016546       -0.517434        0.500000
+ grid1/grid1_000875.png/png
+ burst_profile/burst_profile000875.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   879       -8.052575       -0.553463        0.500000
+ grid1/grid1_000880.png/png
+ burst_profile/burst_profile000880.png/png
+ grid1/grid1_000885.png/png
+ burst_profile/burst_profile000885.png/png
+ grid1/grid1_000890.png/png
+ burst_profile/burst_profile000890.png/png
+ grid1/grid1_000895.png/png
+ burst_profile/burst_profile000895.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   896       -7.822454       -0.323343        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   896       -8.123484       -0.624373        0.500000
+ have reached retry limit so now backup
+ grid1/grid1_000895.png/png
+ burst_profile/burst_profile000895.png/png
+        900   8.845719  1.183E+07   2.145078   3.823017   1.400000   1.400000   0.000000   0.000000   0.275200   0.016972   4.718414    935    171
+  -7.521424   6.663992  -4.792543   2.031461   2.902966  -8.522879   0.000000   0.000000   0.000000   0.020000   0.018871  32.486315      6     32
+ 8.6432E-04  23.323664   3.660335   3.806574  14.497611  -0.777817   0.000000   0.000000   0.000000   0.000687  9.642E-01  0.290E-09  max increase
+
+ grid1/grid1_000900.png/png
+ burst_profile/burst_profile000900.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   902       -7.521424       -0.022313        0.500000
+ grid1/grid1_000905.png/png
+ burst_profile/burst_profile000905.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1   906       -7.618334       -0.119223        0.500000
+ grid1/grid1_000910.png/png
+ burst_profile/burst_profile000910.png/png
+ grid1/grid1_000915.png/png
+ burst_profile/burst_profile000915.png/png
+ grid1/grid1_000920.png/png
+ burst_profile/burst_profile000920.png/png
+ grid1/grid1_000925.png/png
+ burst_profile/burst_profile000925.png/png
+
+stop because model_number >= max_model_number
+      928      928
+
+        928   8.637938  6.158E+06   1.233649   2.101581   1.400000   1.400000   0.000000   0.000000   0.275200   0.016226   8.230032    935    173
+  -6.510248   6.691967  -4.792821   0.599644   1.687258  -8.522879   0.000000   0.000000   0.000000   0.020000   0.018027  53.555859      6     32
+ 8.6772E-04  23.324200   2.525623   2.022215  14.138780  -0.790054   0.000000   0.000000   0.000000   0.000687  9.657E-01  0.756E-11    varcontrol
+
+save LOGS/profile5.data for model 928
+save photos/x928 for model 928
+save abund_profile_r_fe49_ng_fe50_01.data for model 928
+ saved to final.mod
+termination code: max_model_number
+        928   8.637938  6.158E+06   1.233649   2.101581   1.400000   1.400000   0.000000   0.000000   0.275200   0.016226   8.230032    935    173
+  -6.510248   6.691967  -4.792821   0.599644   1.687258  -8.522879   0.000000   0.000000   0.000000   0.020000   0.018027  53.555859      6     32
+ 8.6772E-04  23.324200   2.525623   2.022215  14.138780  -0.790054   0.000000   0.000000   0.000000   0.000687  9.657E-01  0.756E-11      lgT_cntr
+
+DATE: 2020-08-30
+TIME: 08:06:58
