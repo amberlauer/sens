@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=2096
-#SBATCH --array=numero01-number01
+#SBATCH --array=numero01-number00
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
