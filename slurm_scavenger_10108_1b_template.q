@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=2096
-#SBATCH --array=numero00-numero99
+#SBATCH --array=numero01-number00
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
@@ -20,8 +20,6 @@ export MESA_BASE=/hpc/group/physics/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
 export MESA_RUN=/work/al363/runs/runs_xfactor_number
 
-
-
 #mkdir $MESA_BASE/runs_x100_number
 
 shopt -s nullglob
@@ -30,8 +28,6 @@ let "index=${SLURM_ARRAY_TASK_ID}"
 let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
 let "index3=${index}-numero00"
-
-
 
 # Check for empty files using arrays
 #empty=false
@@ -51,7 +47,7 @@ model=$(sed -n ''${index3}'p' $MESA_BASE/1b/restart_model_xfactor_number.txt)
 
 if [ "${model}" = "0" ]; then
     echo "starting from 0"
-    cd ../ date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
+    date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
     $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 
