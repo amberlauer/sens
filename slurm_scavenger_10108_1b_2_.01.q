@@ -59,8 +59,8 @@ elif [ ! "${max_model}" = "DNC" ] ; then
         cd ./photos
         cp ${model} restart_photo
 	cd ../ 
-	date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
-        $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+        date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
+         $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
         date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 elif [ "${max_model}" = "DNC" ];then
         echo "DNC" >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 

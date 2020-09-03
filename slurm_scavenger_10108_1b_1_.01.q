@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=2096
-#SBATCH --array=001-62
+#SBATCH --array=001-100
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
@@ -20,8 +20,6 @@ export MESA_BASE=/hpc/group/physics/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
 export MESA_RUN=/work/al363/runs/runs_x.01_1
 
-
-
 #mkdir $MESA_BASE/runs_x100_1
 
 shopt -s nullglob
@@ -30,8 +28,11 @@ let "index=${SLURM_ARRAY_TASK_ID}"
 let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
 let "index3=${index}-000"
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> e249b4bfaa350eb1e977f4b4597b409176810fc9
 
 # Check for empty files using arrays
 #empty=false
