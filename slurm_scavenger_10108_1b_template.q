@@ -5,11 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=2096
-<<<<<<< HEAD
 #SBATCH --array=numero01-number00
-=======
-#SBATCH --array=numero01-number01
->>>>>>> e249b4bfaa350eb1e977f4b4597b409176810fc9
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
@@ -51,11 +47,7 @@ model=$(sed -n ''${index3}'p' $MESA_BASE/1b/restart_model_xfactor_number.txt)
 
 if [ "${model}" = "0" ]; then
     echo "starting from 0"
-<<<<<<< HEAD
     date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
-=======
-     date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
->>>>>>> e249b4bfaa350eb1e977f4b4597b409176810fc9
     $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 
