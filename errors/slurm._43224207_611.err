@@ -11173,3 +11173,39 @@ hydro_newton_step failed to accept
    add ag92
    add sb102
    add i107
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0x7f0ed06963ff in ???
+#1  0x716a1a in solve_equ
+	at ../private/star_newton.f90:1061
+#2  0x716a1a in do_newton
+	at ../private/star_newton.f90:473
+#3  0x716a1a in __star_newton_MOD_newton
+	at ../private/star_newton.f90:187
+#4  0x6d6618 in newt
+	at ../private/solve_hydro.f90:765
+#5  0x6d9ad0 in hydro_newton_step
+	at ../private/solve_hydro.f90:703
+#6  0x6d9ad0 in do_hydro_newton
+	at ../private/solve_hydro.f90:445
+#7  0x6d9ad0 in __solve_hydro_MOD_do_hydro_converge
+	at ../private/solve_hydro.f90:164
+#8  0x6da70e in __struct_burn_mix_MOD_do_struct_burn_mix
+	at ../private/struct_burn_mix.f90:180
+#9  0x579dea in __evolve_MOD_do_evolve_step_part2
+	at ../private/evolve.f90:500
+#10  0x41fd7d in __star_lib_MOD_star_evolve_step
+	at ../public/star_lib.f90:516
+#11  0x43824f in __run_star_support_MOD_run1_star
+	at ../job/run_star_support.f90:127
+#12  0x41c710 in __run_star_MOD_do_run_star
+	at /hpc/group/physics/al363/mesa10108/star/job/run_star.f:26
+#13  0x41c761 in run
+	at ../src/run.f:13
+#14  0x41c798 in main
+	at ../src/run.f:2
+/var/spool/slurmd/job43224213/slurm_script: line 66: 27738 Segmentation fault      $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
+DATE: 2020-09-03
+TIME: 17:45:10
