@@ -16,9 +16,9 @@ export MESASDK_ROOT=/hpc/group/physics/al363/mesasdk_11_2017
 #export MESASDK_ROOT=~/mesasdk_8_18
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
-export MESA_BASE=/work/al363/sens/base
+export MESA_BASE=/hpc/group/physics/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
-export MESA_RUN=$MESA_BASE/runs_x100_wk_both
+export MESA_RUN=/work/al363/runs/runs_x100_wk_both
 
 #mkdir $MESA_BASE/runs_x100_redos
 cd $MESA_RUN
