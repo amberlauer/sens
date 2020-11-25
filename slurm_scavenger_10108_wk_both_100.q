@@ -46,7 +46,7 @@ if $empty; then
 
 else
     cd $MESA_RUN/${index2}
-    if ls ./final_profile* 1> /dev/null 2>&1; then
+    if [! ls ./final_profile* 1> /dev/null 2>&1]; then
     	echo "this_model_is_finished"  >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     else	
     	echo "starting from photo" >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
