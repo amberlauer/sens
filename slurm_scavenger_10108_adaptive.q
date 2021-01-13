@@ -18,7 +18,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
 export MESA_BASE=/hpc/group/physics/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist_3
-export MESA_RUN=/work/al363/runs/runs_adaptive
+export MESA_RUN=/work/al363/runs/runs_adaptive2
 
 #mkdir $MESA_RUN
 
