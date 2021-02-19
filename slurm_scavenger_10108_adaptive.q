@@ -5,7 +5,8 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=10240
-#SBATCH --array=8,19,399,611,776,834,1102
+#SBATCH --array=321,1046,1221,15,1502,37,641,797,811,1179
+
 #SBATCH --mail-type=END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
@@ -18,7 +19,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
 export MESA_BASE=/hpc/group/physics/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist_3
-export MESA_RUN=/work/al363/runs/runs_adaptive
+export MESA_RUN=/work/al363/runs/runs_adaptive3
 
 #mkdir $MESA_RUN
 
@@ -55,7 +56,7 @@ else
 
     	cd ./photos
     	cp $(ls -t  | head -1) restart_photo
-    	cd ../   date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
+    	cd ../   #date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
     	if [[ -e star.exe ]];then
         $MESA_BASE/star.exe
     	else
