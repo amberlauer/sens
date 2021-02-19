@@ -34,7 +34,7 @@ let "index3=${index}-1200"
 #test "$(ls -A ./${index2}/photos)"&& empty=false || empty=true
 mkdir $MESA_RUN/${index2}
 cd $MESA_RUN/${index2}
-cp $MESA_BASE/inlist_cluster_abund_template.01  ./inlist_cluster
+cp $MESA_BASE/inlist_cluster_abund_template100  ./inlist_cluster
 rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
 rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
