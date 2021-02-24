@@ -27,7 +27,6 @@ shopt -s dotglob # Die if dir name provided on command line
 let "index=${SLURM_ARRAY_TASK_ID}"
 let "index1=${SLURM_ARRAY_TASK_ID}*2"
 let "index2=${index1}-1"
-let "index3=${index}-1200"
 
 # Check for empty files using arrays
 #empty=false
@@ -39,10 +38,10 @@ rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
 rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
 sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
-max_model=$(sed -n ''${index3}'p' $MESA_BASE/1b/max_model_x100_eredos.txt)
+max_model=$(sed -n ''${index}'p' $MESA_BASE/1b/max_model_x100_eredos.txt)
 sed -i 's|max_numb|'${max_model}'|g'  inlist_cluster
 
-model=$(sed -n ''${index3}'p' $MESA_BASE/1b/restart_model_x100_eredos.txt)
+model=$(sed -n ''${index}'p' $MESA_BASE/1b/restart_model_x100_eredos.txt)
 
 
 if [ "${model}" = "0" ]; then
