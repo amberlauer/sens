@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=3072
-#SBATCH --array=4,1,3,5,2,1408,673,716,631,807,1256,867,760,790,843,547,792
+#SBATCH --array=1256
 #SBATCH --mail-type=END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
@@ -42,14 +42,13 @@ if $empty; then
     sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
     rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
     sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
-    $MESA_BASE/star >> /work/al363/new_sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
+    $MESA_BASE/star >> errors/slurm._%A_%a.err
 
 else
     cd $MESA_RUN/${index2}
     if ls ./final_profile* 1> /dev/null 2>&1; then
-    	echo "this_model_is_finished"  >> /work/al363/new_sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
-    else	
-    	echo "starting from photo" >> /work/al363/new_sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+    	echo "this_model_is_finished"  >> /hpc/group/physics/al363/sens/
+    	echo "starting from photo" >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
 
     	cd ./photos
     	cp $(ls -t  | head -1) restart_photo
@@ -57,7 +56,7 @@ else
     	if [[ -e star.exe ]];then
         $MESA_BASE/star.exe
     	else
-        $MESA_BASE/star >> /work/al363/new_sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+        $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     	fi
     	date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
      fi		
