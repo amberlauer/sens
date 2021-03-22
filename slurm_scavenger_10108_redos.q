@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=3072
-#SBATCH --array=numero00-number00
+#SBATCH --array=4,1,3,5,2,1408,673,716,631,807,1256,867,760,790,843,547,792
 #SBATCH --mail-type=END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/slurm._%A_%a.err
@@ -16,9 +16,9 @@ export MESASDK_ROOT=/hpc/group/physics/al363/mesasdk_11_2017
 #export MESASDK_ROOT=~/mesasdk_8_18
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
-export MESA_BASE=/work/al363/new_sens/base
+export MESA_BASE=/hpc/group/physics/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
-export MESA_RUN=$MESA_BASE/runs_x.01_redos
+export MESA_RUN=/work/al363/runs/runs_x100_best
 
 #mkdir $MESA_BASE/runs_x100_redos
 cd $MESA_RUN
@@ -37,7 +37,7 @@ if $empty; then
     echo "starting from scratch "
     mkdir $MESA_RUN/${index2}
     cd $MESA_RUN/${index2}
-    cat $MESA_BASE/inlist_cluster_template.01 > ./inlist_cluster
+    cat $MESA_BASE/inlist_cluster_template100 > ./inlist_cluster
     rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
     sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
     rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
