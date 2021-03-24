@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --partition scavenger
-#SBATCH --job-name=sensitivity_10108_1
+#SBATCH --job-name=sensitivity_10108_number
 #SBATCH --output=errors/slurm._%A_%a.err
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
@@ -17,9 +17,9 @@ export MESASDK_ROOT=/hpc/group/physics/al363/mesasdk_11_2017
 #export MESASDK_ROOT=~/mesasdk_8_1 8
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
-export MESA_BASE=/hpc/group/physics/al363/sens/base
+export MESA_BASE=/hpc/group/physics/al363/low_overhead/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
-export MESA_RUN=/work/al363/runs/runs_xfactor_number
+export MESA_RUN=/work/al363/runs/low_overhead/runs_xfactor_number
 
 
 #mkdir $MESA_BASE/runs_x100_1
@@ -44,13 +44,13 @@ if $empty; then
     sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
     rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
     sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
-    $MESA_BASE/star >> /work/al363/sens2/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
+    $MESA_BASE/star >> /hpc/group/physics/al363/low_overhead/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
 else
     cd $MESA_RUN/${index2}
     if [! ls ./final_profile* 1> /dev/null 2>&1]; then
-    	echo "this_model_is_finished"  >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+    	echo "this_model_is_finished"  >> /hpc/group/physics/al363/low_overhead/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     else	
-    	echo "starting from photo" >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+    	echo "starting from photo" >> /hpc/group/physics/al363/low_overhead/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
 
     	cd ./photos
     	cp $(ls -t  | head -1) restart_photo
@@ -58,7 +58,7 @@ else
     	if [[ -e star.exe ]];then
         $MESA_BASE/star.exe
     	else
-        $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+        $MESA_BASE/star >> /hpc/group/physics/al363/low_overhead/sens/errors/slurm._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     	fi
     	date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
      fi		

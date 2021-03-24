@@ -2,14 +2,12 @@
 
 echo "what is the round number?"
 read number
-echo "what is the start number"
-read numero
 let "numero=${number}-1"
 cp slurm_scavenger_10108_template.q slurm_scavenger_10108_${number}_01.q
 sed -i 's|number|'${number}'|g'  slurm_scavenger_10108_${number}_01.q
 sed -i 's|numero|'${numero}'|g'  slurm_scavenger_10108_${number}_01.q
 
-mkdir /work/al363/runs/runs_x.01_${number}
+mkdir /work/al363/runs/low_overhead/runs_x.01_${number}
 sbatch slurm_scavenger_10108_${number}_01.q >> job_number_${number}_01.txt
 
 #job_number=$(tail -c 9 job_number.txt)

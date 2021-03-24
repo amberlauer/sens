@@ -37,7 +37,7 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	  
 	load_saved_model = .true.
 	!saved_model_name = 'ns_1.4M_h_test.mod'
-	saved_model_name = '/hpc/group/physics/al363/sens/base/ns_relax.mod'
+	saved_model_name = '/hpc/group/physics/al363/low_overhead/sens/base/ns_relax.mod'
 	
 	save_model_when_terminate = .true.
 	save_model_filename = 'final.mod'
@@ -49,9 +49,9 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	
 	change_initial_net = .true.
-	new_net_name = '/hpc/group/physics/al363/sens/base/rp_305.net'
+	new_net_name = '/hpc/group/physics/al363/low_overhead/sens/base/rp_305.net'
 	!new_net_name = 'basic.net'
-	rate_tables_dir ='/hpc/group/physics/al363/sens/base/starlib_raw_rates'
+	rate_tables_dir ='/hpc/group/physics/al363/low_overhead/sens/base/starlib_raw_rates'
 	rate_cache_suffix = 'starlib'	
 	
 	set_rate_3a = 'FL87' ! Fushiki and Lamb, Apj, 317, 368-388, 1987
@@ -68,11 +68,11 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 	max_model_number= 3000
 	use_other_pgstar_plots=.true.
-	photo_interval = 500
-	profile_interval = 500
+	photo_interval = 1000
+	profile_interval = 1000
 	history_interval = 2
-	terminal_interval = 100
-	write_header_frequency = 10
+	terminal_interval = 1000
+	write_header_frequency = 1000
 	  
 	min_timestep_limit = 1d-99
 	max_years_for_timestep = 1d-4  	
@@ -118,7 +118,7 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	mesh_dlog_burn_fe_dlogP_extra = 1
 	
 	mesh_dlog_pnhe4_dlogP_extra = 1
-	mesh_dlog_other_dlogP_extra = 1
+	mesh_dlog_other_dlogP_extra = 1extra_t
 	mesh_dlog_photo_dlogP_extra = 1         
 	 
 
@@ -173,7 +173,7 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	! 2% metals case
 	     accretion_h1 = 0.7048	
 	     accretion_h2 = 0 	
-	     accretion_he3 = 0
+	     accretion_he3 = 0extra_t
 	     accretion_he4 = 0.2752
 	     accretion_zfracs = 3 
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -194,7 +194,7 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !      tol_max_correction = 1d-7
   
 
-  ! FOR DEBUGGING
+  ! FOR DEBUGGINGextra_t
 
   !report_hydro_solver_progress = .true. ! set true to see info about newton iterations
   !report_ierr = .true. ! if true, produce terminal output when have some internal error
