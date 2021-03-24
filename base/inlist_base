@@ -111,7 +111,15 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	
 	mesh_dlog_burn_si_dlogP_extra = 1
 	mesh_dlog_burn_s_dlogP_extra = 1
-	mesh_dlog_burn_ar_dlogP_extra = 1
+	mesh_dlog_burn_ar_dlogP_extra = 1  epsnuc_M_1 ! start1 for 1st zone
+      epsnuc_M_2 ! start2
+      epsnuc_M_3 ! end2
+      epsnuc_M_4 ! end1
+      
+      epsnuc_M_5 ! start1 for 2nd zone
+      epsnuc_M_6 ! start2
+      epsnuc_M_7 ! end2
+      epsnuc_M_8 ! end1
 	mesh_dlog_burn_ca_dlogP_extra = 1
 	mesh_dlog_burn_ti_dlogP_extra = 1
 	mesh_dlog_burn_cr_dlogP_extra = 1
@@ -121,10 +129,15 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	mesh_dlog_other_dlogP_extra = 1extra_t
 	mesh_dlog_photo_dlogP_extra = 1         
 	 
-
-	fe_core_infall_limit = 1d99
-	max_abar_for_burning = 137
-	!max_abar_for_burning=55
+  epsnuc_M_1 ! start1 for 1st zone
+      epsnuc_M_2 ! start2
+      epsnuc_M_3 ! end2
+      epsnuc_M_4 ! end1
+      
+      epsnuc_M_5 ! start1 for 2nd zone
+      epsnuc_M_6 ! start2
+      epsnuc_M_7 ! end2
+      epsnuc_M_8 ! end1
 	  
 	use_Type2_opacities = .true.
 	Zbase = 0.02d0 
@@ -145,10 +158,15 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	thermohaline_coeff = 2
 	thermohaline_option = 'Kippenhahn'
 	  
-	set_min_D_mix = .true.
-	min_D_mix = 1d6	 
-
-	min_T_for_acceleration_limited_conv_velocity = 0.0
+	set_min_D_mix = .true.  epsnuc_M_1 ! start1 for 1st zone
+      epsnuc_M_2 ! start2
+      epsnuc_M_3 ! end2
+      epsnuc_M_4 ! end1
+      
+      epsnuc_M_5 ! start1 for 2nd zone
+      epsnuc_M_6 ! start2
+      epsnuc_M_7 ! end2
+      epsnuc_M_8 ! end1city = 0.0
 	okay_to_reduce_gradT_excess = .true.
 	super_eddington_scaling_factor = 1
 
@@ -179,18 +197,29 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	! Accretion rate
 		 mass_change = 3d-9
-	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  epsnuc_M_1 ! start1 for 1st zone
+      epsnuc_M_2 ! start2
+      epsnuc_M_3 ! end2
+      epsnuc_M_4 ! end1
+      
+      epsnuc_M_5 ! start1 for 2nd zone
+      epsnuc_M_6 ! start2
+      epsnuc_M_7 ! end2
+      epsnuc_M_8 ! end1
 	!mass_change_full_on_dt = 1d-4 ! (seconds)
 	!mass_change_full_off_dt = 1d-6 ! (seconds)
 
 
 ! test with "Gold Standard" tolerances -- FAILED
-!      newton_iterations_limit = 20
-!      max_tries = 20
-!      iter_for_resid_tol2 = 30
-!      tol_residual_norm1 = 1d-9
-!      tol_max_residual1 = 1d-7
-!      tol_correction_norm = 1d-9
+!      newton_iterations_limit = 20  epsnuc_M_1 ! start1 for 1st zone
+      epsnuc_M_2 ! start2
+      epsnuc_M_3 ! end2
+      epsnuc_M_4 ! end1
+      
+      epsnuc_M_5 ! start1 for 2nd zone
+      epsnuc_M_6 ! start2
+      epsnuc_M_7 ! end2
+      epsnuc_M_8 ! end1
 !      tol_max_correction = 1d-7
   
 
@@ -205,7 +234,15 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   !report_why_dt_limits = .true.
   !report_all_dt_limits = .true.
   
-  !show_mesh_changes = .true.
+  !show_mesh_changes = .true.  epsnuc_M_1 ! start1 for 1st zone
+      epsnuc_M_2 ! start2
+      epsnuc_M_3 ! end2
+      epsnuc_M_4 ! end1
+      
+      epsnuc_M_5 ! start1 for 2nd zone
+      epsnuc_M_6 ! start2
+      epsnuc_M_7 ! end2
+      epsnuc_M_8 ! end1
   !mesh_dump_call_number = 5189
   !okay_to_remesh = .false.
   
@@ -218,7 +255,15 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   !hydro_numerical_jacobian = .true.
   !hydro_save_numjac_plot_data = .true.
   !small_mtx_decsol = 'lapack'
-  !large_mtx_decsol = 'lapack'
+  !large_mtx_decsol = 'lapack'  epsnuc_M_1 ! start1 for 1st zone
+      epsnuc_M_2 ! start2
+      epsnuc_M_3 ! end2
+      epsnuc_M_4 ! end1
+      
+      epsnuc_M_5 ! start1 for 2nd zone
+      epsnuc_M_6 ! start2
+      epsnuc_M_7 ! end2
+      epsnuc_M_8 ! end1
   !hydro_dump_call_number = 195
 
   !trace_newton_bcyclic_solve_input = .true. ! input is "B" j k iter B(j,k)
