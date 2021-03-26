@@ -19,11 +19,11 @@ num_peaks = []
 run_num = []
 benchmarks = []
 multiple_500=[]
-results_loc = '/home/iml13/REU2020/results/'
+results_loc = '/datacommons/phy-champagne-lauer/1_runs/results/'
 # change starting model number using variable "start"
 
 #runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
-data_loc = '/datacommons/phy-champagne-lauer/'
+data_loc = '/datacommons/phy-champagne-lauer/1_runs'
 runs_name = input('Enter name of runs folder\n runs_')
 runs_folder ='runs_'+ runs_name +'/'
 start=int(input('Enter the number associated with the first model folder:'))
