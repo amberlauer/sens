@@ -55,7 +55,7 @@ for i in range(0, max, 1): # goes through odd files
     print(file_path)
     file_path=str(file_path)
     print(file_path)
-    with open( file_path, 'r') as f:
+    with open(os.path(file_path), 'r') as f:
 
         info_starts = 0
         data = []
