@@ -1,0 +1,147 @@
+/var/spool/slurmd/job5796816/slurm_script: line 24: cd: /work/al363/runs/runs_x100_wk_both: No such file or directory
+ls: cannot access './133/photos': No such file or directory
+starting from scratch 
+mkdir: cannot create directory ‘/work/al363/runs/runs_x100_wk_both/133’: No such file or directory
+/var/spool/slurmd/job5796816/slurm_script: line 39: cd: /work/al363/runs/runs_x100_wk_both/133: No such file or directory
+                                         version_number       10108
+ read /hpc/group/physics/al363/sens/base/inlist_base
+ read inlist_cluster
+load saved model /hpc/group/physics/al363/sens/base/ns_relax.mod
+
+ change to /hpc/group/physics/al363/sens/base/rp_305.net
+               set special rate factor for r_s30_wk_p30        3035    1.0000000000000000D+02
+         set special rate factor for r_p30_wk-minus_s30        3005    1.0000000000000000D+02
+               set special rate factor for r_s30_wk_p30        3035    1.0000000000000000D+02
+         set special rate factor for r_p30_wk-minus_s30        3005    1.0000000000000000D+02
+ number of species         305
+ read /hpc/group/physics/al363/sens/base/history_customACL.list_tau
+ read /hpc/group/physics/al363/sens/base/profile_customACL.list_tau
+ net name /hpc/group/physics/al363/sens/base/rp_305.net
+ v_flag T
+                         which_atm_option: grey_and_kap
+                                           xmstar/mstar    4.5461189430843640D-12
+                                             xmstar (g)    1.2660395722219186D+22
+                                           M_center (g)    2.7848799999878681D+33
+                                            xmstar/Msun    6.3645665203193175D-12
+                                          M_center/Msun    1.3999999999939012D+00
+                                          R_center (cm)    1.1200000000000000D+06
+                                          R_center/Rsun    1.6092416448748527D-05
+                                           core density    4.7322078204273819D+14
+                                          L_center/Lsun    4.1647144567650578D+00
+ kappa_file_prefix gs98
+ kappa_lowT_prefix lowT_fa05_gs98
+
+   eos_file_prefix mesa
+                                        OMP_NUM_THREADS           8
+
+
+__________________________________________________________________________________________________________________________________________________
+
+       step    lg_Tcntr    Teff       lg_LH     lg_Lnuc     Mass       H_rich     H_cntr     N_cntr     Y_surf     X_avg     eta_cntr  zones retry
+   lg_dt_yr    lg_Dcntr    lg_R       lg_L3a    lg_Lneu     lg_Mdot    He_core    He_cntr    O_cntr     Z_surf     Y_avg     gam_cntr  iters bckup
+     age_yr    lg_Pcntr    lg_L       lg_LZ     lg_Psurf    lg_Dsurf   C_core     C_cntr     Ne_cntr    Si_cntr    Z_avg     v_div_cs     dt_limit
+__________________________________________________________________________________________________________________________________________________
+
+save LOGS/profile1.data for model 2
+          6   8.165156  1.497E+06   0.087590   0.087976   1.400000   1.400000   0.000000   0.000000   0.275200   0.030886  22.514775    791      0
+  -5.817651   6.610341  -4.793035 -18.862378  -1.086578  -8.522879   0.000000   0.000000   0.000000   0.020000   0.011710 149.410225      6      0
+ 4.0040E-06  23.176196   0.068337  -2.962874  12.744977  -1.553972   0.000000   0.000000   0.000000   0.000687  9.574E-01  0.395E-11      lgT_cntr
+
+save LOGS/profile2.data for model 6
+       retry log10(dt/yr), log10(dt), retry_factor     1    30       -5.532111        1.967001        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    35       -5.231081        2.268031        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    36       -5.532111        1.967001        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    40       -5.532111        1.967001        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    45       -5.231081        2.268031        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    49       -5.231081        2.268031        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    53       -5.231081        2.268031        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    56       -5.532111        1.967001        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    56       -5.833141        1.665971        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1    58       -6.134171        1.364941        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    58       -6.435201        1.063911        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1    58       -6.736231        0.762881        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    58       -7.037261        0.461851        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1    60       -7.338291        0.160821        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    60       -7.639321       -0.140209        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1    62       -7.940351       -0.441239        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    62       -8.241381       -0.742269        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    76       -5.231081        2.268031        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    76       -5.532111        1.967001        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    77       -5.833141        1.665971        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    77       -6.134171        1.364941        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1    80       -6.435201        1.063911        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    80       -6.736231        0.762881        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1    81       -7.037261        0.461851        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    81       -7.338291        0.160821        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1    84       -7.639321       -0.140209        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    84       -7.940351       -0.441239        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1    84       -8.241381       -0.742269        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    97       -5.708197        1.790914        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    98       -6.029742        1.469369        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    99       -6.330772        1.168339        0.500000
+        100   8.444841  4.670E+06   2.033172   2.166622   1.400000   1.400000   0.000000   0.000000   0.275200   0.100536  12.226478    752     31
+  -6.029742   6.642744  -4.792800   1.206170   1.283423  -8.522879   0.000000   0.000000   0.000000   0.020000   0.058448  80.444496      6      8
+ 3.1300E-04  23.235090   2.045017   1.357015  13.860470  -0.943582   0.000000   0.000000   0.000000   0.000687  8.410E-01  0.987E-12          hold
+
+       retry log10(dt/yr), log10(dt), retry_factor     1   101       -6.631802        0.867309        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   103       -6.932832        0.566279        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   104       -7.233862        0.265249        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   106       -7.534892       -0.035780        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   110       -7.649240       -0.150129        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   110       -7.950270       -0.451159        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   112       -8.333830       -0.834718        0.500000
+                       super eddington wind: lg_Mdot, L/Ledd         166    -9.76056     1.00708
+                       super eddington wind: lg_Mdot, L/Ledd         167    -9.00478     1.04031
+                       super eddington wind: lg_Mdot, L/Ledd         168    -8.75953     1.07086
+                       super eddington wind: lg_Mdot, L/Ledd         169    -8.62667     1.09614
+                       super eddington wind: lg_Mdot, L/Ledd         170    -8.52208     1.12216
+                       super eddington wind: lg_Mdot, L/Ledd         171    -8.42429     1.15286
+                       super eddington wind: lg_Mdot, L/Ledd         172    -8.60169     1.10143
+                       super eddington wind: lg_Mdot, L/Ledd         173    -8.46097     1.14012
+                       super eddington wind: lg_Mdot, L/Ledd         174    -8.38559     1.16676
+                       super eddington wind: lg_Mdot, L/Ledd         175    -8.53062     1.11907
+                       super eddington wind: lg_Mdot, L/Ledd         176    -8.40181     1.16029
+                       super eddington wind: lg_Mdot, L/Ledd         177    -8.32990     1.18906
+                       super eddington wind: lg_Mdot, L/Ledd         178    -8.44989     1.14288
+                       super eddington wind: lg_Mdot, L/Ledd         179    -8.33809     1.18491
+                       super eddington wind: lg_Mdot, L/Ledd         180    -8.27479     1.21362
+                       super eddington wind: lg_Mdot, L/Ledd         181    -8.39331     1.16242
+                       super eddington wind: lg_Mdot, L/Ledd         182    -8.29666     1.20273
+                       super eddington wind: lg_Mdot, L/Ledd         183    -8.24132     1.23015
+                       super eddington wind: lg_Mdot, L/Ledd         184    -8.36111     1.17435
+                       super eddington wind: lg_Mdot, L/Ledd         185    -8.28014     1.20973
+                       super eddington wind: lg_Mdot, L/Ledd         186    -8.23671     1.23166
+                       super eddington wind: lg_Mdot, L/Ledd         187    -8.35578     1.17572
+                       super eddington wind: lg_Mdot, L/Ledd         188    -8.29009     1.20416
+                       super eddington wind: lg_Mdot, L/Ledd         189    -8.25231     1.22271
+                       super eddington wind: lg_Mdot, L/Ledd         190    -8.39439     1.16019
+                       super eddington wind: lg_Mdot, L/Ledd         191    -8.33559     1.18317
+                       super eddington wind: lg_Mdot, L/Ledd         192    -8.32248     1.18856
+                       super eddington wind: lg_Mdot, L/Ledd         193    -8.51113     1.12184
+       retry log10(dt/yr), log10(dt), retry_factor     1   193       -9.066207       -1.567096        0.500000
+                       super eddington wind: lg_Mdot, L/Ledd         193    -8.51113     1.12184
+       retry log10(dt/yr), log10(dt), retry_factor     2   193       -9.367237       -1.868126        0.500000
+                       super eddington wind: lg_Mdot, L/Ledd         193    -8.51113     1.12184
+ have reached retry limit so now backup
+                       super eddington wind: lg_Mdot, L/Ledd         192    -8.32248     1.18856
+                       super eddington wind: lg_Mdot, L/Ledd         193    -8.69495     1.07991
+                       super eddington wind: lg_Mdot, L/Ledd         194    -8.39636     1.15896
+                       super eddington wind: lg_Mdot, L/Ledd         195    -8.56473     1.10769
+                       super eddington wind: lg_Mdot, L/Ledd         196    -8.46665     1.13508
+                       super eddington wind: lg_Mdot, L/Ledd         197    -8.38312     1.16376
+                       super eddington wind: lg_Mdot, L/Ledd         198    -8.55858     1.10924
+                       super eddington wind: lg_Mdot, L/Ledd         199    -8.46557     1.13519
+                       super eddington wind: lg_Mdot, L/Ledd         200    -8.38135     1.16422
+        200   8.945236  2.382E+07   3.761388   6.698931   1.400000   1.400000   0.000000   0.000000   0.295793   0.076046   3.115683    668     40
+  -8.830916   6.571145  -4.791534   3.025258   4.390288  -8.381348   0.000000   0.000000   0.000000   0.199583   0.044895  24.056603      6      9
+ 3.1497E-04  23.235202   4.878001   6.698337  15.060023  -0.895736   0.000000   0.000000   0.000000   0.000687  8.791E-01  0.818E-04    varcontrol
+slurmstepd: error: *** JOB 5796816 ON dcc-ultrasound-06 CANCELLED AT 2021-03-23T03:00:00 DUE TO PREEMPTION ***
