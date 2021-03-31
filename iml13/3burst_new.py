@@ -48,7 +48,7 @@ for i in range(0, max, 1): # goes through odd files
     
     path1= lf.iloc[i]    
     path2 = '/LOGS/history.data'
-    file_path = path1 + s + path2
+    file_path = path1 + path2
 
     with open( file_path, 'r') as f:
 
