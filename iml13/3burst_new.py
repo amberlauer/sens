@@ -12,8 +12,8 @@ from os.path import isfile, join
 #import pandas as pd
 from scipy.signal import find_peaks
 from scipy.interpolate import interp1d
-
-
+import subprocess
+import os
 peak_period = []
 num_peaks = []
 run_num = []
@@ -24,20 +24,29 @@ results_loc = '/datacommons/phy-champagne-lauer/1_runs/results/'
 
 #runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
 data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
-runs_name = input('Enter name of runs folder\n runs_')
-runs_folder ='runs_name +'/'
-start=int(input('Enter the number associated with the first model folder:'))
-end=int(input('Enter the number associated with the last model folder:'))
-num_files = end+2 # num_files includes baseline!
-bashCommand
-for i in range(start, num_files+2, 2): # goes through odd files
-    if i == num_files:
-        s = 'baseline'
-        path1 = data_loc
-    else:
-        s = str(i) # changes int i into string s
-        path1 = data_loc+runs_folder
-        
+runs_name = input('Enter name of runs folder')
+runs_folder =runs_name +'/'
+subprocess.call(['bash','./files.sh',runs_folder,runs_name])
+
+#changed so script prints a list of files in folder and then reads from
+#start=int(input('Enter the number associated with the first model folder:'))
+#end=int(input('Enter the number associated with the last model folder:'))
+#num_files = end+2 # num_files includes baseline!
+#for i in range(start, num_files+2, 2): # goes through odd files
+#    if i == num_files:
+#        s = 'baseline'
+#        path1 = data_loc
+#    else:
+
+#openfile
+file_list=os.listdir(runs_folder)
+#goes through list
+
+for i in range(0, max, 1): # goes through odd files
+
+    #s = str(i) # changes int i into string 
+    lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
+    path1= lf.iloc[i]    
     path2 = '/LOGS/history.data'
     file_path = path1 + s + path2
 
