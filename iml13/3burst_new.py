@@ -21,9 +21,11 @@ results_loc = '/datacommons/phy-champagne-lauer/1_runs/results/'
 
 #runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
 data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
+print(data_loc)
 runs_name = input('Enter name of runs folder \n')
+print(runs_name)
 runs_folder =data_loc+runs_name +'/'
-
+print(runs_folder)
 #subprocess.call(['bash','./files.sh',runs_folder,runs_name])
 #changed so script prints a list of files in folder and then reads from
 #start=int(input('Enter the number associated with the first model folder:'))
@@ -46,7 +48,8 @@ for i in range(0, max, 1): # goes through odd files
 
     #s = str(i) # changes int i into string 
     
-    path1= lf.iloc[i]    
+    path1= lf.iloc[i]
+    print(path1)    
     path2 = '/LOGS/history.data'
     file_path = path1 + path2
     file_path=str(file_path)
