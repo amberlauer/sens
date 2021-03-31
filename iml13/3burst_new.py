@@ -48,7 +48,7 @@ for i in range(0, max, 1): # goes through odd files
 
     #s = str(i) # changes int i into string 
     
-    path1= lf.iloc[i]
+    path1= lf.values[i]
     print(path1)    
     path2 = '/LOGS/history.data'
     file_path = path1 + path2
