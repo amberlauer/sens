@@ -23,13 +23,13 @@ results_loc = '/datacommons/phy-champagne-lauer/1_runs/results/'
 # change starting model number using variable "start"
 
 #runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
-data_loc = '/datacommons/phy-champagne-lauer/1_runs'
+data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
 runs_name = input('Enter name of runs folder\n runs_')
-runs_folder ='runs_'+ runs_name +'/'
+runs_folder ='runs_name +'/'
 start=int(input('Enter the number associated with the first model folder:'))
 end=int(input('Enter the number associated with the last model folder:'))
 num_files = end+2 # num_files includes baseline!
-
+bashCommand
 for i in range(start, num_files+2, 2): # goes through odd files
     if i == num_files:
         s = 'baseline'
