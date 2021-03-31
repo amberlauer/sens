@@ -49,7 +49,7 @@ for i in range(0, max, 1): # goes through odd files
     
     path1= lf.values[i]
     print(path1)    
-    path1=str(path1)
+    #path1=str(path1)
     path2 = '/LOGS/history.data'
     file_path =runs_folder+ path1 + path2
     print(file_path)
