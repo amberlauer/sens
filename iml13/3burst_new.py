@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[9]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
@@ -24,9 +21,9 @@ results_loc = '/datacommons/phy-champagne-lauer/1_runs/results/'
 #runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
 data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
 runs_name = input('Enter name of runs folder')
-runs_folder =runs_name +'/'
-subprocess.call(['bash','./files.sh',runs_folder,runs_name])
+runs_folder =data_loc+runs_name +'/'
 
+#subprocess.call(['bash','./files.sh',runs_folder,runs_name])
 #changed so script prints a list of files in folder and then reads from
 #start=int(input('Enter the number associated with the first model folder:'))
 #end=int(input('Enter the number associated with the last model folder:'))
@@ -245,9 +242,6 @@ with open(csv_name, 'w', newline='') as data:
 num_peaks_loc = csv_path + 'num_peaks.csv'
 
 
-# In[ ]:
-
-
 #y = np.linspace(1, 1)
 #df = pd.DataFrame(data = num_peaks, index = run_num)
 # creates a data frame using pandas - essentially tells code below where the data is stored 
@@ -257,22 +251,4 @@ num_peaks_loc = csv_path + 'num_peaks.csv'
 #writer.save()
 
 # The above creates, writes in the data, then saves and excel spreadsheet
-
-
-# In[22]:
-
-
-
-
-
-# In[23]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
