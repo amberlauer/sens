@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
 import os.path
 from os.path import isfile, join
-import pandas as pd
 from scipy.signal import find_peaks
 from scipy.interpolate import interp1d
 import subprocess
