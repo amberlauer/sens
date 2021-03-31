@@ -38,6 +38,7 @@ runs_folder =data_loc+runs_name +'/'
 file_list=os.listdir(runs_folder)
 lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
 max=lf.count
+max=int(max)
 #goes through list
 
 for i in range(0, max, 1): # goes through odd files
