@@ -52,7 +52,7 @@ for i in range(0, max, 1): # goes through odd files
     print(path1)    
     path2 = '/LOGS/history.data'
     file_path =runs_folder+ path1 + path2
-    file_path=str(file_path)
+    #file_path=str(file_path)
     with open( file_path, 'r') as f:
 
         info_starts = 0
