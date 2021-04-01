@@ -47,7 +47,7 @@ i=0
 for line in range(0, max, 1): # goes through odd files
     i=i+1
     #s = str(i) # changes int i into string 
-    path1=runs_folder+lf.values[i]
+    path1=runs_folder+str(lf.values[i])
     print(path1)    
     path2 = '/LOGS/history.data'
     file_path =os.path.join(path1,path2)
