@@ -46,7 +46,7 @@ max=int(len(index))
 #goes through list
 i=0
 for line in range(0, max, 1): # goes through odd files
-    i++
+    i=i+1
     #s = str(i) # changes int i into string 
     path1=lf.values[i]
     print(path1)    
