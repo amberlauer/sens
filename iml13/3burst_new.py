@@ -25,7 +25,7 @@ data_loc = r'/datacommons/phy-champagne-lauer/1_runs/'
 print(data_loc)
 runs_name = input('Enter name of runs folder \n')
 print(runs_name)
-runs_folder=data_loc+runs_name
+runs_folder=data_loc+runs_name+'/'
 print(runs_folder)
 #subprocess.call(['bash','./files.sh',runs_folder,runs_name])
 #changed so script prints a list of files in folder and then reads from
