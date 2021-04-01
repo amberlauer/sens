@@ -50,9 +50,8 @@ for line in range(0, max, 1): # goes through odd files
     #s = str(i) # changes int i into string 
     path1=lf.values[i]
     print(path1)    
-    path2 = path1+'/LOGS/history.data'
-    file_path =runs_folder+path2
-    file_path=file_path.replace(""][","")
+    path2 = '/LOGS/history.data'
+    file_path =os.path.join(path1,path2)
     print(file_path)
 
     with open( file_path, 'r') as f:
