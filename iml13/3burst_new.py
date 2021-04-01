@@ -21,7 +21,7 @@ results_loc =r'/datacommons/phy-champagne-lauer/1_runs/results/'
 # change starting model number using variable "start"
 
 #runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
-data_loc = r'/datacommons/phy-champagne-lauer/1_runs/'
+data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
 print(data_loc)
 runs_name = input('Enter name of runs folder \n')
 print(runs_name)
@@ -52,9 +52,10 @@ for line in range(0, max, 1): # goes through odd files
     print(path1)    
     path2 = path1+'/LOGS/history.data'
     file_path =runs_folder+path2
+    file_path=file_path.replace(""][","")
     print(file_path)
-    folder=os.fsencode(str(file_path))
-    with open( folder, 'r') as f:
+
+    with open( file_path, 'r') as f:
 
         info_starts = 0
         data = []
