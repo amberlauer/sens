@@ -52,7 +52,7 @@ for line in range(0, max, 1): # goes through odd files
     path2 = path1+'/LOGS/history.data'
     file_path =runs_folder+path2
     print(file_path)
-    folder=os.fsencode(file_path)
+    folder=os.fsencode(str(file_path))
     with open( folder, 'r') as f:
 
         info_starts = 0
