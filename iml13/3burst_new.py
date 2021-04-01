@@ -11,6 +11,7 @@ from scipy.signal import find_peaks
 from scipy.interpolate import interp1d
 import subprocess
 import os
+import fileinput
 peak_period = []
 num_peaks = []
 run_num = []
@@ -43,15 +44,16 @@ index=lf.index
 max=int(len(index))
 #goes through list
 
-for i in range(0, max, 1): # goes through odd files
+for line in range(0, max, 1): # goes through odd files
 
     #s = str(i) # changes int i into string 
     path1=lf.values[i]
     print(path1)    
     path2 = path1+'/LOGS/history.data'
-    file_path =os.path.join(runs_folder, path2)
+    file_path =runs_folder+path2
     print(file_path)
-    with open(  file_path, 'r') as f:
+    folder=os.fsencode(file_path)
+    with open( folder, 'r') as f:
 
         info_starts = 0
         data = []
