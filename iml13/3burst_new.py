@@ -38,7 +38,7 @@ with open(file_name) as f:
 #num_files = end+2 # num_files includes baseline!
 #for i in range(start, num_files+2, 2): # goes through odd files
 #    if i == num_files:
-#        s = 'baseline'
+#        
 #        path1 = data_loc
 #    else:
 
@@ -47,6 +47,7 @@ with open(file_name) as f:
 #lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
 #index=lf.index0
 max=int(len(lines))
+s = 'baseline'
 #goes through list
 i=0
 for line in range(0, max, 1): # goes through odd files
