@@ -47,6 +47,7 @@ with open(file_name) as f:
 #lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
 #index=lf.index0
 max=int(len(lines))
+max=max(max,100)
 s = 'baseline'
 #goes through list
 i=0
