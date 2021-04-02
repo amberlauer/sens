@@ -17,16 +17,20 @@ num_peaks = []
 run_num = []
 benchmarks = []
 multiple_500=[]
+#file locations: results=results_loc , main data folder=data_loc, ind data folder=runs_name
 results_loc =r'/datacommons/phy-champagne-lauer/1_runs/results/'
-# change starting model number using variable "start"
-#runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
 data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
-print(data_loc)
-runs_name = input('Enter name of runs folder \n')
-print(runs_name)
+runs_name = input('Enter **Full** name of runs folder \n')
 runs_folder=data_loc+runs_name+'/'
+
+print(data_loc)
+print(runs_name)
 print(runs_folder)
-#subprocess.call(['bash','./files.sh',runs_folder,runs_name])
+file_name=runs_name+"_list.txt"
+bashCommand="bash files.sh "+ runs_folder+" "+ file_name
+os.system(bashCommand)
+with open(file_name)
+    lines = [line.rstrip() for line in f]
 #changed so script prints a list of files in folder and then reads from
 #start=int(input('Enter the number associated with the first model folder:'))
 #end=int(input('Enter the number associated with the last model folder:'))
@@ -38,19 +42,21 @@ print(runs_folder)
 #    else:
 
 #openfile
-file_list=os.listdir(runs_folder)
-lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
-index=lf.index
-max=int(len(index))
+#file_list=os.listdir(runs_folder)
+#lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
+#index=lf.index0
+max=int(len(lines))
 #goes through list
 i=0
 for line in range(0, max, 1): # goes through odd files
     i=i+1
     #s = str(i) # changes int i into string 
-    path1=runs_folder+str(lf.values[i])
+    path1=lines(i)
+    print(lines[])
     print(path1)    
     path2 = '/LOGS/history.data'
-    file_path =os.path.join(path1,path2)
+    #file_path =os.path.join(path1,path2)
+    file_path=path1+path2
     print(file_path)
 
     with open( file_path, 'r') as f:

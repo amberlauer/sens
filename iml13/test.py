@@ -1,12 +1,20 @@
-test.py
+#!/usr/bin/env python
+
 import os
 
-path1='/home/al363/Tech/python/incremfolder/'
-path2='myfiles.txt'
-folder= os.fsencode(path1+path2)
+path1='/home/al363/Documents/Tech/MESA/XRB/'
+path2='sens/iml13/'
+path=path1+path2
+name='test'
+bashCommand="bash files.sh "+ path+" "+ name
+os.system(bashCommand)
+filename='files'+name+'.txt'
+with open(filename) as f:
+       lines = [line.rstrip() for line in f]
+       print(lines[])
+#filenames=[]
 
-filenames=[]
+#open()
+#        filename=os.fsdecode(file)
+#        print(filename)
 
-for file in os.listdir(folder):
-        filename=os.fsdecode(file)
-        print filename
