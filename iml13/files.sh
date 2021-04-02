@@ -2,5 +2,6 @@
 ##files.sh
 cwd=$(pwd)
 cd ${1}
-ls >> ${cwd}/files"${2}".txt
+rm ${cwd}/"${2}"
+ls >> ${cwd}/"${2}"
 cd ${cwd}
