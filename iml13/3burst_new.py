@@ -46,12 +46,12 @@ with open(file_name) as f:
 #file_list=os.listdir(runs_folder)
 #lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
 #index=lf.index0
-max=int(len(lines))
-max=max(max,100)
+cap=int(len(lines))
+cap=max(cap,100)
 s = 'baseline'
 #goes through list
 i=0
-for line in range(0, max, 1): # goes through odd files
+for line in range(0, cap, 1): # goes through odd files
     i=i+1
     #s = str(i) # changes int i into string 
     path1=lines[i]
