@@ -29,7 +29,7 @@ print(runs_folder)
 file_name=runs_name+"_list.txt"
 bashCommand="bash files.sh "+ runs_folder+" "+ file_name
 os.system(bashCommand)
-with open(file_name)
+with open(file_name) as f:
     lines = [line.rstrip() for line in f]
 #changed so script prints a list of files in folder and then reads from
 #start=int(input('Enter the number associated with the first model folder:'))
