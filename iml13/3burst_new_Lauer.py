@@ -28,9 +28,9 @@ final_path= "/final_*"
 
 runs_folder=data_loc+runs_name+'/'
 
-print(data_loc)
-print(runs_name)
-print(runs_folder)
+#print(data_loc)
+#print(runs_name)
+#print(runs_folder)
 file_name=runs_name+"_list.txt"
 bashCommand="bash files.sh "+ runs_folder+" "+ file_name
 os.system(bashCommand)
@@ -52,19 +52,19 @@ s = 'baseline'
 #goes through list
 i=0
 path1=lines[i]
-print(lines[i])
-print(path1)   
+#print(lines[i])
+#print(path1)   
 s=lines[i]
 check_final=runs_folder+path1+final_path        
 while (glob.glob(check_final)):
        
     #for line in range(0, cap, 1): # goes through odd files
     file=glob.glob(check_final)
-    print(file)
+    #print(file)
     #doesn't work yet, trying to check if the final profile exists
     path1=lines[i]
-    print(lines[i])
-    print(path1)   
+    #print(lines[i])
+    #print(path1)   
     s=lines[i]
     check_final=runs_folder+path1+final_path
         
@@ -78,7 +78,7 @@ while (glob.glob(check_final)):
     file_path=runs_folder+path1+history_path
     if(os.path.exists(file_path)):    
         
-        print(file_path)
+        #print(file_path)
         with open( file_path, 'r') as f:
 
             info_starts = 0
