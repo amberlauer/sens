@@ -61,7 +61,7 @@ for line in range(0, cap, 1): # goes through odd files
     s=lines[i]
     check_final=runs_folder+path1+final_path
         
-   file=(glob.glob(check_final))
+   file=glob.glob(check_final)
    print(file)
    #doesn't work yet, trying to check if the final profile exists
    # while not (glob.glob(check_final)):
