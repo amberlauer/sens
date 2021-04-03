@@ -56,10 +56,10 @@ s = 'baseline'
 i=0
 for line in range(0, cap, 1): # goes through odd files
     path1=lines[i]
-        print(lines[i])
-        print(path1)   
-        s=lines[i]
-        check_final=runs_folder+path1+final_path
+    print(lines[i])
+    print(path1)   
+    s=lines[i]
+    check_final=runs_folder+path1+final_path
  
     while(0==int(glob.glob(check_final))):
         i=i+1
