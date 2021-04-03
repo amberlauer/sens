@@ -69,7 +69,7 @@ for line in range(0, cap, 1): # goes through odd files
     #file_path =os.path.join(path1,history_path)
     check_final=runs_folder+path1+final_path
     
-    while(0=int(glob.glob(check_final))):
+    while(0==int(glob.glob(check_final))):
         i+=1
 
     file_path=runs_folder+path1+history_path
