@@ -47,18 +47,23 @@ with open(file_name) as f:
 #lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
 #index=lf.index0
 cap=int(len(lines))
-#cap=min(cap,100)
 s = 'baseline'
 #goes through list
 i=0
-for line in range(0, cap-1, 1): # goes through odd files
+for line in range(0, cap, 1): # goes through odd files
     i=i+1
-    #s = str(i) # changes int i into string 
-    path1=lines[i]
-    print(lines[i])
-    print(path1)    
-    path2 = '/LOGS/history.data'
+     path2 = '/LOGS/history.data'
     #file_path =os.path.join(path1,path2)
+   
+    if i == cap:
+        runs_folder=data_loc
+        path_1 = 'baseline'
+    else:
+        path1=lines[i]
+        print(lines[i])
+        print(path1)   
+        
+
     file_path=runs_folder+path1+path2
     if(os.path.exists(file_path)):
         print(file_path)
