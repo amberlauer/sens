@@ -60,7 +60,7 @@ for line in range(0, cap, 1): # goes through odd files
     path2 = '/LOGS/history.data'
     #file_path =os.path.join(path1,path2)
     file_path=runs_folder+path1+path2
-    if(path.exists(file_path))
+    if(path.exists(file_path)):
         print(file_path)
         with open( file_path, 'r') as f:
 
