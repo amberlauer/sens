@@ -40,10 +40,7 @@ with open(file_name) as f:
 #start=int(input('Enter the number associated with the first model folder:'))
 #end=int(input('Enter the number associated with the last model folder:'))
 #num_files = end+2 # num_files includes baseline!
-#for i in range(start, num_files+2, 2): # goes through odd files
-#    if i == num_files:
-#        
-#        path1 = data_loc
+#for i in ra8h1 = data_loc
 #    else:
 
 #openfile
@@ -55,15 +52,15 @@ s = 'baseline'
 #goes through list
 i=0
 for line in range(0, cap, 1): # goes through odd files
-   path1=lines[i]
-   print(lines[i])
-   print(path1)   
-   s=lines[i]
-   check_final=runs_folder+path1+final_path        
-   file=glob.glob(check_final)
-   print(file)
-   #doesn't work yet, trying to check if the final profile exists
-   # while not (glob.glob(check_final)):
+    path1=lines[i]
+    print(lines[i])
+    print(path1)   
+    s=lines[i]
+    check_final=runs_folder+path1+final_path        
+    file=glob.glob(check_final)
+    print(file)
+    #doesn't work yet, trying to check if the final profile exists
+    # while not (glob.glob(check_final)):
         #                i=i+1
         #                path1=lines[i]
         #                print(lines[i])
