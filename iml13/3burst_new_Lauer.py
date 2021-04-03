@@ -55,12 +55,11 @@ s = 'baseline'
 #goes through list
 i=0
 for line in range(0, cap, 1): # goes through odd files
-    path1=lines[i]
-    print(lines[i])
-    print(path1)   
-    s=lines[i]
-    check_final=runs_folder+path1+final_path
-        
+   path1=lines[i]
+   print(lines[i])
+   print(path1)   
+   s=lines[i]
+   check_final=runs_folder+path1+final_path        
    file=glob.glob(check_final)
    print(file)
    #doesn't work yet, trying to check if the final profile exists
