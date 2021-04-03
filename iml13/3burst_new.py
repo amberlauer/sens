@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import csv
 import os.path
-from os.path import isfile, join, path
+from os.path import isfile, join
 from scipy.signal import find_peaks
 from scipy.interpolate import interp1d
 import subprocess
