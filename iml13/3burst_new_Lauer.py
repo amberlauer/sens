@@ -55,7 +55,10 @@ for line in range(0, cap, 1): # goes through odd files
     path2 = '/LOGS/history.data'
     path3= "/final_*"
     #file_path =os.path.join(path1,path2)
-   
+    check_final=runs_folder+path1+path3
+    
+    while(!glob.glob(check_final)):
+        i+=1
     if i == cap:
         runs_folder=data_loc
         path_1 = 'baseline'
@@ -66,11 +69,8 @@ for line in range(0, cap, 1): # goes through odd files
         print(path1)   
         s=lines[i]
     file_path=runs_folder+path1+path2
-    check_final=runs_folder+path1+path3
+    if(os.path.exists(file_path)):    
     i=i+1
-    
-    if glob.glob(check_final):
-    #if(os.path.exists(file_path)):    
     
         print(file_path)
         with open( file_path, 'r') as f:
