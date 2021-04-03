@@ -74,7 +74,7 @@ for line in range(0, cap, 1): # goes through odd files
         runs_folder=data_loc
         path_1 = 'baseline'
         s="baseline"
-    
+    i=i+1
     #file_path =os.path.join(path1,history_path)
         
     file_path=runs_folder+path1+history_path
