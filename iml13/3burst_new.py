@@ -1,109 +1,81 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import pandas as pd
+# In[9]:
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
 import os.path
 from os.path import isfile, join
+#import pandas as pd
 from scipy.signal import find_peaks
 from scipy.interpolate import interp1d
-import subprocess
-import os
-import fileinput
+
+
 peak_period = []
 num_peaks = []
 run_num = []
 benchmarks = []
 multiple_500=[]
+results_loc = '/home/iml13/REU2020/results/'
+# change starting model number using variable "start"
 
-# file locations: results=results_loc , main data folder=data_loc, ind data folder=runs_name
-results_loc =r'/datacommons/phy-champagne-lauer/1_runs/results/'
-data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
-runs_name = input('Enter **Full** name of runs folder \n')
-runs_folder=data_loc+runs_name+'/'
+#runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
+data_loc = '/datacommons/phy-champagne-lauer/'
+runs_name = input('Enter name of runs folder\n runs_')
+runs_folder ='runs_'+ runs_name +'/'
+start=int(input('Enter the number associated with the first model folder:'))
+end=int(input('Enter the number associated with the last model folder:'))
+num_files = end+2 # num_files includes baseline!
 
-print(data_loc)
-print(runs_name)
-print(runs_folder)
-file_name=runs_name+"_list.txt"
-bashCommand="bash files.sh "+ runs_folder+" "+ file_name
-os.system(bashCommand)
-with open(file_name) as f:
-    lines = [line.rstrip() for line in f]
-#changed so script prints a list of files in folder and then reads from
-#start=int(input('Enter the number associated with the first model folder:'))
-#end=int(input('Enter the number associated with the last model folder:'))
-#num_files = end+2 # num_files includes baseline!
-#for i in range(start, num_files+2, 2): # goes through odd files
-#    if i == num_files:
-#        
-#        path1 = data_loc
-#    else:
-
-#openfile
-#file_list=os.listdir(runs_folder)
-#lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
-#index=lf.index0
-cap=int(len(lines))
-s = 'baseline'
-#goes through list
-i=0
-for line in range(0, cap, 1): # goes through odd files
-    path2 = '/LOGS/history.data'
-    #file_path =os.path.join(path1,path2)
-   
-    if i == cap:
-        runs_folder=data_loc
-        path_1 = 'baseline'
-        s="baseline"
+for i in range(start, num_files+2, 2): # goes through odd files
+    if i == num_files:
+        s = 'baseline'
+        path1 = data_loc
     else:
-        path1=lines[i]
-        print(lines[i])
-        print(path1)   
-        s=lines[i]
+        s = str(i) # changes int i into string s
+        path1 = data_loc+runs_folder
         
-    i=i+1
-    file_path=runs_folder+path1+path2
-    if(os.path.exists(file_path)):
-        print(file_path)
-        with open( file_path, 'r') as f:
+    path2 = '/LOGS/history.data'
+    file_path = path1 + s + path2
 
-            info_starts = 0
-            data = []
-            all_models = []
+    with open( file_path, 'r') as f:
 
-            for line in f:
+        info_starts = 0
+        data = []
+        all_models = []
 
-                info_starts += 1
+        for line in f:
 
-                model_info = line.split(" ")    # splits the individual numbers in the lines
+            info_starts += 1
 
-                model_info = np.array(list(filter(None, model_info)))[:-1:]
+            model_info = line.split(" ")    # splits the individual numbers in the lines
+
+            model_info = np.array(list(filter(None, model_info)))[:-1:]
+            
+            if info_starts == 5: # identifies tau column
+                last_column = line.split(" ")
+                last_column = np.array(list(filter(None, last_column)))[-2]
+                last_column = last_column.astype(int) -1
                 
-                if info_starts == 5: # identifies tau column
-                    last_column = line.split(" ")
-                    last_column = np.array(list(filter(None, last_column)))[-2]
-                    last_column = last_column.astype(int) -1
-                    
-                    
-                if info_starts == 6:
                 
-                    column_name = {}
+            if info_starts == 6:
+            
+                column_name = {}
+                
+                for k in range(last_column):
+                    column_name[model_info[k]] = k
                     
-                    for k in range(last_column):
-                        column_name[model_info[k]] = k
-                        
 
-                if info_starts >= 7:     # This is where we care about the data
+            if info_starts >= 7:     # This is where we care about the data
 
-                    model_elements = model_info.astype(float)
+                model_elements = model_info.astype(float)
 
-                    all_models.append(model_elements)
+                all_models.append(model_elements)
 
-                    num_models = len(all_models)
-
+                num_models = len(all_models)
 
     # This creates lists for star age and log luminosity
 
@@ -203,7 +175,7 @@ for line in range(0, cap, 1): # goes through odd files
 
     if len(peaks_x) == 1:
         print('\n\n\n','Only one peak', '\n\n\n')
-        run_num.append(path1)
+        run_num.append(s)
         peak_period.append('DNC')
     else:
         for k in range(len(peaks_x)-1):
@@ -216,7 +188,7 @@ for line in range(0, cap, 1): # goes through odd files
         # over distance B E T W E E N peaks)
 
         peak_period.append(burst_period)
-        run_num.append(path1)
+        run_num.append(s)
         #print(burst_frequency, '     run number: ',s, '\n\n')
         #print(peaks_x, '\n\n',peaks_y, '\n\n')
 
@@ -265,6 +237,9 @@ with open(csv_name, 'w', newline='') as data:
 num_peaks_loc = csv_path + 'num_peaks.csv'
 
 
+# In[ ]:
+
+
 #y = np.linspace(1, 1)
 #df = pd.DataFrame(data = num_peaks, index = run_num)
 # creates a data frame using pandas - essentially tells code below where the data is stored 
@@ -274,4 +249,21 @@ num_peaks_loc = csv_path + 'num_peaks.csv'
 #writer.save()
 
 # The above creates, writes in the data, then saves and excel spreadsheet
+
+
+# In[22]:
+
+
+
+
+
+# In[23]:
+
+
+
+
+
+# In[ ]:
+
+
 
