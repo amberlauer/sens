@@ -50,7 +50,6 @@ s = 'baseline'
 #goes through list
 i=0
 for line in range(0, cap, 1): # goes through odd files
-    i=i+1
     path2 = '/LOGS/history.data'
     #file_path =os.path.join(path1,path2)
    
@@ -64,7 +63,7 @@ for line in range(0, cap, 1): # goes through odd files
         print(path1)   
         s=lines[i]
         
-
+    i=i+1
     file_path=runs_folder+path1+path2
     if(os.path.exists(file_path)):
         print(file_path)
