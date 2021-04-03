@@ -51,28 +51,30 @@ cap=int(len(lines))
 s = 'baseline'
 #goes through list
 i=0
-for line in range(0, cap, 1): # goes through odd files
+path1=lines[i]
+print(lines[i])
+print(path1)   
+s=lines[i]
+check_final=runs_folder+path1+final_path        
+while (glob.glob(check_final)):
+       
+    #for line in range(0, cap, 1): # goes through odd files
+    file=glob.glob(check_final)
+    print(file)
+    #doesn't work yet, trying to check if the final profile exists
     path1=lines[i]
     print(lines[i])
     print(path1)   
     s=lines[i]
-    check_final=runs_folder+path1+final_path        
-    file=glob.glob(check_final)
-    print(file)
-    #doesn't work yet, trying to check if the final profile exists
-    # while not (glob.glob(check_final)):
-        #                i=i+1
-        #                path1=lines[i]
-        #                print(lines[i])
-        #                print(path1)   
-        #                s=lines[i]
-        #                check_final=runs_folder+path1+final_path
-        #
+    check_final=runs_folder+path1+final_path
+        
     if i == cap:
         runs_folder=data_loc
         path_1 = 'baseline'
         s="baseline"
+    
     i=i+1
+    
     file_path=runs_folder+path1+history_path
     if(os.path.exists(file_path)):    
         
