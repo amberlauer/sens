@@ -52,7 +52,7 @@ s = 'baseline'
 i=0
 for line in range(0, cap, 1): # goes through odd files
     i=i+1
-     path2 = '/LOGS/history.data'
+    path2 = '/LOGS/history.data'
     #file_path =os.path.join(path1,path2)
    
     if i == cap:
