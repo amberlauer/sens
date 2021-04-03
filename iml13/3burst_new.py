@@ -57,10 +57,12 @@ for line in range(0, cap, 1): # goes through odd files
     if i == cap:
         runs_folder=data_loc
         path_1 = 'baseline'
+        s="baseline"
     else:
         path1=lines[i]
         print(lines[i])
         print(path1)   
+        s=lines[i]
         
 
     file_path=runs_folder+path1+path2
@@ -201,7 +203,7 @@ for line in range(0, cap, 1): # goes through odd files
 
     if len(peaks_x) == 1:
         print('\n\n\n','Only one peak', '\n\n\n')
-        run_num.append(s)
+        run_num.append(path1)
         peak_period.append('DNC')
     else:
         for k in range(len(peaks_x)-1):
@@ -214,7 +216,7 @@ for line in range(0, cap, 1): # goes through odd files
         # over distance B E T W E E N peaks)
 
         peak_period.append(burst_period)
-        run_num.append(s)
+        run_num.append(path1)
         #print(burst_frequency, '     run number: ',s, '\n\n')
         #print(peaks_x, '\n\n',peaks_y, '\n\n')
 
