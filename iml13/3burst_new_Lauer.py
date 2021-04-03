@@ -55,27 +55,30 @@ s = 'baseline'
 #goes through list
 i=0
 for line in range(0, cap, 1): # goes through odd files
-
-    if i == cap:
-        runs_folder=data_loc
-        path_1 = 'baseline'
-        s="baseline"
-    else:
+    path1=lines[i]
+        print(lines[i])
+        print(path1)   
+        s=lines[i]
+        check_final=runs_folder+path1+final_path
+ 
+    while(0==int(glob.glob(check_final))):
+        i=i+1
         path1=lines[i]
         print(lines[i])
         print(path1)   
         s=lines[i]
-
-    #file_path =os.path.join(path1,history_path)
-    check_final=runs_folder+path1+final_path
+        check_final=runs_folder+path1+final_path
+ 
+    if i == cap:
+        runs_folder=data_loc
+        path_1 = 'baseline'
+        s="baseline"
     
-    while(0==int(glob.glob(check_final))):
-        i+=1
-
+    #file_path =os.path.join(path1,history_path)
+        
     file_path=runs_folder+path1+history_path
     if(os.path.exists(file_path)):    
-    i=i+1
-    
+        
         print(file_path)
         with open( file_path, 'r') as f:
 
