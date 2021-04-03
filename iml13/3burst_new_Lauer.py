@@ -62,14 +62,14 @@ for line in range(0, cap, 1): # goes through odd files
     check_final=runs_folder+path1+final_path
  
    #doesn't work yet, trying to check if the final profile exists
-    while not (glob.glob(check_final)):
-        i=i+1
-        path1=lines[i]
-        print(lines[i])
-        print(path1)   
-        s=lines[i]
-        check_final=runs_folder+path1+final_path
-        
+   # while not (glob.glob(check_final)):
+        #                i=i+1
+        #                path1=lines[i]
+        #                print(lines[i])
+        #                print(path1)   
+        #                s=lines[i]
+        #                check_final=runs_folder+path1+final_path
+        #
     if i == cap:
         runs_folder=data_loc
         path_1 = 'baseline'
