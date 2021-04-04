@@ -79,7 +79,7 @@ print(glob.glob(final_prof_path))
 #for line in range(0, cap, 1): # goes through odd files        
 while(os.path.exists(file_path) and i<cap+1):    
 
-    while not (glob.glob(final_prof_path)):
+    while not (glob.glob(final_prof_path) and i==cap+1):
         i=i+1
         path1=lines[i]
         final_prof_path=runs_folder+path1+final_path
