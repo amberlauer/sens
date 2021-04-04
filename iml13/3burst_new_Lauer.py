@@ -71,11 +71,13 @@ print(runs_name)
 print(runs_folder)
 print(lines[i])
 print(path1)   
+print(glob.glob(final_prof_path))
+
 #goes through list   
-    
 ### new loop is a while statement that continues to iterate through the list of files if final*profile exists.    
 #for line in range(0, cap, 1): # goes through odd files        
 while (glob.glob(final_prof_path)):
+    print(glob.glob(final_prof_path))
     
     #doesn't work yet, trying to check if the final profile exists
     path1=lines[i]
