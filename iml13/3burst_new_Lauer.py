@@ -80,7 +80,7 @@ while (glob.glob(final_prof_path)):
     path1=lines[i]
     #s=lines[i]
     final_prof_path=runs_folder+path1+final_path
-        
+    print(final_prof_path)    
     if i == cap:
         runs_folder=data_loc
         path_1 = 'baseline'
