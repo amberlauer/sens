@@ -40,6 +40,8 @@ os.system(bashCommand)
 with open(file_name) as f:
     lines = [line.rstrip() for line in f]
 
+cap=int(len(lines))
+
 #start=int(input('Enter the number associated with the first model folder:'))
 #end=int(input('Enter the number associated with the last model folder:'))
 #num_files = end+2 # num_files includes baseline!
@@ -52,7 +54,6 @@ with open(file_name) as f:
 #lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
 #index=lf.index0
 #####
-#cap=int(len(lines))
 
 s = 'baseline'
 #goes through list
