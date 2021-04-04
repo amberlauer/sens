@@ -65,11 +65,11 @@ path1=lines[i]
 final_prof_path=runs_folder+path1+final_path        
 
 #### debug print statements
-#print(data_loc)
-#print(runs_name)
-#print(runs_folder)
-#print(lines[i])
-#print(path1)   
+print(data_loc)
+print(runs_name)
+print(runs_folder)
+print(lines[i])
+print(path1)   
 #goes through list   
     
 ### new loop is a while statement that continues to iterate through the list of files if final*profile exists.    
@@ -91,7 +91,7 @@ while (glob.glob(final_prof_path)):
     file_path=runs_folder+path1+history_path
     if(os.path.exists(file_path)):    
         
-        #print(file_path)
+        print(file_path)
         with open( file_path, 'r') as f:
 
             info_starts = 0
