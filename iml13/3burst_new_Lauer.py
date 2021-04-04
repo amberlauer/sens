@@ -98,45 +98,34 @@ while(os.path.exists(file_path)):
     ## this is kind of redundant. If final*profile exits, history.data *should* exist. Whatevs.
     file_path=runs_folder+path1+history_path
         
-        print(file_path)
-        with open( file_path, 'r') as f:
-
-            info_starts = 0
-            data = []
-            all_models = []
-
-            for line in f:
-
-                info_starts += 1
-
-                model_info = line.split(" ")    # splits the individual numbers in the lines
-
-                model_info = np.array(list(filter(None, model_info)))[:-1:]
+    print(file_path)
+    with open( file_path, 'r') as f:
+        info_starts = 0
+        data = []
+        all_models = []
+        for line in f:
+            info_starts += 1
+            model_info = line.split(" ")    # splits the individual numbers in the lines
+            model_info = np.array(list(filter(None, model_info)))[:-1:]
+            
+            if info_starts == 5: # identifies tau column
+                last_column = line.split(" ")
+                last_column = np.array(list(filter(None, last_column)))[-2]
+                last_column = last_column.astype(int) -1
                 
-                if info_starts == 5: # identifies tau column
-                    last_column = line.split(" ")
-                    last_column = np.array(list(filter(None, last_column)))[-2]
-                    last_column = last_column.astype(int) -1
-                    
-                    
-                if info_starts == 6:
                 
-                    column_name = {}
+            if info_starts == 6:
+            
+                column_name = {}
+                
+                for k in range(last_column):
+                    column_name[model_info[k]] = k
                     
-                    for k in range(last_column):
-                        column_name[model_info[k]] = k
-                        
-
-                if info_starts >= 7:     # This is where we care about the data
-
-                    model_elements = model_info.astype(float)
-
-                    all_models.append(model_elements)
-
-                    num_models = len(all_models)
-
-
-    # This creates lists for star age and log luminosity
+            if info_starts >= 7:     # This is where we care about the data
+                model_elements = model_info.astype(float)
+                all_models.append(model_elements)
+                num_models = len(all_models)
+  # This creates lists for star age and log luminosity
 
     star_age = []
     log_lum = []
