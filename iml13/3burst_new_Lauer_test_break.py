@@ -80,7 +80,7 @@ print(glob.glob(final_prof_path))
 
 
 
-for i in range(0, cap+1,1):    
+for i in range(0, cap,1):    
     path1=lines[i]
     final_prof_path=runs_folder+path1+final_path
     print(final_prof_path)
