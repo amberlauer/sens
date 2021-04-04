@@ -83,7 +83,7 @@ while(os.path.exists(file_path)):
         i=i+1
         path1=lines[i]
         final_prof_path=runs_folder+path1+final_path
-        if(glob.glob(final_prof_path))
+        if(glob.glob(final_prof_path)):
             print(final_prof_path)
     #doesn't work yet, trying to check if the final profile exists
     
