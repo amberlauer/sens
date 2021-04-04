@@ -20,12 +20,13 @@ run_num = []
 benchmarks = []
 multiple_500=[]
 
-# file locations: results=results_loc , main data folder=data_loc, ind data folder=runs_name
+# file locations: results=results_loc , main data folder=data_loc, ind data folder=runs_name, history and final path self explan
+# these values don't change so I put them together.
 results_loc =r'/datacommons/phy-champagne-lauer/1_runs/results/'
 data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
 runs_name = input('Enter **Full** name of runs folder \n')
 history_path = '/LOGS/history.data'
-final_path= "/final_*"
+final_path= "/final_*" ### note that this includes wildcard!!! That's why used special func "glob" below. it handles *.
 runs_folder=data_loc+runs_name+'/'
 
 # check if runs folder exitsts, if not exit compilation
@@ -35,12 +36,11 @@ if not (os.path.exists(runs_folder)):
 
 #changed so script prints a list of files in folder and then reads from
 file_name=runs_name+"_list.txt"
-bashCommand="bash files.sh "+ runs_folder+" "+ file_name
+bashCommand="bash files.sh "+ runs_folder+" "+ file_name ## os.system takes unlimted vars as a string, first should be executable, then any vars passed.
 os.system(bashCommand)
 with open(file_name) as f:
     lines = [line.rstrip() for line in f]
 
-cap=int(len(lines))
 
 #start=int(input('Enter the number associated with the first model folder:'))
 #end=int(input('Enter the number associated with the last model folder:'))
@@ -55,13 +55,16 @@ cap=int(len(lines))
 #index=lf.index0
 #####
 
-s = 'baseline'
+#s = 'baseline'
+#s=lines[i]
+
+## have to set initial values
+cap=int(len(lines))
 i=0
 path1=lines[i]
-s=lines[i]
 final_prof_path=runs_folder+path1+final_path        
 
-#### debut print statements
+#### debug print statements
 #print(data_loc)
 #print(runs_name)
 #print(runs_folder)
@@ -81,7 +84,7 @@ while (glob.glob(final_prof_path)):
     if i == cap:
         runs_folder=data_loc
         path_1 = 'baseline'
-    #    s="baseline"
+        #    s="baseline"
     
     i=i+1
     ## this is kind of redundant. If final*profile exits, history.data *should* exist. Whatevs.
