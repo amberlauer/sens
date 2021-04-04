@@ -80,14 +80,14 @@ print(glob.glob(final_prof_path))
 
 
 
-for i in range(0, cap,1):    
+for i in range(0, cap+1,1):    
     path1=lines[i]
     final_prof_path=runs_folder+path1+final_path
     print(final_prof_path)
     file_path=runs_folder+path1+history_path    
 
     #doesn't work yet, trying to check if the final profile exists
-    if i == cap:
+    if i == cap+1:
         runs_folder=data_loc
         path1 = 'baseline'
         #    s="baseline"
