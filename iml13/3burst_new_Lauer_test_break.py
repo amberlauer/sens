@@ -81,11 +81,7 @@ print(glob.glob(final_prof_path))
 
 
 for i in range(0, cap+1,1):    
-    path1=lines[i]
-    final_prof_path=runs_folder+path1+final_path
-    print(final_prof_path)
-    file_path=runs_folder+path1+history_path    
-
+    
     #doesn't work yet, trying to check if the final profile exists
     if i == cap+1:
         runs_folder=data_loc
@@ -97,6 +93,10 @@ for i in range(0, cap+1,1):
         while not (glob.glob(final_prof_path)):   
             break  
         ## this is kind of redundant. If final*profile exits, history.data *should* exist. Whatevs.
+        path1=lines[i]
+        final_prof_path=runs_folder+path1+final_path
+        print(final_prof_path)
+        file_path=runs_folder+path1+history_path      
         print(file_path)
         with open( file_path, 'r') as f:
             info_starts = 0
