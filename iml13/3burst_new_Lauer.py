@@ -56,36 +56,35 @@ cap=int(len(lines))
 #####
 
 s = 'baseline'
-#goes through list
 i=0
 path1=lines[i]
 s=lines[i]
-check_final=runs_folder+path1+final_path        
+final_prof_path=runs_folder+path1+final_path        
+
+#### debut print statements
 #print(data_loc)
 #print(runs_name)
 #print(runs_folder)
 #print(lines[i])
 #print(path1)   
-
-while (glob.glob(check_final)):
-       
-    #for line in range(0, cap, 1): # goes through odd files
-    file=glob.glob(check_final)
-    #print(file)
+#goes through list   
+    
+### new loop is a while statement that continues to iterate through the list of files if final*profile exists.    
+#for line in range(0, cap, 1): # goes through odd files        
+while (glob.glob(final_prof_path)):
+    
     #doesn't work yet, trying to check if the final profile exists
     path1=lines[i]
-    #print(lines[i])
-    #print(path1)   
-    s=lines[i]
-    check_final=runs_folder+path1+final_path
+    #s=lines[i]
+    final_prof_path=runs_folder+path1+final_path
         
     if i == cap:
         runs_folder=data_loc
         path_1 = 'baseline'
-        s="baseline"
+    #    s="baseline"
     
     i=i+1
-    
+    ## this is kind of redundant. If final*profile exits, history.data *should* exist. Whatevs.
     file_path=runs_folder+path1+history_path
     if(os.path.exists(file_path)):    
         
