@@ -77,7 +77,7 @@ print(glob.glob(final_prof_path))
 #goes through list   
 ### new loop is a while statement that continues to iterate through the list of files if final*profile exists.    
 #for line in range(0, cap, 1): # goes through odd files        
-while(os.path.exists(file_path) and i<capt+1:    
+while(os.path.exists(file_path) and i<cap+1):    
 
     while not (glob.glob(final_prof_path)):
         i=i+1
