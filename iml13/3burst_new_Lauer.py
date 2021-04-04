@@ -13,6 +13,7 @@ import subprocess
 import os
 import fileinput
 import glob
+import system
 peak_period = []
 num_peaks = []
 run_num = []
@@ -25,37 +26,46 @@ data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
 runs_name = input('Enter **Full** name of runs folder \n')
 history_path = '/LOGS/history.data'
 final_path= "/final_*"
-
 runs_folder=data_loc+runs_name+'/'
 
-#print(data_loc)
-#print(runs_name)
-#print(runs_folder)
+# check if runs folder exitsts, if not exit compilation
+if not (os.path.exists(runs_folder)):    
+    print("folder doesn't exist")
+    sys.exit()
+
+#changed so script prints a list of files in folder and then reads from
 file_name=runs_name+"_list.txt"
 bashCommand="bash files.sh "+ runs_folder+" "+ file_name
 os.system(bashCommand)
 with open(file_name) as f:
     lines = [line.rstrip() for line in f]
-#changed so script prints a list of files in folder and then reads from
+
 #start=int(input('Enter the number associated with the first model folder:'))
 #end=int(input('Enter the number associated with the last model folder:'))
 #num_files = end+2 # num_files includes baseline!
 #for i in ra8h1 = data_loc
 #    else:
 
+##### failed attempt to use panda dataframe to hold folder locations. It added strange characters and didn't work.
 #openfile
 #file_list=os.listdir(runs_folder)
 #lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
 #index=lf.index0
-cap=int(len(lines))
+#####
+#cap=int(len(lines))
+
 s = 'baseline'
 #goes through list
 i=0
 path1=lines[i]
-#print(lines[i])
-#print(path1)   
 s=lines[i]
 check_final=runs_folder+path1+final_path        
+#print(data_loc)
+#print(runs_name)
+#print(runs_folder)
+#print(lines[i])
+#print(path1)   
+
 while (glob.glob(check_final)):
        
     #for line in range(0, cap, 1): # goes through odd files
