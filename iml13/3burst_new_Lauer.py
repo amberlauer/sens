@@ -13,6 +13,7 @@ import subprocess
 import os
 import fileinput
 import glob
+import system
 peak_period = []
 num_peaks = []
 run_num = []
@@ -25,10 +26,12 @@ data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
 runs_name = input('Enter **Full** name of runs folder \n')
 history_path = '/LOGS/history.data'
 final_path= "/final_*"
-
 runs_folder=data_loc+runs_name+'/'
-if(os.path.exists(runs_folder)):    
 
+# check if runs folder exitsts, if not exit compilation
+if not (os.path.exists(runs_folder)):    
+    print("folder doesn't exist")
+    sys.exit()
 
 #changed so script prints a list of files in folder and then reads from
 file_name=runs_name+"_list.txt"
