@@ -13,7 +13,7 @@ import subprocess
 import os
 import fileinput
 import glob
-import system
+import sys
 peak_period = []
 num_peaks = []
 run_num = []
