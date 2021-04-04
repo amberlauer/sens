@@ -63,7 +63,7 @@ cap=int(len(lines))
 i=0
 path1=lines[i]
 final_prof_path=runs_folder+path1+final_path        
-
+print(final_prof_path)
 #### debug print statements
 print(data_loc)
 print(runs_name)
