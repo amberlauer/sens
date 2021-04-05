@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition scavenger
+#SBATCH -p common,scavenger
 #SBATCH --job-name=sensitivity_10108_wk_both
 #SBATCH --output=errors/slurm._%A_%a.err
 #SBATCH --ntasks=1
