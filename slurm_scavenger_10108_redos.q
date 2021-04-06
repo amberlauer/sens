@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --partition scavenger
+#SBATCH -p physics,common,scavenger
 #SBATCH --job-name=sensitivity_10108_number
 #SBATCH --output=errors/baseline._%A_%a.err
 #SBATCH --ntasks=1
@@ -38,11 +38,11 @@ if $empty; then
     mkdir $MESA_RUN/${index2}
     cd $MESA_RUN/${index2}
     cat $MESA_BASE/inlist_cluster_template100 > ./inlist_cluster
-    rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
-    sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
-    rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
-    sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
-    $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/baseline._%A_%a.err
+    #rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
+    #sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
+    #rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
+    #sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
+    $MESA_BASE/star >> errors/baseline._%A_%a.err
 
 else
     cd $MESA_RUN/${index2}
