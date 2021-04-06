@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -p common,scavenger
+#SBATCH -p physics,common,scavenger
 #SBATCH --job-name=sensitivity_10108_number
 #SBATCH --output=errors/xfactor_number._%A_%a.err
 #SBATCH --ntasks=1

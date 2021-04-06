@@ -42,7 +42,7 @@ if $empty; then
     sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
     rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
     sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
-    $MESA_BASE/star >> errors/baseline._%A_%a.err
+    $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/baseline._%A_%a.err
 
 else
     cd $MESA_RUN/${index2}
