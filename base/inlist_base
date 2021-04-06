@@ -51,14 +51,13 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	change_initial_net = .true.
 	new_net_name = '/hpc/group/physics/al363/sens/base/rp_305.net'
 	!new_net_name = 'basic.net'
-	rate_tables_dir ='/hpc/group/physics/al363/sens/base/starlib_raw_rates'
-	rate_cache_suffix = 'starlib'	
-	
-	set_rate_3a = 'FL87' ! Fushiki and Lamb, Apj, 317, 368-388, 1987
-	set_rate_1212 = 'G05' ! Gasques, et al. Phys Review C, 72, 025806, 2005   
-	   	  
-	pgstar_flag = .true.
-
+	rate                
+                rel_period.append(abs(peak_period[z]/peak_period[-1]))
+            
+                #finds difference as fraction of baseline
+            
+                delta_period.append(abs((peak_period[z]-peak_period[-1])/peak_period[-1]))
+            
 	warn_run_star_extras=.false.
 	
   
@@ -73,7 +72,6 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	history_interval = 2
 	terminal_interval = 1000
 	write_header_frequency = 1000
-	star_history_name='abund_history.data'  
 	min_timestep_limit = 1d-99
 	max_years_for_timestep = 1d-4  	
 	max_timestep_factor=2d0	
