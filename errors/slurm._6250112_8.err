@@ -1,0 +1,774 @@
+starting from scratch 
+mkdir: cannot create directory ‘/work/al363/runs/low_overhead/runs_x.01_1/15’: File exists
+                                         version_number       10108
+ read /hpc/group/physics/al363/low_overhead/sens/base/inlist_base
+ read inlist_cluster
+load saved model /hpc/group/physics/al363/sens/base/ns_relax.mod
+
+ change to /hpc/group/physics/al363/sens/base/rp_305.net
+             set special rate factor for r_al25_ng_al26          15    1.0000000000000000D-02
+             set special rate factor for r_al26_gn_al25          16    1.0000000000000000D-02
+             set special rate factor for r_al25_ng_al26          15    1.0000000000000000D-02
+             set special rate factor for r_al26_gn_al25          16    1.0000000000000000D-02
+ number of species         305
+ read /hpc/group/physics/al363/low_overhead/sens/base/history_custom_low_overhead
+ read /hpc/group/physics/al363/low_overhead/sens/base/profile_custom_low_overhead
+ net name /hpc/group/physics/al363/sens/base/rp_305.net
+ v_flag T
+                                           xmstar/mstar    4.5461189430843640D-12
+                                             xmstar (g)    1.2660395722219186D+22
+                                           M_center (g)    2.7848799999878681D+33
+                                            xmstar/Msun    6.3645665203193175D-12
+                                          M_center/Msun    1.3999999999939012D+00
+                                          R_center (cm)    1.1200000000000000D+06
+                                          R_center/Rsun    1.6092416448748527D-05
+                                           core density    4.7322078204273819D+14
+                                          L_center/Lsun    4.1647144567650578D+00
+ kappa_file_prefix gs98
+ kappa_lowT_prefix lowT_fa05_gs98
+
+   eos_file_prefix mesa
+                                        OMP_NUM_THREADS           8
+
+
+__________________________________________________________________________________________________________________________________________________
+
+       step    lg_Tcntr    Teff       lg_LH     lg_Lnuc     Mass       H_rich     H_cntr     N_cntr     Y_surf     X_avg     eta_cntr  zones retry
+   lg_dt_yr    lg_Dcntr    lg_R       lg_L3a    lg_Lneu     lg_Mdot    He_core    He_cntr    O_cntr     Z_surf     Y_avg     gam_cntr  iters bckup
+     age_yr    lg_Pcntr    lg_L       lg_LZ     lg_Psurf    lg_Dsurf   C_core     C_cntr     Ne_cntr    Si_cntr    Z_avg     v_div_cs     dt_limit
+__________________________________________________________________________________________________________________________________________________
+
+save LOGS/profile1.data for model 2
+         12   8.207068  1.596E+06   0.422373   0.422680   1.400000   1.400000   0.000000   0.000000   0.275200   0.032716  18.782540    782      0
+  -5.834864   6.544453  -4.792968 -17.300136  -0.755568  -8.522879   0.000000   0.000000   0.000000   0.020000   0.012436 128.974929      6      0
+ 9.8181E-06  23.077272   0.179446  -2.727454  12.804639  -1.522785   0.000000   0.000000   0.000000   0.000687  9.548E-01 -0.112E-12      lgT_cntr
+
+save LOGS/profile2.data for model 12
+       retry log10(dt/yr), log10(dt), retry_factor     1    34       -5.396416        2.102695        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    38       -5.396416        2.102695        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    42       -5.396416        2.102695        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    46       -5.396416        2.102695        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    51       -5.095386        2.403725        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    52       -5.095386        2.403725        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    53       -5.095386        2.403725        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    54       -5.095386        2.403725        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    55       -5.095386        2.403725        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    56       -5.095386        2.403725        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    56       -5.396416        2.102695        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    60       -5.396416        2.102695        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    61       -5.697446        1.801665        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    62       -5.998476        1.500635        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    64       -6.299506        1.199605        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    65       -6.600536        0.898575        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    67       -6.901566        0.597545        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    69       -7.202596        0.296515        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    71       -7.503626       -0.004515        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    74       -7.804656       -0.305545        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    77       -8.105686       -0.606575        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    78       -8.442066       -0.942954        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   146       -8.661623       -1.162511        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   146       -8.962653       -1.463541        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   152       -9.291589       -1.792477        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   159       -9.002968       -1.503856        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   161       -9.303998       -1.804886        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   174       -8.574166       -1.075054        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   179       -8.823967       -1.324856        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   179       -9.124997       -1.625886        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   197       -7.306028        0.193083        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   197       -7.607058       -0.107947        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   204       -7.674515       -0.175403        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   204       -7.975545       -0.476433        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   205       -8.276575       -0.777463        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   206       -8.577605       -1.078493        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   213       -7.832850       -0.333739        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   213       -8.133880       -0.634769        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   243       -7.768128       -0.269016        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   243       -8.069158       -0.570046        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   249       -7.467098        0.032014        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   250       -7.768128       -0.269016        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   250       -8.069158       -0.570046        0.500000
+ have reached retry limit so now backup
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   258       -7.564677       -0.065566        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   258       -7.865707       -0.366596        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   265       -7.585607       -0.086496        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   265       -7.886637       -0.387526        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   307       -5.665342        1.833770        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   307       -5.966372        1.532740        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   313       -5.548963        1.950148        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   314       -5.849993        1.649118        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   321       -5.453413        2.045699        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   321       -5.754443        1.744669        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   327       -5.380827        2.118284        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   327       -5.681857        1.817254        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   332       -5.380827        2.118284        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   335       -5.681857        1.817254        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   341       -5.161756        2.337355        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   341       -5.462786        2.036325        0.500000
+ have reached retry limit so now backup
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   342       -5.957636        1.541475        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   343       -6.258666        1.240445        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   350       -5.604643        1.894468        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   354       -6.093494        1.405618        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   354       -6.394524        1.104588        0.500000
+ have reached retry limit so now backup
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   358       -6.459797        1.039314        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   359       -6.508417        0.990694        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   359       -6.809447        0.689664        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   366       -6.095361        1.403750        0.500000
+        366   8.437280  4.559E+06   1.970255   2.109054   1.400000   1.400000   0.000000   0.000000   0.275200   0.077496  11.880395    749     68
+  -5.794331   6.606420  -4.792681   1.272613   1.190572  -8.522879   0.000000   0.000000   0.000000   0.020000   0.055836  79.606519      6     10
+ 5.8226E-04  23.180530   2.003755   1.215665  13.833657  -0.959707   0.000000   0.000000   0.000000   0.000687  8.667E-01 -0.294E-13         retry
+
+save LOGS/profile3.data for model 366
+       retry log10(dt/yr), log10(dt), retry_factor     1   367       -6.493301        1.005810        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   368       -6.794331        0.704780        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   368       -7.095361        0.403750        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   373       -6.794331        0.704780        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   376       -7.095361        0.403750        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   377       -7.396391        0.102720        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   378       -7.697421       -0.198310        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   380       -7.998451       -0.499340        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   383       -8.495569       -0.996457        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   416       -9.313675       -1.814563        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   473       -7.629086       -0.129974        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   473       -7.930116       -0.431004        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   477       -7.930116       -0.431004        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   477       -8.231146       -0.732034        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   477       -8.532176       -1.033064        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   477       -8.833206       -1.334094        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   478       -9.134236       -1.635124        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   478       -9.435266       -1.936154        0.500000
+ bad other yaxis for History panels plot num_zones
+
+ ERROR: failed to find log_Teff in history data
+
+ grid1/grid1_000500.png/png
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   514       -7.693311       -0.194199        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   521       -7.668613       -0.169502        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   521       -7.969643       -0.470532        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   526       -7.668613       -0.169502        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   531       -7.538043       -0.038931        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   531       -7.839073       -0.339961        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   538       -7.494530        0.004582        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   538       -7.795560       -0.296448        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   583       -5.469352        2.029760        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   584       -5.770382        1.728730        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   585       -6.071412        1.427700        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   585       -6.372442        1.126670        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   591       -5.886415        1.612697        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   592       -6.187445        1.311667        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   599       -5.553408        1.945703        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   599       -5.854438        1.644673        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   600       -6.155468        1.343643        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   607       -5.424275        2.074836        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   608       -5.822215        1.676896        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   609       -6.123245        1.375866        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   616       -5.506326        1.992786        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   616       -5.807356        1.691756        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   617       -6.108386        1.390726        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   623       -5.671879        1.827232        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   628       -5.539292        1.959819        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   629       -5.937232        1.561879        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   630       -6.271656        1.227455        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   637       -5.512221        1.986891        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   638       -5.890819        1.608293        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   643       -5.773036        1.726076        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   647       -6.224353        1.274759        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   649       -6.053617        1.445494        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   651       -6.451557        1.047554        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   651       -6.752587        0.746524        0.500000
+ have reached retry limit so now backup
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   655       -6.800734        0.698377        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   659       -6.513633        0.985478        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   659       -6.814663        0.684448        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   661       -7.115693        0.383418        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   664       -7.416723        0.082388        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   665       -7.717753       -0.218642        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   669       -8.212603       -0.713492        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   670       -8.513633       -1.014522        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   700       -9.490830       -1.991719        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   700       -9.791860       -2.292749        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   711       -9.275057       -1.775945        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   712       -9.275057       -1.775945        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   765       -7.258295        0.240817        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   765       -7.559325       -0.060213        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   765       -7.860355       -0.361243        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   765       -8.161385       -0.662273        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   765       -8.462415       -0.963303        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   765       -8.763445       -1.264333        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   766       -9.064475       -1.565363        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   766       -9.365505       -1.866393        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   769       -9.666535       -2.167423        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   769       -9.967565       -2.468453        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   770      -10.268595       -2.769483        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   770      -10.569625       -3.070513        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1   770      -10.870655       -3.371543        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   787       -7.361184        0.137928        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   787       -7.662214       -0.163102        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   792       -8.250672       -0.751560        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   792       -8.551702       -1.052590        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   794       -8.852732       -1.353620        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   799       -8.551702       -1.052590        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   835       -7.750034       -0.250922        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   835       -8.051064       -0.551952        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   841       -7.449004        0.050108        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   841       -7.750034       -0.250922        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   849       -7.644952       -0.145841        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   862       -7.367510        0.131601        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   862       -7.668540       -0.169429        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   899       -5.830517        1.668594        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   904       -5.676357        1.822755        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   905       -5.977387        1.521725        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   911       -5.552286        1.946826        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   912       -5.853316        1.645796        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   912       -6.154346        1.344766        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   913       -6.455376        1.043736        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   921       -5.476824        2.022287        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   925       -5.874764        1.624347        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   931       -5.598167        1.900944        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   931       -5.899197        1.599914        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   937       -5.572749        1.926363        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   938       -5.970689        1.528423        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   943       -5.465539        2.033573        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   944       -5.766569        1.732543        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   945       -6.140738        1.358374        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   946       -6.441768        1.057344        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   951       -6.257907        1.241204        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   952       -6.278742        1.220370        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   952       -6.579772        0.919340        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   953       -6.880802        0.618310        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   962       -5.664813        1.834299        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   962       -5.965843        1.533269        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   963       -6.331839        1.167272        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   964       -6.632869        0.866242        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   964       -6.933899        0.565212        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   969       -6.632869        0.866242        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   969       -6.933899        0.565212        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   976       -6.030809        1.468302        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   978       -6.331839        1.167272        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   978       -6.632869        0.866242        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   980       -6.933899        0.565212        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   980       -7.234929        0.264182        0.500000
+ have reached retry limit so now backup
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1   985       -7.021075        0.478037        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   985       -7.322105        0.177007        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   987       -7.021075        0.478037        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   988       -7.322105        0.177007        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2   988       -7.623135       -0.124023        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   992       -7.725537       -0.226425        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2   992       -8.026567       -0.527455        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1   993       -8.327597       -0.828485        0.500000
+       1000   8.457011  5.289E+06   3.049769   4.047225   1.400000   1.400000   0.000000   0.000000   0.275200   0.063728  12.116469    915    199
+  -8.249173   6.658113  -4.792563   2.828223   3.188586  -8.522879   0.000000   0.000000   0.000000   0.020000   0.046707  79.149601      6     25
+ 1.1155E-03  23.258676   2.261883   3.970996  13.993396  -0.866379   0.000000   0.000000   0.000000   0.000687  8.896E-01  0.119E-09       Lnuc_He
+
+save LOGS/profile4.data for model 1000
+save photos/1000 for model 1000
+ bad other yaxis for History panels plot num_zones
+
+ ERROR: failed to find log_Teff in history data
+
+ grid1/grid1_001000.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1  1005       -8.585941       -1.086829        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1060       -8.505749       -1.006638        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1060       -8.806779       -1.307668        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1092       -7.389321        0.109791        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  1092       -7.690351       -0.191239        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1096       -8.263505       -0.764394        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1097       -8.564535       -1.065424        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1104       -7.839986       -0.340875        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1136       -7.675304       -0.176192        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1136       -7.976334       -0.477222        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1142       -7.374274        0.124838        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1142       -7.675304       -0.176192        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1150       -7.453958        0.045154        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1150       -7.754988       -0.255876        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  1161       -7.357891        0.141221        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1161       -7.658921       -0.159809        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1197       -5.523513        1.975598        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  1197       -5.824543        1.674568        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  1198       -6.222483        1.276628        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1199       -6.523513        0.975598        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1207       -5.319393        2.179718        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1208       -5.620423        1.878688        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1216       -5.350750        2.148362        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1217       -5.748690        1.750422        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1218       -6.049720        1.449392        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1224       -5.651490        1.847621        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1224       -5.952520        1.546591        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  1225       -6.279295        1.219817        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1226       -6.580324        0.918787        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1236       -5.514671        1.984440        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1237       -5.912611        1.586500        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  1237       -6.213641        1.285470        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1238       -6.514671        0.984440        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1245       -5.611581        1.887530        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1246       -5.912611        1.586500        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1252       -5.661013        1.838099        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  1252       -5.962043        1.537069        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1253       -6.359983        1.139129        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1254       -6.757923        0.741189        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1255       -7.058953        0.440159        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1263       -5.854833        1.644279        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1265       -6.155863        1.343249        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1266       -6.553803        0.945309        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1266       -6.854833        0.644279        0.500000
+ have reached retry limit so now backup
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1270       -6.907520        0.591591        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1274       -6.434327        1.064785        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1275       -6.735357        0.763755        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1276       -7.036387        0.462725        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1277       -7.337417        0.161695        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1279       -7.638447       -0.139335        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1282       -7.939477       -0.440365        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1283       -8.240507       -0.741395        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1287       -8.639724       -1.140612        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1287       -8.940754       -1.441642        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1324       -9.199514       -1.700402        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1330       -9.169886       -1.670774        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1381       -7.243120        0.255991        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  1381       -7.544150       -0.045039        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1386       -8.291558       -0.792447        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1386       -8.592588       -1.093477        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1392       -8.087424       -0.588312        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1395       -8.019237       -0.520125        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1427       -7.528581       -0.029469        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1431       -7.584799       -0.085687        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1431       -7.885829       -0.386717        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1447       -7.195585        0.303527        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1447       -7.496615        0.002497        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1483       -5.914415        1.584697        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1484       -6.215445        1.283667        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1491       -5.497057        2.002055        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1491       -5.798087        1.701025        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  1497       -5.462419        2.036693        0.500000
+ bad other yaxis for History panels plot num_zones
+
+ ERROR: failed to find log_Teff in history data
+
+ grid1/grid1_001500.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1  1502       -5.481762        2.017350        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1506       -5.575169        1.923942        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1506       -5.876199        1.622912        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  1512       -5.515157        1.983954        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1516       -5.632751        1.866361        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1520       -5.729661        1.769451        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1525       -5.715051        1.784061        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  1525       -6.016081        1.483031        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1526       -6.414021        1.085091        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1528       -6.747051        0.752060        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1535       -5.843961        1.655150        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1538       -6.241901        1.257210        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1538       -6.542931        0.956180        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1542       -6.542931        0.956180        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1542       -6.843961        0.655150        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1543       -7.144991        0.354120        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1545       -7.446021        0.053090        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1546       -7.446021        0.053090        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1548       -7.747051       -0.247940        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1551       -8.048081       -0.548970        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1552       -8.364093       -0.864981        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1588       -9.296588       -1.797476        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1588       -9.597618       -2.098506        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1594       -9.173239       -1.674127        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1643       -7.440395        0.058717        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  1643       -7.741425       -0.242313        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1646       -8.333185       -0.834073        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1646       -8.634215       -1.135103        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1654       -8.064329       -0.565217        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1657       -8.075577       -0.576465        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1657       -8.376607       -0.877495        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1664       -7.770545       -0.271433        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1691       -7.698588       -0.199476        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1691       -7.999618       -0.500506        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  1697       -7.550623       -0.051511        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  1697       -7.851653       -0.352541        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1702       -7.550623       -0.051511        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1702       -7.851653       -0.352541        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1712       -7.446018        0.053094        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1712       -7.747048       -0.247936        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1724       -7.253876        0.245236        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1724       -7.554906       -0.055794        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1725       -7.855936       -0.356824        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1761       -5.747702        1.751409        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1766       -5.629092        1.870019        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1767       -5.930122        1.568989        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1767       -6.231152        1.267959        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1776       -5.768616        1.730495        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1781       -5.589902        1.909209        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1787       -5.326383        2.172729        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1787       -5.627413        1.871699        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1792       -5.507951        1.991161        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1796       -5.716128        1.782984        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1800       -5.716128        1.782984        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1801       -6.017158        1.481954        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1802       -6.415098        1.084014        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1807       -5.960549        1.538563        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1808       -6.328464        1.170647        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1809       -6.726404        0.772707        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1810       -7.124344        0.374767        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1811       -7.425374        0.073737        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1818       -6.522284        0.976827        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1819       -6.823314        0.675797        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1820       -7.124344        0.374767        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1822       -7.425374        0.073737        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1825       -7.726404       -0.227293        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1827       -8.027434       -0.528323        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1828       -8.350858       -0.851746        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1864       -9.341195       -1.842083        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1914       -7.400604        0.098508        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1914       -7.701634       -0.202522        0.500000
+ have reached retry limit so now backup
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1918       -8.445967       -0.946855        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  1922       -8.057864       -0.558752        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  1922       -8.358894       -0.859782        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  1929       -7.752627       -0.253516        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1957       -7.556626       -0.057515        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  1964       -7.447614        0.051498        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  1964       -7.748644       -0.249532        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  1971       -7.454472        0.044640        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  1971       -7.755502       -0.256390        0.500000
+       2000   8.521147  4.492E+06   1.279022   1.612531   1.400000   1.400000   0.000000   0.000000   0.275200   0.016347  11.285613   1175    351
+  -5.945456   6.721309  -4.792710  -0.635256   1.112505  -8.522879   0.000000   0.000000   0.000000   0.020000   0.016391  71.676796      6     35
+ 1.9317E-03  23.356333   1.977742   1.337116  13.816941  -0.969565   0.000000   0.000000   0.000000   0.000687  9.673E-01 -0.578E-14    varcontrol
+
+save LOGS/profile5.data for model 2000
+save photos/2000 for model 2000
+ bad other yaxis for History panels plot num_zones
+
+ ERROR: failed to find log_Teff in history data
+
+ grid1/grid1_002000.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1  2009       -6.253837        1.245275        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2019       -5.492130        2.006981        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2022       -5.890070        1.609041        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2023       -6.191100        1.308011        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2023       -6.492130        1.006981        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2031       -5.460975        2.038137        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2032       -5.858915        1.640197        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  2032       -6.159945        1.339167        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2033       -6.460975        1.038137        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2041       -5.475296        2.023815        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2045       -5.873236        1.625875        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2048       -5.668644        1.830468        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2048       -5.969674        1.529438        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2054       -5.545831        1.953280        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2059       -5.612076        1.887036        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2059       -5.913106        1.586006        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2060       -6.311046        1.188066        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2067       -5.635287        1.863825        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  2067       -5.936317        1.562795        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2068       -6.310213        1.188899        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2069       -6.708153        0.790959        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2070       -7.009183        0.489929        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2078       -5.805063        1.694049        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2079       -5.805063        1.694049        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2081       -6.203003        1.296109        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2081       -6.504033        0.995079        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2086       -6.203003        1.296109        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2086       -6.504033        0.995079        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2091       -6.299913        1.199199        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2091       -6.600943        0.898169        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2093       -6.901973        0.597139        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2094       -7.203003        0.296109        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2096       -7.504033       -0.004921        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2097       -7.504033       -0.004921        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2099       -7.805063       -0.305951        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2103       -7.997803       -0.498691        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2103       -8.298833       -0.799721        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2131       -9.172077       -1.672965        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2184       -7.915556       -0.416444        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2185       -8.313496       -0.814384        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2189       -8.313496       -0.814384        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2189       -8.614526       -1.115414        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2218       -7.847962       -0.348851        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2227       -7.765012       -0.265900        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2239       -7.595212       -0.096100        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2239       -7.896242       -0.397130        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2291       -5.302558        2.196554        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2295       -5.700498        1.798614        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2295       -6.001528        1.497584        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2296       -6.302558        1.196554        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2296       -6.603588        0.895524        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2306       -5.045826        2.453286        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2306       -5.346856        2.152256        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2310       -5.446161        2.052951        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2314       -5.594065        1.905047        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2315       -5.983724        1.515388        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2321       -5.601368        1.897744        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2322       -5.999308        1.499804        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2323       -6.397248        1.101864        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2329       -5.989008        1.510103        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2329       -6.290038        1.209073        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2334       -5.989008        1.510103        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  2334       -6.290038        1.209073        0.500000
+ have reached retry limit so now backup
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2335       -6.784888        0.714223        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2336       -7.085918        0.413193        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2336       -7.386948        0.112163        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2344       -6.182828        1.316283        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2345       -6.483858        1.015253        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2347       -6.784888        0.714223        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2348       -7.182828        0.316283        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2352       -6.881798        0.617313        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  2352       -7.182828        0.316283        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2354       -7.483858        0.015253        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2357       -7.784888       -0.285777        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2359       -8.085918       -0.586807        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2360       -8.402126       -0.903014        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2367       -8.633298       -1.134186        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2372       -8.734262       -1.235151        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2390       -9.156213       -1.657101        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2396       -9.331104       -1.831993        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2449       -7.954479       -0.455367        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2451       -8.449329       -0.950217        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2451       -8.750359       -1.251247        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2461       -7.700401       -0.201290        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2463       -8.098341       -0.599230        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2490       -7.849820       -0.350708        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2490       -8.150850       -0.651738        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2496       -7.668014       -0.168903        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2496       -7.969044       -0.469933        0.500000
+ bad other yaxis for History panels plot num_zones
+
+ ERROR: failed to find log_Teff in history data
+
+ grid1/grid1_002500.png/png
+       retry log10(dt/yr), log10(dt), retry_factor     1  2501       -7.668014       -0.168903        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2501       -7.969044       -0.469933        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2507       -7.667637       -0.168525        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2507       -7.968667       -0.469555        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2513       -7.682771       -0.183660        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2513       -7.983801       -0.484690        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2518       -7.682771       -0.183660        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2523       -7.442668        0.056443        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2523       -7.743698       -0.244587        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2566       -6.200343        1.298768        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2567       -6.501373        0.997738        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2575       -5.600376        1.898735        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2576       -5.901406        1.597705        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2576       -6.202436        1.296675        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2583       -5.436119        2.062993        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2588       -5.501617        1.997494        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2588       -5.802647        1.696464        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2599       -5.394664        2.104448        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2600       -5.792604        1.706508        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  2600       -6.093634        1.405478        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2601       -6.394664        1.104448        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2601       -6.695694        0.803418        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2606       -6.394664        1.104448        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2606       -6.695694        0.803418        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2615       -5.588484        1.910628        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2615       -5.889514        1.609598        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2619       -5.934354        1.564757        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2625       -5.625695        1.873417        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  2625       -5.926725        1.572387        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2626       -6.243791        1.255321        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2630       -6.263936        1.235175        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  2630       -6.564966        0.934145        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2635       -5.832074        1.667037        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2635       -6.133104        1.366007        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2637       -6.434134        1.064977        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2638       -6.735164        0.763947        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2640       -7.036194        0.462917        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2642       -7.337224        0.161887        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2642       -7.638254       -0.139143        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2647       -7.337224        0.161887        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  2647       -7.638254       -0.139143        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2651       -7.821218       -0.322106        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2651       -8.122248       -0.623136        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2656       -7.996280       -0.497168        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2658       -8.402983       -0.903871        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2691       -9.324896       -1.825785        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2743       -7.654906       -0.155795        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2743       -7.955936       -0.456825        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2743       -8.256966       -0.757855        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2743       -8.557996       -1.058885        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2755       -7.838830       -0.339718        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2756       -8.236770       -0.737658        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2763       -7.888507       -0.389396        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2763       -8.189537       -0.690425        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2805       -7.371477        0.127634        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2805       -7.672507       -0.173396        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2810       -7.371477        0.127634        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2855       -5.575297        1.923814        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2856       -5.954299        1.544813        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2857       -6.255329        1.243783        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2863       -5.796414        1.702698        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2864       -6.194354        1.304758        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2865       -6.495384        1.003728        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2873       -5.607121        1.891991        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2873       -5.908151        1.590961        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2879       -5.592358        1.906753        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2884       -5.291328        2.207783        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  2884       -5.592358        1.906753        0.500000
+ have reached retry limit so now backup
+       retry log10(dt/yr), log10(dt), retry_factor     1  2885       -6.087208        1.411903        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2891       -5.616484        1.882627        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2896       -5.577673        1.921439        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2897       -5.975613        1.523499        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2898       -6.354400        1.144712        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2  2898       -6.655430        0.843682        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2906       -5.632710        1.866401        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     1  2907       -6.030650        1.468461        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  2907       -6.331680        1.167431        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2908       -6.632710        0.866401        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2915       -5.910971        1.588141        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2920       -5.685078        1.814034        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2921       -5.986108        1.513004        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2926       -5.744779        1.754333        0.500000
+hydro_newton_step failed to accept
+       retry log10(dt/yr), log10(dt), retry_factor     2  2926       -6.045809        1.453303        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2928       -6.346839        1.152273        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2930       -6.647869        0.851243        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2932       -7.005386        0.493725        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2934       -7.306416        0.192695        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2935       -7.607446       -0.108335        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2938       -7.908476       -0.409365        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2940       -8.283503       -0.784392        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2949       -8.582972       -1.083861        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1  2954       -8.659782       -1.160671        0.500000
+
+stop because model_number >= max_model_number
+     3000     3000
+
+       3000   8.438510  1.997E+07   3.431777   6.360230   1.400000   1.400000   0.000000   0.000000   0.275200   0.032842  14.963723   1470    532
+  -7.754262   6.791916  -4.790352   2.776779   4.098110  -8.522879   0.000000   0.000000   0.000000   0.020000   0.023054  91.527269      6     50
+ 2.9794E-03  23.456025   4.574008   6.359604  14.843420  -0.956753   0.000000   0.000000   0.000000   0.000687  9.441E-01  0.434E-09    varcontrol
+
+save LOGS/profile6.data for model 3000
+save photos/3000 for model 3000
+save final_profile_r_al25_ng_al26_01.data for model 3000
+ saved to final.mod
+termination code: max_model_number
+ bad other yaxis for History panels plot num_zones
+
+ ERROR: failed to find log_Teff in history data
+
+ grid1/grid1_003000.png/png
+       3000   8.438510  1.997E+07   3.431777   6.360230   1.400000   1.400000   0.000000   0.000000   0.275200   0.032842  14.963723   1470    532
+  -7.754262   6.791916  -4.790352   2.776779   4.098110  -8.522879   0.000000   0.000000   0.000000   0.020000   0.023054  91.527269      6     50
+ 2.9794E-03  23.456025   4.574008   6.359604  14.843420  -0.956753   0.000000   0.000000   0.000000   0.000687  9.441E-01  0.434E-09    varcontrol
+
