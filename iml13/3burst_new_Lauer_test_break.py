@@ -22,15 +22,15 @@ multiple_500=[]
 # file locations: results=results_loc , main data folder=data_loc, ind data folder=runs_name, history and final path self explan
 # these values don't change so I put them together.
 #results_loc ='/datacommons/phy-champagne-lauer/1_runs/results/'
-results_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/results/'
+results_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/'
 #data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
 data_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/'
 #runs_name = input('Enter **Full** name of runs folder \n')
 runs_name='runs_x.01_8'
 runs_folder=data_loc+runs_name+'/'
-baseline_path=data_loc+'/baseline/LOGS/history.data'
 history_path = '/LOGS/history.data'
-final_path= "/final_*"## note that this includes wildcard!!! That's why used special func "glob" below. it handles *.
+final_path= "/final_*" ### note that this includes wildcard!!! That's why used special func "glob" below. it handles *.
+baseline_path=data_loc+'/baseline/LOGS/history.data'
 
 
 # check if folders exist, if not exit compilation
@@ -57,8 +57,18 @@ bashCommand="bash files.sh "+ runs_folder+" "+ file_name ## os.system takes unli
 os.system(bashCommand)
 with open(file_name) as f:
     lines = [line.rstrip() for line in f]
-baseline_path=data_loc+'/baseline/LOGS/history.data'
 
+## failed attempt to use panda dataframe to hold folder locations. It added strange characters and didn't work.
+#openfile
+#file_list=os.listdir(runs_folder)
+#lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
+#index=lf.index0
+#####
+
+##### old way to name/iterate folders
+#start=int(input('Enter the number associated with the first model folder:'))
+#end=int(input('Enter the number associated with the last model folder:'))
+#num_files = end+2 # num_files includes baseline!
 #for i in ra8h1 = data_loc
 #for line in range(0, cap, 1): # goes through odd files        
 #    else:
@@ -115,7 +125,7 @@ for i in range(0, cap+1,1):
             model_info = np.array(list(filter(None, model_info)))[:-1:]
             if info_starts == 5: # identifies tau column
                 last_column = line.split(" ")
-                last_column = np.array(list(filter(None, last_column)))[-2]
+                last_column = np.array(list(filter(None, last_column))peak_period)[-2]
                 last_column = last_column.astype(int) -1
             if info_starts == 6:
             
