@@ -20,6 +20,7 @@ export MESA_BASE=/work/al363/new_sens/base
 export MESA_INLIST=$MESA_BASE/inlist
 export MESA_RUN=$MESA_BASE/runs_x.01_wk
 
+echo -e "the mesa run folder is $MESA_RUN\n"
 #mkdir $MESA_BASE/runs_x100_redos
 cd $MESA_RUN
 

@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #SBATCH -p common,scavenger
 #SBATCH --job-name=sensitivity_10108_1
 #SBATCH --output=errors/slurm._%A_%a.err
