@@ -23,6 +23,7 @@ export MESA_RUN=$MESA_BASE/runs_xfactor_number
 #mkdir $MESA_BASE/runs_x100_number
 cd $MESA_RUN
 
+echo -e "the mesa run folder is $MESA_RUN\n"
 shopt -s nullglob
 shopt -s dotglob # Die if dir name provided on command line
 let "index1=${SLURM_ARRAY_TASK_ID}*2"
