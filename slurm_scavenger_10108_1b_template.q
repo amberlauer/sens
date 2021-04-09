@@ -21,8 +21,8 @@ export MESA_INLIST=$MESA_BASE/inlist
 export MESA_RUN=/work/al363/runs/runs_xfactor_number
 
 #mkdir $MESA_BASE/runs_x100_number
+echo -e "the mesa run folder is $MESA_RUN\n" >> /hpc/group/physics/al363/sens/errorsx.factor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
 
-echo -e "the mesa run folder is $MESA_RUN\n"
 shopt -s nullglob
 shopt -s dotglob # Die if dir name provided on command line
 let "index=${SLURM_ARRAY_TASK_ID}"

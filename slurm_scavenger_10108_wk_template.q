@@ -18,9 +18,10 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
 export MESA_BASE=/work/al363/new_sens/base
 export MESA_INLIST=$MESA_BASE/inlist
-export MESA_RUN=$MESA_BASE/runs_x.01_wk
+export MESA_RUN=$MESA_BASE/runs_factor_wk
 
-echo -e "the mesa run folder is $MESA_RUN\n"
+
+echo -e "the mesa run folder is $MESA_RUN\n" >> /hpc/group/physics/al363/sens/errorsx.factor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
 #mkdir $MESA_BASE/runs_x100_redos
 cd $MESA_RUN
 
