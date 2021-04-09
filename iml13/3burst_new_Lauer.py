@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-
+import datetime
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -26,12 +26,13 @@ results_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/results/
 #data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
 data_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/'
 #runs_name = input('Enter **Full** name of runs folder \n')
-runs_name='runs_x.01_8'
+runs_name='x100_bf_best'
 runs_folder=data_loc+runs_name+'/'
-baseline_path=data_loc+'/baseline/LOGS/history.data'
+baseline_path='/home/al363//Documents/Tech/MESA/XRB/XRB_SENS_analysis/status_info/baseline_verify/baseline_low_overhead'
+#baseline_path=data_loc+'/baseline/LOGS/history.data'
 history_path = '/LOGS/history.data'
 final_path= "/final_*"## note that this includes wildcard!!! That's why used special func "glob" below. it handles *.
-
+baseline_path=baseline_path+history_path
 
 # check if folders exist, if not exit compilation
 if not (os.path.exists(results_loc)):    
@@ -57,7 +58,6 @@ bashCommand="bash files.sh "+ runs_folder+" "+ file_name ## os.system takes unli
 os.system(bashCommand)
 with open(file_name) as f:
     lines = [line.rstrip() for line in f]
-baseline_path=data_loc+'/baseline/LOGS/history.data'
 
 #for i in ra8h1 = data_loc
 #for line in range(0, cap, 1): # goes through odd files        
@@ -94,7 +94,8 @@ for i in range(0, cap+1,1):
     else:
         path1=lines[i]
         final_prof_path=runs_folder+path1+final_path
-        file_path=runs_folder+path1+history_path      
+        #file_path=runs_folder+path1+history_path
+        file_path=runs_folder+history_path      
         print(file_path)
         print(final_prof_path)
         
@@ -242,7 +243,8 @@ for i in range(0, cap+1,1):
 
 
 #total_rows = (end-start)/2 + 2
-csv_name = results_loc + '3_peak_info_' + runs_name+ '.csv'
+fdate=datetime.date.today().strftime("%y_%m_%d")
+csv_name = results_loc +fdate+ '_peak_' + runs_name+ '.csv'
 
 if not os.path.exists(results_loc):
     os.makedirs(results_loc)
