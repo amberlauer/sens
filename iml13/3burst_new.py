@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # coding: utf-8
 
 # In[9]:
@@ -19,6 +18,13 @@ num_peaks = []
 run_num = []
 benchmarks = []
 multiple_500=[]
+<<<<<<< HEAD
+results_loc = '/datacommons/phy-champagne-lauer/1_runs/results/'
+# change starting model number using variable "start"
+
+#runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
+data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
+=======
 results_loc="/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/results/"
 #results_loc = '/home/iml13/REU2020/results/'
 # change starting model number using variable "start"
@@ -26,6 +32,7 @@ results_loc="/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/results/
 #runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
 #data_loc = '/datacommons/phy-champagne-lauer/'
 data_loc="/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/"
+>>>>>>> 267c3b57ae2f7078324d684e0d67d3ef166529e3
 runs_name = input('Enter name of runs folder\n runs_')
 runs_folder ='runs_'+ runs_name +'/'
 start=int(input('Enter the number associated with the first model folder:'))
@@ -249,3 +256,24 @@ num_peaks_loc = csv_path + 'num_peaks.csv'
 
 # The above creates, writes in the data, then saves and excel spreadsheet
 
+<<<<<<< HEAD
+
+# In[22]:
+
+
+
+
+
+# In[23]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+=======
+>>>>>>> 267c3b57ae2f7078324d684e0d67d3ef166529e3
