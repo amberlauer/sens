@@ -19,44 +19,62 @@ num_peaks = []
 run_num = []
 benchmarks = []
 multiple_500=[]
-
 # file locations: results=results_loc , main data folder=data_loc, ind data folder=runs_name, history and final path self explan
 # these values don't change so I put them together.
-results_loc =r'/datacommons/phy-champagne-lauer/1_runs/results/'
-data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
-runs_name = input('Enter **Full** name of runs folder \n')
+#results_loc ='/datacommons/phy-champagne-lauer/1_runs/results/'
+results_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/'
+#data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
+data_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/'
+#runs_name = input('Enter **Full** name of runs folder \n')
+runs_name='runs_x.01_8'
+runs_folder=data_loc+runs_name+'/'
 history_path = '/LOGS/history.data'
 final_path= "/final_*" ### note that this includes wildcard!!! That's why used special func "glob" below. it handles *.
-runs_folder=data_loc+runs_name+'/'
+baseline_path=data_loc+'/baseline/LOGS/history.data'
 
-# check if runs folder exitsts, if not exit compilation
-if not (os.path.exists(runs_folder)):    
-    print("folder doesn't exist")
+
+# check if folders exist, if not exit compilation
+if not (os.path.exists(results_loc)):    
+    print(results_loc+ " results_loc doesn't exist")
     sys.exit()
 
-#changed so script prints a list of files in folder and then reads from
+if not (os.path.exists(data_loc)):    
+    print(data_loc +" data_loc folder doesn't exist")
+    sys.exit()
+
+if not (os.path.exists(runs_folder)):    
+    print(runs_folder +" runs_folder doesn't exist")
+    sys.exit()
+
+if not (os.path.exists(baseline_path)):    
+    print(baseline_path +" baseline_path folder doesn't exist")
+    sys.exit()
+
+
+#####changed so script prints a list of files in folder and then reads from
 file_name=runs_name+"_list.txt"
 bashCommand="bash files.sh "+ runs_folder+" "+ file_name ## os.system takes unlimted vars as a string, first should be executable, then any vars passed.
 os.system(bashCommand)
 with open(file_name) as f:
     lines = [line.rstrip() for line in f]
 
-
-#start=int(input('Enter the number associated with the first model folder:'))
-#end=int(input('Enter the number associated with the last model folder:'))
-#num_files = end+2 # num_files includes baseline!
-#for i in ra8h1 = data_loc
-#    else:
-
-##### failed attempt to use panda dataframe to hold folder locations. It added strange characters and didn't work.
+## failed attempt to use panda dataframe to hold folder locations. It added strange characters and didn't work.
 #openfile
 #file_list=os.listdir(runs_folder)
 #lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
 #index=lf.index0
 #####
 
+##### old way to name/iterate folders
+#start=int(input('Enter the number associated with the first model folder:'))
+#end=int(input('Enter the number associated with the last model folder:'))
+#num_files = end+2 # num_files includes baseline!
+#for i in ra8h1 = data_loc
+#for line in range(0, cap, 1): # goes through odd files        
+#    else:
 #s = 'baseline'
 #s=lines[i]
+######
 
 ## have to set initial values
 cap=int(len(lines))
@@ -73,58 +91,51 @@ print(runs_folder)
 print(lines[i])
 print(path1)   
 print(glob.glob(final_prof_path))
+print(cap)
+input("press any key to continue")
 
-#goes through list   
-### new loop is a while statement that continues to iterate through the list of files if final*profile exists.    
-#for line in range(0, cap, 1): # goes through odd files        
-
-
-
+###### new loop iterate through the list of files  
 for i in range(0, cap+1,1):    
-    
-    #doesn't work yet, trying to check if the final profile exists
-    if i == cap+1:
-        runs_folder=data_loc
-        path1 = 'baseline'
-        #    s="baseline"
-        file_path=runs_folder+path1+history_path    
+    print(cap+1)
+    print(i)
+    if i == cap:
+        file_path=baseline_path  
 
     else:
-        while not (glob.glob(final_prof_path)):   
-            break  
-        ## this is kind of redundant. If final*profile exits, history.data *should* exist. Whatevs.
         path1=lines[i]
         final_prof_path=runs_folder+path1+final_path
-        print(final_prof_path)
         file_path=runs_folder+path1+history_path      
         print(file_path)
-        with open( file_path, 'r') as f:
-            info_starts = 0
-            data = []
-            all_models = []
-            for line in f:
-                info_starts += 1
-                model_info = line.split(" ")    # splits the individual numbers in the lines
-                model_info = np.array(list(filter(None, model_info)))[:-1:]
+        print(final_prof_path)
+        
+        #### check if final*profile exists. Want only finished runs   
+        if not (glob.glob(final_prof_path)): 
+            print("final profile doesn't exist")  
+            print(i)
+            print(final_prof_path)
+            continue  
 
-                if info_starts == 5: # identifies tau column
-                    last_column = line.split(" ")
-                    last_column = np.array(list(filter(None, last_column)))[-2]
-                    last_column = last_column.astype(int) -1
-
-
-                if info_starts == 6:
-                
-                    column_name = {}
-
-                    for k in range(last_column):
-                        column_name[model_info[k]] = k
-
-                if info_starts >= 7:     # This is where we care about the data
-                    model_elements = model_info.astype(float)
-                    all_models.append(model_elements)
-                    num_models = len(all_models)
-      # This creates lists for star age and log luminosity
+    with open( file_path, 'r') as f:
+        info_starts = 0
+        data = []
+        all_models = []
+        for line in f:
+            info_starts += 1
+            model_info = line.split(" ")    # splits the individual numbers in the lines
+            model_info = np.array(list(filter(None, model_info)))[:-1:]
+            if info_starts == 5: # identifies tau column
+                last_column = line.split(" ")
+                last_column = np.array(list(filter(None, last_column))peak_period)[-2]
+                last_column = last_column.astype(int) -1
+            if info_starts == 6:
+            
+                column_name = {}
+                for k in range(last_column):
+                    column_name[model_info[k]] = k
+            if info_starts >= 7:     # This is where we care about the data
+                model_elements = model_info.astype(float)
+                all_models.append(model_elements)
+                num_models = len(all_models)   # This creates lists for star age and log luminosity
 
         star_age = []
         log_lum = []
@@ -241,21 +252,20 @@ for i in range(0, cap+1,1):
 
 
 #total_rows = (end-start)/2 + 2
-csv_path = data_loc  + 'results/'
-csv_name = csv_path + '3_peak_info_' + runs_name+ '.csv'
+csv_name = results_loc + '3_peak_info_' + runs_name+ '.csv'
 
-if not os.path.exists(csv_path):
-    os.makedirs(csv_path)
+if not os.path.exists(results_loc):
+    os.makedirs(results_loc)
 
 rel_period = []
 delta_period = []
     
-#if os.path.exists(csv_path + 'test_values.csv'):
+#if os.path.exists(results_loc + 'test_values.csv'):
  #   x = input('Would you like to overwrite test_values.csv? [y/n] \n')
   #  if x == 'y' or x == 'Y':
-   #     csv_name = csv_path + 'peaks_info_' + runs_name + '.csv'
+   #     csv_name = results_loc + 'peaks_info_' + runs_name + '.csv'
     #else:
-     #   csv_name = csv_path + input('Enter a name for the csv file, \n including .csv at end of name\n')
+     #   csv_name = results_loc + input('Enter a name for the csv file, \n including .csv at end of name\n')
         
         
 
@@ -280,7 +290,7 @@ with open(csv_name, 'w', newline='') as data:
                 delta_period.append(abs((peak_period[z]-peak_period[-1])/peak_period[-1]))
             
             writer.writerow([run_num[z], num_peaks[z], benchmarks[z], multiple_500[z], peak_period[z],rel_period[z],delta_period[z]])    
-num_peaks_loc = csv_path + 'num_peaks.csv'
+num_peaks_loc = results_loc + 'num_peaks.csv'
 
 
 #y = np.linspace(1, 1)

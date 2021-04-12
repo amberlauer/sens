@@ -1,8 +1,7 @@
+#!/usr/bin/env python
 # coding: utf-8
 
-# In[9]:
-
-
+import datetime
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
@@ -18,37 +17,34 @@ num_peaks = []
 run_num = []
 benchmarks = []
 multiple_500=[]
-<<<<<<< HEAD
-results_loc = '/datacommons/phy-champagne-lauer/1_runs/results/'
+model_num = []
+results_loc = '/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/status_info/baseline_verify/'
 # change starting model number using variable "start"
 
 #runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
-data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
-=======
-results_loc="/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/results/"
-#results_loc = '/home/iml13/REU2020/results/'
-# change starting model number using variable "start"
+data_loc = '/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/status_info/baseline_verify/'
+#runs_name = input('Enter name of runs folder\n runs_')
+#runs_folder ='runs_'+ runs_name +'/'
+#start=int(input('Enter the number associated with the first model folder:'))
+#end=int(input('Enter the number associated with the last model folder:'))
+#num_files = end+2 # num_files includes baseline!
 
-#runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
-#data_loc = '/datacommons/phy-champagne-lauer/'
-data_loc="/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/"
->>>>>>> 267c3b57ae2f7078324d684e0d67d3ef166529e3
-runs_name = input('Enter name of runs folder\n runs_')
-runs_folder ='runs_'+ runs_name +'/'
-start=int(input('Enter the number associated with the first model folder:'))
-end=int(input('Enter the number associated with the last model folder:'))
-num_files = end+2 # num_files includes baseline!
 
-for i in range(start, num_files+2, 2): # goes through odd files
-    if i == num_files:
-        s = 'baseline'
-        path1 = data_loc
-    else:
-        s = str(i) # changes int i into string s
-        path1 = data_loc+runs_folder
-        
+
+
+for i in range(1): # goes through odd files
+    #s = str(i) # changes int i into string s
+
+    #path1 = data_loc+runs_folder
     path2 = '/LOGS/history.data'
-    file_path = path1 + s + path2
+    #file_path = path1 + s + path2
+    
+    #if i == num_files:
+    s = 'baseline1'
+    file_path = data_loc + s + path2
+
+    print(s)
+    model_num.append(s)
 
     with open( file_path, 'r') as f:
 
@@ -204,8 +200,10 @@ for i in range(start, num_files+2, 2): # goes through odd files
 
 
 #total_rows = (end-start)/2 + 2
-csv_path = data_loc  + 'results/'
-csv_name = csv_path + '3_peak_info_' + runs_name+ '.csv'
+
+fdate=datetime.date.today().strftime("%y_%m_%d")
+csv_path = data_loc  + 'baseline_results/'
+csv_name = csv_path + fdate+s+'baseline_burst_freq' + '.csv'
 
 if not os.path.exists(csv_path):
     os.makedirs(csv_path)
@@ -246,34 +244,4 @@ with open(csv_name, 'w', newline='') as data:
 num_peaks_loc = csv_path + 'num_peaks.csv'
 
 
-#y = np.linspace(1, 1)
-#df = pd.DataFrame(data = num_peaks, index = run_num)
-# creates a data frame using pandas - essentially tells code below where the data is stored 
-#spread_path = runs_location + 'results/num_peaks_.01_10.xlsx'
-#writer = pd.ExcelWriter(spread_path, engine='xlsxwriter')
-#df.to_excel(writer, index=True)
-#writer.save()
 
-# The above creates, writes in the data, then saves and excel spreadsheet
-
-<<<<<<< HEAD
-
-# In[22]:
-
-
-
-
-
-# In[23]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-=======
->>>>>>> 267c3b57ae2f7078324d684e0d67d3ef166529e3
