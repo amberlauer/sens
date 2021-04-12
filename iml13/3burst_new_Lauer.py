@@ -32,7 +32,7 @@ runs_folder=data_loc+"runs_"+runs_name+'/'
 baseline_path=data_loc+'/baseline/LOGS/history.data'
 history_path = '/LOGS/history.data'
 final_path= "/final_*"## note that this includes wildcard!!! That's why used special func "glob" below. it handles *.
-baseline_path=baseline_path+history_path
+#baseline_path=baseline_path+history_path
 
 # check if folders exist, if not exit compilation
 if not (os.path.exists(results_loc)):    
