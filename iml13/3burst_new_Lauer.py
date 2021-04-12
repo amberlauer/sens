@@ -21,15 +21,15 @@ benchmarks = []
 multiple_500=[]
 # file locations: results=results_loc , main data folder=data_loc, ind data folder=runs_name, history and final path self explan
 # these values don't change so I put them together.
-#results_loc ='/datacommons/phy-champagne-lauer/1_runs/results/'
-results_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/results/'
-#data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
-data_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/'
+results_loc ='/datacommons/phy-champagne-lauer/1_runs/results/'
+#results_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/results/'
+data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
+#data_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/'
 runs_name = input('Enter name of runs folder \n runs_')
 #runs_name='runs_x100_1'
 runs_folder=data_loc+"runs_"+runs_name+'/'
-baseline_path='/home/al363//Documents/Tech/MESA/XRB/XRB_SENS_analysis/status_info/baseline_verify/baseline_full_step2'
-#baseline_path=data_loc+'/baseline/LOGS/history.data'
+#baseline_path='/home/al363//Documents/Tech/MESA/XRB/XRB_SENS_analysis/status_info/baseline_verify/baseline_full_step2'
+baseline_path=data_loc+'/baseline/LOGS/history.data'
 history_path = '/LOGS/history.data'
 final_path= "/final_*"## note that this includes wildcard!!! That's why used special func "glob" below. it handles *.
 baseline_path=baseline_path+history_path
