@@ -1,119 +1,63 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import pandas as pd
+import datetime
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
 import os.path
 from os.path import isfile, join
+#import pandas as pd
 from scipy.signal import find_peaks
 from scipy.interpolate import interp1d
-import subprocess
-import os
-import fileinput
-import glob
-import sys
+
+
 peak_period = []
 num_peaks = []
 run_num = []
 benchmarks = []
 multiple_500=[]
+model_num = []
+results_loc = '/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/status_info/baseline_verify/'
+# change starting model number using variable "start"
 
-# file locations: results=results_loc , main data folder=data_loc, ind data folder=runs_name, history and final path self explan
-# these values don't change so I put them together.
-results_loc ='/datacommons/phy-champagne-lauer/1_runs/results/'
-#results_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/test_results/'
-
-data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
-#data_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/'
-
-#runs_name = input('Enter **Full** name of runs folder \n')
-#runs_name='runs_x.01_8'
-history_path = '/LOGS/history.data'
-final_path= "/final_*" ### note that this includes wildcard!!! That's why used special func "glob" below. it handles *.
-runs_folder=data_loc+runs_name+'/'
-
-# check if runs folder exitsts, if not exit compilation
-if not (os.path.exists(runs_folder)):    
-    print("folder doesn't exist")
-    sys.exit()
-
-#changed so script prints a list of files in folder and then reads from
-file_name=runs_name+"_list.txt"
-bashCommand="bash files.sh "+ runs_folder+" "+ file_name ## os.system takes unlimted vars as a string, first should be executable, then any vars passed.
-os.system(bashCommand)
-with open(file_name) as f:
-    lines = [line.rstrip() for line in f]
-
-
+#runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
+data_loc = '/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/status_info/baseline_verify/'
+#runs_name = input('Enter name of runs folder\n runs_')
+#runs_folder ='runs_'+ runs_name +'/'
 #start=int(input('Enter the number associated with the first model folder:'))
 #end=int(input('Enter the number associated with the last model folder:'))
 #num_files = end+2 # num_files includes baseline!
-#for i in ra8h1 = data_loc
-#    else:
 
-##### failed attempt to use panda dataframe to hold folder locations. It added strange characters and didn't work.
-#openfile
-#file_list=os.listdir(runs_folder)
-#lf=pd.DataFrame({'col':[os.path.splitext(x)[0] for x in file_list]})
-#index=lf.index0
-#####
 
-#s = 'baseline'
-#s=lines[i]
 
-## have to set initial values
-cap=int(len(lines))
-i=0
-path1=lines[i]
-final_prof_path=runs_folder+path1+final_path        
-file_path=runs_folder+path1+history_path
 
-#### debug print statements
-print(final_prof_path)
-print(data_loc)
-print(runs_name)
-print(runs_folder)
-print(lines[i])
-print(path1)   
-print(glob.glob(final_prof_path))
+for i in range(1): # goes through odd files
+    #s = str(i) # changes int i into string s
 
-#goes through list   
-### new loop is a while statement that continues to iterate through the list of files if final*profile exists.    
-#for line in range(0, cap, 1): # goes through odd files        
-while(os.path.exists(file_path) and i<cap+1):    
+    #path1 = data_loc+runs_folder
+    path2 = '/LOGS/history.data'
+    #file_path = path1 + s + path2
     
-    path1=lines[i]
-    final_prof_path=runs_folder+path1+final_path
-    print(final_prof_path)    
-    
-    while not (glob.glob(final_prof_path) and i==cap+1):
-        i=i+1
-        path1=lines[i]
-        final_prof_path=runs_folder+path1+final_path
-        if(glob.glob(final_prof_path)):
-            print(final_prof_path)
-    #doesn't work yet, trying to check if the final profile exists
-    
-    
-    if i == cap:
-        runs_folder=data_loc
-        path1 = 'baseline'
-        #    s="baseline"
-    
-    i=i+1
-    ## this is kind of redundant. If final*profile exits, history.data *should* exist. Whatevs.
-    file_path=runs_folder+path1+history_path
-        
-    print(file_path)
+    #if i == num_files:
+    s = 'baseline1'
+    file_path = data_loc + s + path2
+
+    print(s)
+    model_num.append(s)
+
     with open( file_path, 'r') as f:
+
         info_starts = 0
         data = []
         all_models = []
+
         for line in f:
+
             info_starts += 1
+
             model_info = line.split(" ")    # splits the individual numbers in the lines
+
             model_info = np.array(list(filter(None, model_info)))[:-1:]
             
             if info_starts == 5: # identifies tau column
@@ -129,11 +73,16 @@ while(os.path.exists(file_path) and i<cap+1):
                 for k in range(last_column):
                     column_name[model_info[k]] = k
                     
+
             if info_starts >= 7:     # This is where we care about the data
+
                 model_elements = model_info.astype(float)
+
                 all_models.append(model_elements)
+
                 num_models = len(all_models)
-  # This creates lists for star age and log luminosity
+
+    # This creates lists for star age and log luminosity
 
     star_age = []
     log_lum = []
@@ -231,7 +180,7 @@ while(os.path.exists(file_path) and i<cap+1):
 
     if len(peaks_x) == 1:
         print('\n\n\n','Only one peak', '\n\n\n')
-        run_num.append(path1)
+        run_num.append(s)
         peak_period.append('DNC')
     else:
         for k in range(len(peaks_x)-1):
@@ -244,15 +193,17 @@ while(os.path.exists(file_path) and i<cap+1):
         # over distance B E T W E E N peaks)
 
         peak_period.append(burst_period)
-        run_num.append(path1)
+        run_num.append(s)
         #print(burst_frequency, '     run number: ',s, '\n\n')
         #print(peaks_x, '\n\n',peaks_y, '\n\n')
 
 
 
 #total_rows = (end-start)/2 + 2
-csv_path = data_loc  + 'results/'
-csv_name = csv_path + '3_peak_info_' + runs_name+ '.csv'
+
+fdate=datetime.date.today().strftime("%y_%m_%d")
+csv_path = data_loc  + 'baseline_results/'
+csv_name = csv_path + fdate+s+'baseline_burst_freq' + '.csv'
 
 if not os.path.exists(csv_path):
     os.makedirs(csv_path)
@@ -293,13 +244,4 @@ with open(csv_name, 'w', newline='') as data:
 num_peaks_loc = csv_path + 'num_peaks.csv'
 
 
-#y = np.linspace(1, 1)
-#df = pd.DataFrame(data = num_peaks, index = run_num)
-# creates a data frame using pandas - essentially tells code below where the data is stored 
-#spread_path = runs_location + 'results/num_peaks_.01_10.xlsx'
-#writer = pd.ExcelWriter(spread_path, engine='xlsxwriter')
-#df.to_excel(writer, index=True)
-#writer.save()
-
-# The above creates, writes in the data, then saves and excel spreadsheet
 
