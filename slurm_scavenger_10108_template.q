@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --p physics,common,scavenger
+#SBATCH --p common,scavenger
 #SBATCH --job-name=sensitivity_10108_number
 #SBATCH --output=errors/xfactor_number._%A_%a.err
 #SBATCH --ntasks=1
@@ -25,7 +25,7 @@ export MESA_RUN=/work/al363/runs/low_overhead/runs_xfactor_number
 #mkdir $MESA_BASE/runs_x100_1
 cd $MESA_RUN
 
-echo -e "the mesa run folder is $MESA_RUN\n" >> /hpc/group/physics/al363/sens/errorsx.factor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
+echo -e "the mesa run folder is $MESA_RUN\n" >> /hpc/group/physics/al363/low_overhead/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
 shopt -s nullglob
 shopt -s dotglob # Die if dir name provided on command line
 let "index1=${SLURM_ARRAY_TASK_ID}*2"
