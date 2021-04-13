@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=3072
-#SBATCH --array=0
+#SBATCH --array=27
 #SBATCH --mail-type=END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/baseline._%A_%a.err
@@ -18,7 +18,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
 export MESA_BASE=/hpc/group/physics/al363/low_overhead/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
-export MESA_RUN=/work/al363/runs/low_overhead/baseline
+export MESA_RUN=/work/al363/runs/low_overhead/runs_x100_1
 
 #mkdir $MESA_BASE/runs_x100_redos
 cd $MESA_RUN
@@ -38,10 +38,10 @@ if $empty; then
     mkdir $MESA_RUN/${index2}
     cd $MESA_RUN/${index2}
     cat $MESA_BASE/inlist_cluster_base > ./inlist_cluster
-    #rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
-    #sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
-    #rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
-    #sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
+    rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
+    sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
+    rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
+    sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster
     $MESA_BASE/star >>  /hpc/group/physics/al363/sens/errors/baseline._%A_%a.err
 
 else
