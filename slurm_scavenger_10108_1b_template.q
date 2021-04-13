@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -p physics,common,scavenger
+#SBATCH -p common,scavenger
 #SBATCH --job-name=sensitivity_10108_number
 #SBATCH --output=errors/xfactor_number._%A_%a.err
 #SBATCH --ntasks=1
@@ -16,9 +16,9 @@ export MESASDK_ROOT=/hpc/group/physics/al363/mesasdk_11_2017
 #export MESASDK_ROOT=~/mesasdk_8_1 8
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
-export MESA_BASE=/hpc/group/physics/al363/sens/base
+export MESA_BASE=/hpc/group/physics/al363/low_overhead/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
-export MESA_RUN=/work/al363/runs/runs_xfactor_number
+export MESA_RUN=/work/al363/runs/low_overhead/runs_xfactor_number_2
 
 #mkdir $MESA_BASE/runs_x100_number
 echo -e "the mesa run folder is $MESA_RUN\n" >> /hpc/group/physics/al363/sens/errorsx.factor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
