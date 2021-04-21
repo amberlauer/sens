@@ -21,7 +21,7 @@ export MESA_INLIST=$MESA_BASE/inlist
 export MESA_RUN=/work/al363/runs/low_overhead/runs_x100_1_2
 
 #mkdir $MESA_BASE/runs_x100_1
-echo -e "the mesa run folder is $MESA_RUN\n" >> /hpc/group/physics/al363/sens/errorsx.100_1._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
+echo -e "the mesa run folder is $MESA_RUN\n" >> /hpc/group/physics/al363/low_overhead/sens/errors/x100_1._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
 
 shopt -s nullglob
 shopt -s dotglob # Die if dir name provided on command line
@@ -49,7 +49,7 @@ model=$(sed -n ''${index3}'p' $MESA_BASE/1b/restart_model_x100_1.txt)
 if [ "${model}" = "0" ]; then
     echo "starting from 0"
     date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
-    $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/x100_1._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+    $MESA_BASE/star >> /hpc/group/physics/al363/low_overhead/sens/errors/x100_1._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 
 elif [ ! "${max_model}" = "DNC" ] ; then
@@ -57,10 +57,10 @@ elif [ ! "${max_model}" = "DNC" ] ; then
         cp ${model} restart_photo
 	cd ../
 	 date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
-        $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/x100_1._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+        $MESA_BASE/star >> /hpc/group/physics/al363/low_overhead/sens/errors/x100_1._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
         date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 elif [ "${max_model}" = "DNC" ];then
-        echo "DNC" >> /hpc/group/physics/al363/sens/errors/x100_1._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+        echo "DNC" >> /hpc/group/physics/al363/low_overhead/sens/errors/x100_1._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
 
 fi
 
