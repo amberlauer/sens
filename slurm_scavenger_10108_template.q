@@ -4,7 +4,7 @@
 #SBATCH --output=errors/xfactor_number._%A_%a.err
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
-#SBATCH --mem-per-cpu=2096
+#SBATCH --mem-per-cpu=3072
 #SBATCH --array=numero01-number00
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --mail-user=amberlauer@gmail.com
@@ -48,7 +48,7 @@ if $empty; then
     $MESA_BASE/star >> /hpc/group/physics/al363/low_overhead/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
 else
     cd $MESA_RUN/${index2}
-    if [! ls ./final_profile* 1> /dev/null 2>&1]; then
+    if [! ls ./final_* 1> /dev/null 2>&1 ] ; then
     	echo "this_model_is_finished"  >> /hpc/group/physics/al363/low_overhead/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     else	
     	echo "starting from photo" >> /hpc/group/physics/al363/low_overhead/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 

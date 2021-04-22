@@ -1,0 +1,60 @@
+the mesa run folder is /work/al363/runs/low_overhead/runs_x100_7
+
+starting from photo
+cp: 'restart_photo' and 'restart_photo' are the same file
+                                         version_number       10108
+ read /hpc/group/physics/al363/low_overhead/sens/base/inlist_base
+ read inlist_cluster
+load saved model /hpc/group/physics/al363/sens/base/ns_relax.mod
+
+ change to /hpc/group/physics/al363/sens/base/rp_305.net
+             set special rate factor for r_zr80_pg_nb81        1373    1.0000000000000000D+02
+             set special rate factor for r_nb81_gp_zr80        1374    1.0000000000000000D+02
+             set special rate factor for r_zr80_pg_nb81        1373    1.0000000000000000D+02
+             set special rate factor for r_nb81_gp_zr80        1374    1.0000000000000000D+02
+ number of species         305
+ read /hpc/group/physics/al363/low_overhead/sens/base/history_custom_low_overhead
+ read /hpc/group/physics/al363/low_overhead/sens/base/profile_custom_low_overhead
+ net name /hpc/group/physics/al363/sens/base/rp_305.net
+ v_flag T
+                                           xmstar/mstar    4.5461189430843640D-12
+                                             xmstar (g)    1.2660395722219186D+22
+                                           M_center (g)    2.7848799999878681D+33
+                                            xmstar/Msun    6.3645665203193175D-12
+                                          M_center/Msun    1.3999999999939012D+00
+                                          R_center (cm)    1.1200000000000000D+06
+                                          R_center/Rsun    1.6092416448748527D-05
+                                           core density    4.7322078204273819D+14
+                                          L_center/Lsun    4.1647144567650578D+00
+ kappa_file_prefix gs98
+ kappa_lowT_prefix lowT_fa05_gs98
+
+   eos_file_prefix mesa
+                                        OMP_NUM_THREADS           8
+
+
+__________________________________________________________________________________________________________________________________________________
+
+       step    lg_Tcntr    Teff       lg_LH     lg_Lnuc     Mass       H_rich     H_cntr     N_cntr     Y_surf     X_avg     eta_cntr  zones retry
+   lg_dt_yr    lg_Dcntr    lg_R       lg_L3a    lg_Lneu     lg_Mdot    He_core    He_cntr    O_cntr     Z_surf     Y_avg     gam_cntr  iters bckup
+     age_yr    lg_Pcntr    lg_L       lg_LZ     lg_Psurf    lg_Dsurf   C_core     C_cntr     Ne_cntr    Si_cntr    Z_avg     v_div_cs     dt_limit
+__________________________________________________________________________________________________________________________________________________
+
+save LOGS/profile1.data for model 2
+         12   8.207068  1.596E+06   0.422373   0.422680   1.400000   1.400000   0.000000   0.000000   0.275200   0.032716  18.782540    782      0
+  -5.834864   6.544453  -4.792968 -17.300136  -0.755568  -8.522879   0.000000   0.000000   0.000000   0.020000   0.012436 128.974929      6      0
+ 9.8181E-06  23.077272   0.179446  -2.727454  12.804639  -1.522785   0.000000   0.000000   0.000000   0.000687  9.548E-01 -0.112E-12      lgT_cntr
+
+save LOGS/profile2.data for model 12
+       retry log10(dt/yr), log10(dt), retry_factor     1    34       -5.396345        2.102767        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    38       -5.396345        2.102767        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    42       -5.396345        2.102767        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    46       -5.396345        2.102767        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    51       -5.095315        2.403797        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    52       -5.095315        2.403797        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    53       -5.095315        2.403797        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    54       -5.095315        2.403797        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    55       -5.095315        2.403797        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     1    56       -5.095315        2.403797        0.500000
+       retry log10(dt/yr), log10(dt), retry_factor     2    56       -5.396345        2.102767        0.500000
+slurmstepd: error: *** JOB 8219623 ON dcc-econ-11 CANCELLED AT 2021-04-21T22:30:21 ***
