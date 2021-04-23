@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --p common,scavenger
+#SBATCH --partition common,scavenger
 #SBATCH --job-name=sens_x100_7_low_O
 #SBATCH --output=errors/x100_7._%A_%a.err
 #SBATCH --ntasks=1

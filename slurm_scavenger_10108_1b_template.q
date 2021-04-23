@@ -1,11 +1,6 @@
 #!/bin/bash
-<<<<<<< HEAD
 #SBATCH -p common,scavenger
-#SBATCH --job-name=sensitivity_10108_number
-=======
-#SBATCH --partition common,scavenger
 #SBATCH --job-name=sens_1b_xfactor_number
->>>>>>> b2a4c860ab45a465fbe080319817ef1d0b9f47b1
 #SBATCH --output=errors/xfactor_number._%A_%a.err
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
