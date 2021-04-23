@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -p physics,common,scavenger
+#SBATCH -p common,scavenger
 #SBATCH --job-name=sensitivity_10108_number
 #SBATCH --output=errors/baseline._%A_%a.err
 #SBATCH --ntasks=1
@@ -18,10 +18,11 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
 export MESA_BASE=/hpc/group/physics/al363/sens/base
 export MESA_INLIST=$MESA_BASE/inlist
-export MESA_RUN=/work/al363/runs/baseline
+export MESA_RUN=/work/al363/runs/baseline4
 
 #mkdir $MESA_BASE/runs_x100_redos
 cd $MESA_RUN
+pwd >> /hpc/group/physics/al363/sens/errors/baseline._%A_%a.err
 
 shopt -s nullglob
 shopt -s dotglob # Die if dir name provided on command line
@@ -37,7 +38,7 @@ if $empty; then
     echo "starting from scratch "
     mkdir $MESA_RUN/${index2}
     cd $MESA_RUN/${index2}
-    cat $MESA_BASE/inlist_cluster_base > ./inlist_cluster
+    cat $MESA_BASE/inlist_cluster_base4 > ./inlist_cluster
     #rxn1=$(sed -n ''${index2}'p' $MESA_BASE/reaction_list_305_10108.txt)
     #sed -i 's|reaction_name1|'$rxn1'|g'  inlist_cluster
     #rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)

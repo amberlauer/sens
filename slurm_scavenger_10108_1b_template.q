@@ -21,7 +21,7 @@ export MESA_INLIST=$MESA_BASE/inlist
 export MESA_RUN=/work/al363/runs/runs_xfactor_number
 
 #mkdir $MESA_BASE/runs_x100_number
-echo -e "the mesa run folder is $MESA_RUN\n" >> /hpc/group/physics/al363/sens/errorsxfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+echo -e "the mesa run folder is $MESA_RUN\n" >> /hpc/group/physics/al363/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
 shopt -s nullglob
 shopt -s dotglob # Die if dir name provided on command line
 let "index=${SLURM_ARRAY_TASK_ID}"
@@ -48,7 +48,7 @@ model=$(sed -n ''${index3}'p' $MESA_BASE/1b/restart_model_xfactor_number.txt)
 if [ "${model}" = "0" ]; then
     echo "starting from 0"
     date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S" 
-    $MESA_BASE/star >> /hpc/group/physics/al363/sens/errorsxfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
+    $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
 
 elif [ ! "${max_model}" = "DNC" ] ; then
