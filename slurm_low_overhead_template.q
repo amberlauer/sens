@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --partition common,scavenger
-#SBATCH --job-name=sens_xfactor_number
+#SBATCH --p common,scavenger
+#SBATCH --job-name=sens_xfactor_number_low_O
 #SBATCH --output=errors/xfactor_number._%A_%a.err
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
@@ -17,14 +17,13 @@ export MESASDK_ROOT=/hpc/group/physics/al363/mesasdk_11_2017
 #export MESASDK_ROOT=~/mesasdk_8_1 8
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 source $MESASDK_ROOT/bin/mesasdk_init.sh
-export MESA_BASE=/hpc/group/physics/al363/sens/base
+export MESA_BASE=/hpc/group/physics/al363s/sens/base
 export MESA_INLIST=$MESA_BASE/inlist_main_low_O
-export MESA_RUN=/work/al363/runs/runs_xfactor_number
+export MESA_RUN=/work/al363/runs/low_overhead/runs_xfactor_number
 
 
 #mkdir $MESA_BASE/runs_x100_1
 cd $MESA_RUN
-
 
 echo -e "the mesa run folder is $MESA_RUN\n" >> /hpc/group/physics/al363/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
 
@@ -36,7 +35,6 @@ let "index2=${index1}-1"
 # Check for empty files using arrays
 empty=false
 test "$(ls -A ./${index2}/photos)"  && empty=false || empty=true
-
 
 if $empty; then
     echo "starting from scratch "
@@ -54,13 +52,12 @@ elif
     	echo "this_model_is_finished"  >> /hpc/group/physics/al363/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     elif	
     	echo "starting from photo" >> /hpc/group/physics/al363/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
-
     	cd ./photos
     	cp $(ls -t  | head -1) restart_photo
-    	cd ../  # date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
+    	cd ../   #date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
     	if [[ -e star.exe ]];then
         $MESA_BASE/star.exe
-    	elif
+    	else
         $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     	fi
     	date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
