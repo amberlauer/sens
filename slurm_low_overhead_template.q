@@ -61,7 +61,7 @@ else
         	$MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     	fi
     	date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
-     fi
+    fi
 fi
 
 

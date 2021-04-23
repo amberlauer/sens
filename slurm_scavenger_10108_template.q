@@ -48,11 +48,11 @@ if $empty; then
     rxn2=$(sed -n ''${index1}'p' $MESA_BASE/reaction_list_305_10108.txt)
     sed -i 's|reaction_name2|'$rxn2'|g'  inlist_cluster_low_overhead
     $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err
-elif
+else
     cd $MESA_RUN/${index2}
     if [! ls ./final_profile* 1> /dev/null 2>&1]; then
     	echo "this_model_is_finished"  >> /hpc/group/physics/al363/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
-    elif	
+    else	
     	echo "starting from photo" >> /hpc/group/physics/al363/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
 
     	cd ./photos
@@ -60,11 +60,11 @@ elif
     	cd ../  # date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
     	if [[ -e star.exe ]];then
         $MESA_BASE/star.exe
-    	elif
+    	else
         $MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/xfactor_number._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     	fi
     	date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
-     fi		
+    fi		
 fi
 
 
