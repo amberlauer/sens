@@ -5,7 +5,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu=3072
-#SBATCH --array=601-700
+#SBATCH --array=601-605
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --mail-user=amberlauer@gmail.com
 #SBATCH -e errors/x100_7._%A_%a.err
@@ -50,7 +50,7 @@ else
     cd $MESA_RUN/${index2}
     if [! ls ./final_profile* 1> /dev/null 2>&1]; then
     	echo "this_model_is_finished"  >> /hpc/group/physics/al363/sens/errors/x100_7._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
-    else	
+    else
     	echo "starting from photo" >> /hpc/group/physics/al363/sens/errors/x100_7._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     	cd ./photos
     	cp $(ls -t  | head -1) restart_photo
@@ -61,7 +61,7 @@ else
         	$MESA_BASE/star >> /hpc/group/physics/al363/sens/errors/x100_7._${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.err 
     	fi
     	date "+DATE: %Y-%m-%d%nTIME: %H:%M:%S"
-     fi		
+    fi
 fi
 
 
