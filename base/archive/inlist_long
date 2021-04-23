@@ -1,0 +1,40 @@
+
+&star_job
+
+
+	history_columns_file = '/work/al363/new_sens/base/history_customACL.list'
+        profile_columns_file = '/work/al363/new_sens/base/profile_customACL.list'
+        read_extra_star_job_inlist1 = .true.
+        extra_star_job_inlist1_name = 'inlist_cluster'
+
+        read_extra_star_job_inlist2 = .true.
+        extra_star_job_inlist2_name = '/work/al363/new_sens/base/inlist_base_long'
+
+
+        !read_extra_star_job_inlist2 = .true.
+        !extra_star_job_inlist2_name = '/work/al363/new_sens/base/inlist_ns_h'
+
+
+/ ! end of star_job namelist
+
+&controls
+
+        read_extra_controls_inlist1 = .true.
+        extra_controls_inlist1_name = '/work/al363/new_sens/base/inlist_base_long'
+
+        !read_extra_controls_inlist1 = .true.
+        !extra_controls_inlist1_name = 'inlist_ns_h'
+
+/ ! end of controls namelist
+
+&pgstar
+
+        read_extra_pgstar_inlist1 = .true.
+        extra_pgstar_inlist1_name = '/work/al363/new_sens/base/inlist_pgstar'
+
+
+        !read_extra_pgstar_inlist1 = .true.
+        !extra_pgstar_inlist1_name = 'inlist_pgstar'
+
+
+/ ! end of pgstar namelist

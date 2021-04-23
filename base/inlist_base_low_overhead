@@ -62,24 +62,20 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	warn_run_star_extras=.false.
 	
   
-	/ ! end of star_job namelist
+	/ ! end of star_job 
 
+	
 &controls
+namelist
+
 
 	max_model_number= 3000
 	use_other_pgstar_plots=.true.
-	photo_interval = 5004
+	photo_interval = 500
 	profile_interval = 5000
-<<<<<<< HEAD
-	history_interval = 2
-=======
-	
-	!history_interval = 5000
-	
->>>>>>> b2a4c860ab45a465fbe080319817ef1d0b9f47b1
-	terminal_interval = 100
+	terminal_interval = 1000
+
 	write_header_frequency = 1000
-	  
 	min_timestep_limit = 1d-99
 	max_years_for_timestep = 1d-4  	
 	max_timestep_factor=2d0	
@@ -93,8 +89,9 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	dX_nuc_drop_limit=7.5d-2
 	dX_nuc_drop_limit_at_high_T=5d-3
 	dX_nuc_drop_min_X_limit=7.5d-2
-	dX_nuc_drop_max_A_limit=52
-			
+	dX_nuc_drop_max_A_limit=52	
+
+
 	!delta_lgT_limit = 0.05 !!! not in farmer x3
 	!delta_lgTeff_limit = 0.05
 	!delta_lgL_He_limit = 0.1		
@@ -135,12 +132,13 @@ l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	use_Type2_opacities = .true.
 	Zbase = 0.02d0 
 		
-	
+		
 	use_GR_factors = .true.
 	 
 	which_atm_option = 'grey_and_kap'  
 	cool_wind_RGB_scheme = ''
 	cool_wind_AGB_scheme = ''
+
 	RGB_to_AGB_wind_switch = 1d-4
 	Reimers_scaling_factor = 0.5d0  
 	Blocker_scaling_factor = 0.1d0 
