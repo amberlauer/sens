@@ -14,26 +14,32 @@ import os
 import fileinput
 import glob
 import sys
+
+
+#### declare arrays
 peak_period = []
 num_peaks = []
 run_num = []
 benchmarks = []
 multiple_500=[]
-# file locations: results=results_loc , main data folder=data_loc, ind data folder=runs_name, history and final path self explan
+
+#### file locations: results=results_loc , main data folder=data_loc, ind data folder=runs_name, history and final path self explan
 # these values don't change so I put them together.
-results_loc ='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/results/x100_7'
-data_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/histories_x100_7/'
+results_loc ='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/results/'
+data_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/histories_1_runs/'
 
-
+# dont need this in one folder structure
 #runs_name = input('Enter name of runs folder \n runs_')
 #runs_name='runs_x100_1'
 #runs_folder=data_loc+"runs_"+runs_name+'/'
-#baseline_path='/home/al363//Documents/Tech/MESA/XRB/XRB_SENS_analysis/status_info/baseline_verify/baseline_full_step2'
-baseline_path='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/baseline_history.data'
 #history_path = '/LOGS/history.data'
 #final_path= "/final_*"## note that this includes wildcard!!! That's why used special func "glob" below. it handles *.
-#baseline_path=baseline_path+history_path
+#base_loc=base_loc+history_path
 
+#base_loc='/home/al363//Documents/Tech/MESA/XRB/XRB_SENS_analysis/status_info/baseline_verify/baseline_full_step2'
+base_loc='/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/'
+base_filename='baseline_history.data'
+base_path=base_loc+base_filename
 # check if folders exist, if not exit compilation
 if not (os.path.exists(results_loc)):    
     print(results_loc+ " results_loc doesn't exist")
@@ -47,16 +53,17 @@ if not (os.path.exists(data_loc)):
 #    print(runs_folder +" runs_folder doesn't exist")
 #    sys.exit()
 
-#if not (os.path.exists(baseline_path)):    
-#    print(baseline_path +" baseline_path folder doesn't exist")
-#    sys.exit()
+if not (os.path.exists(base_loc)):    
+    print(base_loc +" base_loc folder doesn't exist")
+    sys.exit()
 
 
 #####changed so script prints a list of files in folder and then reads from
 file_name="all_histories.txt"
-bashCommand="bash files.sh " +data_loc+" "+file_name 
-#bashCommand="bash files.sh " +data_loc+" "+file_name ## os.system takes unlimted vars as a string, first should be executable, then any vars passed.
+bashCommand="bash files.sh " +data_loc+" "+file_name ## os.system takes unlimted vars as a string, first should be executable, then any vars passed.
 os.system(bashCommand)
+
+#figure out how many runs
 with open(file_name) as f:
     lines = [line.rstrip() for line in f]
 
@@ -69,25 +76,29 @@ with open(file_name) as f:
 cap=int(len(lines))
 i=0
 history_path=lines[i]
+
+
 #final_prof_path=runs_folder+path1+final_path        
 #file_path=runs_folder+path1+history_path
 
 #### debug print statements
 #print(final_prof_path)
 #print(data_loc)
-#print(runs_name)print(runs_folder)
+#print(runs_name)
+#print(runs_folder)
 #print(lines[i])
 #print(path1)   
 #print(glob.glob(final_prof_path))
 #print(cap)
-input("press any key to continue")
+#print(cap+1)
+    
+input("press any enter to continue")
 
 ###### new loop iterate through the list of files  
 for i in range(0, cap+1,1):    
-    print(cap+1)
     print(i)
     if i == cap:
-        file_path=baseline_path  
+        file_path=base_path  
 
     else:
         path1=lines[i]
@@ -95,8 +106,9 @@ for i in range(0, cap+1,1):
         file_path=data_loc+path1
         #       
         print(file_path)
+
+        #this doesn't work if they're in the same folder. pass h
         #print(final_prof_path)
-        
         #### check if final*profile exists. Want only finished runs   
         #if not (glob.glob(final_prof_path)): 
         #    print("final profile doesn't exist")  
@@ -116,8 +128,8 @@ for i in range(0, cap+1,1):
                 last_column = line.split(" ")
                 last_column = np.array(list(filter(None, last_column)))[-2]
                 last_column = last_column.astype(int) -1
-            if info_starts == 6:
             
+            if info_starts == 6:
                 column_name = {}
                 for k in range(last_column):
                     column_name[model_info[k]] = k
@@ -242,7 +254,7 @@ for i in range(0, cap+1,1):
 
 #total_rows = (end-start)/2 + 2
 fdate=datetime.date.today().strftime("%y_%m_%d")
-csv_name = results_loc +fdate+ '_peaks.csv'
+csv_name =fdate+ results_loc + '_peaks.csv'
 
 if not os.path.exists(results_loc):
     os.makedirs(results_loc)
