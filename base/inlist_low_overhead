@@ -1,0 +1,43 @@
+
+&star_job
+
+
+	history_columns_file = '/hpc/group/physics/al363/low_overhead/sens/base/history_custom_low_overhead'
+        profile_columns_file = '/hpc/group/physics/al363/low_overhead/sens/base/profile_custom_low_overhead'
+        read_extra_star_job_inlist1 = .true.
+        extra_star_job_inlist1_name = 'inlist_cluster_low_overhead'
+
+        read_extra_star_job_inlist2 = .true.
+        extra_star_job_inlist2_name = '/hpc/group/physics/al363/low_overhead/sens/base/inlist_base_low_overhead'
+
+
+        !read_extra_star_job_inlist2 = .true.
+        !extra_star_job_inlist2_name = '/hpc/group/physics/al363/low_overhead/sens/base/inlist_ns_h'
+
+
+/ ! end of star_job namelist
+
+&controls
+
+        read_extra_controls_inlist1 = .true.
+        extra_controls_inlist1_name = '/hpc/group/physics/al363/low_overhead/sens/base/inlist_base_low_overhead'
+
+        !read_extra_controls_inlist1 = .true.
+        !extra_controls_inlist1_name = 'inlist_ns_h'
+	
+	read_extra_controls_inlist2 = .true.
+	extra_controls_inlist2_name=  'inlist_cluster_low_overhead'
+
+/ ! end of controls namelist
+
+&pgstar
+
+        read_extra_pgstar_inlist1 = .true.
+        extra_pgstar_inlist1_name = '/hpc/group/physics/al363/low_overhead/sens/base/inlist_pgstar'
+
+
+        !read_extra_pgstar_inlist1 = .true.
+        !extra_pgstar_inlist1_name = 'inlist_pgstar'
+
+
+/ ! end of pgstar namelist
