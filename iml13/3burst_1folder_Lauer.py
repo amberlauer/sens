@@ -92,7 +92,7 @@ history_path=lines[i]
 #print(cap)
 #print(cap+1)
     
-input("press any enter to continue")
+input("press enter to continue")
 
 ###### new loop iterate through the list of files  
 for i in range(0, cap+1,1):    
@@ -124,7 +124,7 @@ for i in range(0, cap+1,1):
             info_starts += 1
             model_info = line.split(" ")    # splits the individual numbers in the lines
             model_info = np.array(list(filter(None, model_info)))[:-1:]
-            if info_starts == 5: # identifies tau column
+            if info_starts == 5: # 
                 last_column = line.split(" ")
                 last_column = np.array(list(filter(None, last_column)))[-2]
                 last_column = last_column.astype(int) -1
@@ -254,7 +254,7 @@ for i in range(0, cap+1,1):
 
 #total_rows = (end-start)/2 + 2
 fdate=datetime.date.today().strftime("%y_%m_%d")
-csv_name =fdate+ results_loc + '_peaks.csv'
+csv_name =results_loc + fdate+ '_peaks.csv'
 
 if not os.path.exists(results_loc):
     os.makedirs(results_loc)
