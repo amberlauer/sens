@@ -1,30 +1,23 @@
-# coding: utf-8
-
-# In[9]:
-
-
+import datetime
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
 import os.path
 from os.path import isfile, join
-#import pandas as pd
 from scipy.signal import find_peaks
 from scipy.interpolate import interp1d
-
+import subprocess
+import os
+import fileinput
+import glob
+import sys
 
 peak_period = []
 num_peaks = []
 run_num = []
 benchmarks = []
 multiple_500=[]
-<<<<<<< HEAD
-results_loc = '/datacommons/phy-champagne-lauer/1_runs/results/'
-# change starting model number using variable "start"
-
-#runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
-data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
-=======
 results_loc="/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/results/"
 #results_loc = '/home/iml13/REU2020/results/'
 # change starting model number using variable "start"
@@ -32,7 +25,6 @@ results_loc="/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/results/
 #runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
 #data_loc = '/datacommons/phy-champagne-lauer/'
 data_loc="/home/al363/Documents/Tech/MESA/XRB/XRB_SENS_analysis/runs/"
->>>>>>> 267c3b57ae2f7078324d684e0d67d3ef166529e3
 runs_name = input('Enter name of runs folder\n runs_')
 runs_folder ='runs_'+ runs_name +'/'
 start=int(input('Enter the number associated with the first model folder:'))
@@ -142,7 +134,7 @@ for i in range(start, num_files+2, 2): # goes through odd files
     row_check = np.array(list(row_check))
     offset = 0
     for m in range(len(row_check)-1):
-        if (row_check[m+1] - row_check[m]) < 20:
+        if (row_check[m+1] - row_check[m]) < 28:
             if m - offset < 4: 
                 removed +=1 
             if peaks_y[m - offset] < peaks_y[(m-offset)+1]: 
@@ -205,7 +197,7 @@ for i in range(start, num_files+2, 2): # goes through odd files
 
 #total_rows = (end-start)/2 + 2
 csv_path = data_loc  + 'results/'
-csv_name = csv_path + '3_peak_info_' + runs_name+ '.csv'
+csv_name = csv_path + '3_peak_info_28_step' + runs_name+ '.csv'
 
 if not os.path.exists(csv_path):
     os.makedirs(csv_path)
@@ -243,6 +235,7 @@ with open(csv_name, 'w', newline='') as data:
                 delta_period.append(abs((peak_period[z]-peak_period[-1])/peak_period[-1]))
             
             writer.writerow([run_num[z], num_peaks[z], benchmarks[z], multiple_500[z], peak_period[z],rel_period[z],delta_period[z]])    
+
 num_peaks_loc = csv_path + 'num_peaks.csv'
 
 
@@ -256,24 +249,3 @@ num_peaks_loc = csv_path + 'num_peaks.csv'
 
 # The above creates, writes in the data, then saves and excel spreadsheet
 
-<<<<<<< HEAD
-
-# In[22]:
-
-
-
-
-
-# In[23]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-=======
->>>>>>> 267c3b57ae2f7078324d684e0d67d3ef166529e3
