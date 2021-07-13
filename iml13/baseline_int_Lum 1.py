@@ -1,21 +1,29 @@
 #!/usr/bin/env python
 # coding: utf-8
-import datetime
+
+# In[ ]:
+
+
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[ ]:
+
+
+
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
 import scipy
 import os.path
 from os.path import isfile, join
+#import pandas as pd
 from scipy.signal import find_peaks
 from scipy.interpolate import interp1d 
 from scipy.integrate import quad
-#import pandas as pd
-import subprocess
-import os
-import fileinput
-import glob
-import sys
+
 
 peak_frequency = []
 num_peaks = []
@@ -36,29 +44,30 @@ avg_max_lums=[]
 # change starting model number using variable "start"
 
 #runs_location = input('Enter the location of the runs folders: \n e.g. /Users/ianlapinski/Desktop/REU2020/runs_x100_2/ \n')
-data_loc = '/datacommons/phy-champagne-lauer/1_runs/'
-runs_name = input('Enter name of runs folder\n runs_')
-runs_folder ='runs_'+ runs_name +'/'
-start=int(input('Enter the number associated with the first model folder:'))
-end=int(input('Enter the number associated with the last model folder:'))
-num_files = end+2 # num_files includes baseline!
+data_loc = '/datacommons/phy-champagne-lauer/1b_runs/'
+#runs_name = input('Enter name of runs folder\n runs_')
+#runs_folder ='runs_'+ runs_name +'/'
+#start=int(input('Enter the number associated with the first model folder:'))
+#end=int(input('Enter the number associated with the last model folder:'))
+#num_files = end+2 # num_files includes baseline!
 
 
 
 
-for i in range(start, num_files+2, 2): # goes through odd files
-    s = str(i) # changes int i into string s
+for i in range(1): # goes through odd files
+    #s = str(i) # changes int i into string s
 
-    path1 = data_loc+runs_folder
+    #path1 = data_loc+runs_folder
     path2 = '/LOGS/history.data'
-    file_path = path1 + s + path2
+    #file_path = path1 + s + path2
     
-    if i == num_files:
-        s = 'baseline'
-        file_path = data_loc + s + path2
+    #if i == num_files:
+    s = 'baseline'
+    file_path = data_loc + s + path2
 
     print(s)
     model_num.append(s)
+    
     
     with open( file_path, 'r') as f:
 
@@ -117,8 +126,6 @@ for i in range(start, num_files+2, 2): # goes through odd files
     row_check = []
     x = []
     y = []
-Passcode or option (1-3): 
-
     av_lum = []
     total = 0
     removed = 0
@@ -181,7 +188,7 @@ Passcode or option (1-3):
     
 #The following loop defines the range of values to be analyzed for each burst (start and end)
     
-    for j in range(len(peaks_y)):
+    for j in range(len(peaks_y)-1):
         burst_loc = log_lum.index(peaks_y[j])
         shift = star_age[burst_loc]
         if burst_loc-100 < 0:
@@ -275,8 +282,8 @@ Passcode or option (1-3):
 #Follwing loop finds difference between each models average func and the baseline function at each t point, returns absolute value,
 # then finds integral over time of burst.
 
-csv_path = data_loc + runs_folder + 'results/'
-csv_name = csv_path + 'integrated_lum' + runs_name + '.csv'
+csv_path = data_loc  + 'baseline/results/'
+csv_name = csv_path + 'baseline_Int_Lum' + '.csv'
 
 if not os.path.exists(csv_path):
     os.makedirs(csv_path)
@@ -307,3 +314,21 @@ with open(csv_name, 'w', newline='') as data:
         writer.writerow(['Run Number', 'Integrated L', 'Difference from Baseline', 'Max L', 'Max L (avg func)'])
         for i in range(len(model_num)):
             writer.writerow([model_num[i],integrals[i][0],perc_diff[i],max_lums[i],avg_max_lums[i]] )
+
+#for j in range(len(avg_funcs)):
+ #   integral = scipy.integrate.quad(integrand, av_t_start, av_t_end, epsabs = 300, limit = len(x_new)+1)
+    
+  #  print(integral)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
